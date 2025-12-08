@@ -18,6 +18,8 @@ This is the static HTML/CSS/JavaScript version of the Medicine Within website, r
 
 **Live URL**: https://benji-cpu.github.io/medicine-within-website/
 
+**Custom Domain Setup**: See `DNS_CHANGES_BEFORE_AFTER.md` for step-by-step DNS configuration to use `medicinewithin.nl`
+
 **Repository**: https://github.com/Benji-cpu/medicine-within-website
 
 #### Quick Updates
@@ -137,6 +139,7 @@ npx http-server
 ## 📝 Documentation
 
 - **`DEPLOYMENT.md`**: GitHub Pages deployment guide
+- **`DNS_CHANGES_BEFORE_AFTER.md`**: Step-by-step DNS changes to use custom domain `medicinewithin.nl`
 - **`CONFIG_SUMMARY.md`**: ConvertKit configuration and testing results
 - **`WORDPRESS_MIGRATION_GUIDE.md`**: Instructions for migrating to WordPress
 - **`TAG_TESTING_RESULTS.md`**: ConvertKit tag subscription test results

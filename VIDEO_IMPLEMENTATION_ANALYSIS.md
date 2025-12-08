@@ -116,3 +116,4 @@ Host videos on YouTube, Vimeo, or Cloudflare Stream for better compatibility and
 - Video autoplay: Requires muted attribute (already implemented)
 - Video formats: `.mov` has limited support (main issue)
 
+
