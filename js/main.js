@@ -161,6 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.toggle('open');
             navToggle.classList.toggle('active');
             
+            // Toggle body class for backdrop overlay
+            document.body.classList.toggle('nav-open');
+            
             // Toggle body scroll when menu is open
             document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
 
@@ -179,15 +182,17 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 nav.classList.remove('open');
                 navToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
                 document.body.style.overflow = '';
             });
         });
         
-        // Close menu when clicking outside
+        // Close menu when clicking outside (including backdrop)
         document.addEventListener('click', function(e) {
             if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
                 nav.classList.remove('open');
                 navToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
                 document.body.style.overflow = '';
 
                 // Collapse any open dropdowns
@@ -389,6 +394,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     setActiveNavLink();
+    
+    // ==========================================================================
+    // Redirect Prevention for mentorship.html
+    // Prevents WordPress server redirects from affecting GitHub Pages
+    // ==========================================================================
+    
+    (function() {
+        // Only run if we're on medicinewithin.nl (WordPress server)
+        if (window.location.hostname === 'medicinewithin.nl') {
+            const currentPath = window.location.pathname;
+            
+            // If we're on mentorship.html and came from GitHub Pages, redirect back
+            if (currentPath.includes('mentorship.html')) {
+                const referrer = document.referrer;
+                // If we came from GitHub Pages or were trying to access GitHub Pages content
+                if (referrer.includes('github.io') || referrer.includes('benji-cpu')) {
+                    const githubPagesUrl = 'https://benji-cpu.github.io/medicine-within-website/mentorship.html';
+                    window.location.replace(githubPagesUrl);
+                    return;
+                }
+            }
+        }
+    })();
     
     // ==========================================================================
     // Form Validation (Basic - Only for non-CK forms)
