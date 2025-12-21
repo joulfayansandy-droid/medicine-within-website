@@ -1,0 +1,38 @@
+# ConvertKit API Keys - DO NOT COMMIT
+js/config.js
+
+# Parent directory files (not part of v2 site)
+Sandi Personal Assets/
+.cursor/
+.cursorrules
+assets/Photos/
+assets/Videos/
+business_strategy/
+current_build/
+old_build/
+assets/wp-build/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
