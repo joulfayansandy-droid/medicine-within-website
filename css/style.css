@@ -258,12 +258,11 @@ p {
 .nav {
     display: flex;
     gap: 0.75rem;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     max-width: 100%;
     flex: 1;
     justify-content: flex-end;
-    padding-top: 0.5rem;
 }
 
 @media (min-width: 769px) {
@@ -282,6 +281,9 @@ p {
     position: relative;
     white-space: nowrap;
     padding: 0.25rem 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
 }
 
 .nav a::after {
@@ -315,10 +317,7 @@ p {
     border: none;
     cursor: pointer;
     font-family: inherit;
-    display: flex;
-    align-items: center;
     gap: 0.25rem;
-    padding: 0.25rem 0;
 }
 
 .nav-dropdown-toggle .caret {
@@ -2385,6 +2384,16 @@ a.formkit-powered-by {
     background: var(--color-bg);
 }
 
+.theme-clean .hero-bg {
+    object-position: center 5%;
+}
+
+@media (max-width: 768px) {
+    .theme-clean .hero-bg {
+        object-position: center 10%;
+    }
+}
+
 /* Retreats Page - Dream Theme */
 .theme-dream .hero-overlay {
     background: linear-gradient(
@@ -3777,3 +3786,51 @@ a.formkit-powered-by {
     object-fit: cover;
 }
 
+
+/* Sub-Navigation */
+.sub-nav {
+    background: var(--color-bg-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-md) 0;
+    position: sticky;
+    top: 80px;
+    z-index: 90;
+}
+
+.sub-nav-list {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-nav-link {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.sub-nav-link:hover,
+.sub-nav-link.active {
+    color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+    .sub-nav {
+        top: 70px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: var(--space-sm) 0;
+    }
+    
+    .sub-nav-list {
+        justify-content: flex-start;
+        padding: 0 var(--space-md);
+    }
+}

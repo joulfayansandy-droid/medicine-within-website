@@ -396,29 +396,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setActiveNavLink();
     
     // ==========================================================================
-    // Redirect Prevention for mentorship.html
-    // Prevents WordPress server redirects from affecting GitHub Pages
-    // ==========================================================================
-    
-    (function() {
-        // Only run if we're on medicinewithin.nl (WordPress server)
-        if (window.location.hostname === 'medicinewithin.nl') {
-            const currentPath = window.location.pathname;
-            
-            // If we're on mentorship.html and came from GitHub Pages, redirect back
-            if (currentPath.includes('mentorship.html')) {
-                const referrer = document.referrer;
-                // If we came from GitHub Pages or were trying to access GitHub Pages content
-                if (referrer.includes('github.io') || referrer.includes('benji-cpu')) {
-                    const githubPagesUrl = 'https://benji-cpu.github.io/medicine-within-website/mentorship.html';
-                    window.location.replace(githubPagesUrl);
-                    return;
-                }
-            }
-        }
-    })();
-    
-    // ==========================================================================
     // Form Validation (Basic - Only for non-CK forms)
     // ==========================================================================
     
