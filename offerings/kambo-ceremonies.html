@@ -110,6 +110,7 @@
                 <li><a href="kambo-ceremonies.html" class="sub-nav-link active">Ceremonies</a></li>
                 <li><a href="kambo-benefits.html" class="sub-nav-link">Benefits</a></li>
                 <li><a href="kambo-safety.html" class="sub-nav-link">Safety</a></li>
+                <li><a href="kambo-integration.html" class="sub-nav-link">Integration</a></li>
             </ul>
         </div>
     </nav>
@@ -118,8 +119,17 @@
     <section class="section section-dark">
         <div class="container">
             <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div>
-                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-1.jpg" alt="Kambô Medicine" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
+                <div class="video-featured" style="border-radius: 12px; overflow: hidden;">
+                    <video 
+                        data-click-to-play
+                        data-src="../assets/videos/sandi-group-3.mov"
+                        poster="../assets/img/events/Maithuna-day02-byShariVandeCraen-1.jpg"
+                        style="width: 100%; height: 500px; object-fit: cover;"
+                    >
+                        <div class="video-poster">
+                            <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-1.jpg" alt="Watch Ceremony Insight" style="width: 100%; height: 500px; object-fit: cover;">
+                        </div>
+                    </video>
                 </div>
                 <div>
                     <div class="ornament"><span></span></div>
@@ -151,50 +161,31 @@
     <!-- ========== CEREMONY TYPES ========== -->
     <section class="section section-elevated">
         <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div>
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">Where Ceremonies Happen</p>
-                    <h2>Group Ceremonies</h2>
-                    <p><strong>Westerstraat Home Temple</strong></p>
-                    <p>
-                        Small group ceremonies (max. 4 participants), held every other Saturday. 
-                        10:00–13:00 (timing adapts to the natural flow of the ceremony).
-                    </p>
-                    <p>
-                        This intimate home temple space is designed specifically for ceremonial work — quiet, grounded, and deeply held. 
-                        Group size is intentionally small to ensure safety, presence, and individual attention.
-                    </p>
-                    <div class="mt-md">
-                        <a href="../events/index.html" class="btn btn-primary">Join a Group Ceremony</a>
-                    </div>
-                </div>
-                <div>
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" alt="Home Temple Space" style="border-radius: 12px; width: 100%; height: 400px; object-fit: cover;">
-                </div>
+            <div class="section-header">
+                <p class="tagline">Sacred Containers</p>
+                <h2>Where Ceremonies Happen</h2>
             </div>
             
-            <div class="grid grid-2 mt-xl" style="gap: 4rem; align-items: center;">
-                <div class="order-mobile-2">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Private Ceremony" style="border-radius: 12px; width: 100%; height: 400px; object-fit: cover;">
+            <div class="grid grid-2" style="gap: 2rem;">
+                <div class="spoke-card">
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" alt="Group Ceremony" class="spoke-card-bg">
+                    <div class="spoke-card-overlay"></div>
+                    <div class="spoke-card-content">
+                        <p class="tagline" style="color: var(--color-text); margin-bottom: 0.5rem;">Westerstraat Home Temple</p>
+                        <h3>Group Ceremonies</h3>
+                        <p>Intimate circles (max 4) every other Saturday. 10:00–13:00.</p>
+                        <a href="../events/index.html" class="link-arrow" style="color: var(--color-gold);">Join a Group Ceremony</a>
+                    </div>
                 </div>
-                <div class="order-mobile-1">
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">Personalized & Deep</p>
-                    <h2>Private Ceremonies</h2>
-                    <p>
-                        Private ceremonies offer more tailored work and can be held in my home temple space, 
-                        your home (travel fee may apply), or for couples.
-                    </p>
-                    <p>Ideal for:</p>
-                    <ul class="feature-list">
-                        <li>Trauma-sensitive nervous systems</li>
-                        <li>Emotional release & major life transitions</li>
-                        <li>Preparation for or integration after Ayahuasca</li>
-                        <li>Those who prefer a one-to-one container</li>
-                    </ul>
-                    <div class="mt-md">
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn">Book Private Ceremony</a>
+                
+                <div class="spoke-card">
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Private Ceremony" class="spoke-card-bg">
+                    <div class="spoke-card-overlay"></div>
+                    <div class="spoke-card-content">
+                        <p class="tagline" style="color: var(--color-text); margin-bottom: 0.5rem;">Personalised & Deep</p>
+                        <h3>Private Ceremonies</h3>
+                        <p>One-to-one containers in my temple, your home, or for couples.</p>
+                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="link-arrow" style="color: var(--color-gold);">Book Private Ceremony</a>
                     </div>
                 </div>
             </div>
@@ -288,25 +279,33 @@
                 <p class="tagline">Warrior Path</p>
                 <h2>Offerings</h2>
             </div>
-            <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
-                <div class="pricing-card">
-                    <h3>The Warrior Cleanse</h3>
-                    <p class="text-muted">Traditional 3-session protocol within 28 days for deep cleansing, immunity, and clarity.</p>
-                    <p class="text-muted small">Can also be spaced monthly if needed.</p>
-                    <div class="mt-md">
-                        <a href="../events/index.html" class="btn">Explore Cleanse</a>
+            <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto; gap: 2rem;">
+                <div class="pricing-card-bg" style="background-image: url('../assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg'); border-radius: 12px;">
+                    <div class="pricing-card-overlay" style="border-radius: 12px;"></div>
+                    <div class="pricing-card-content" style="padding: var(--space-lg);">
+                        <h3>The Warrior Cleanse</h3>
+                        <p class="text-muted">Traditional 3-session protocol within 28 days for deep cleansing, immunity, and clarity.</p>
+                        <p class="text-muted small">Can also be spaced monthly if needed.</p>
+                        <div class="mt-md">
+                            <a href="../events/index.html" class="btn">Explore Cleanse</a>
+                        </div>
                     </div>
                 </div>
-                <div class="pricing-card featured">
-                    <h3>Warrior Integration</h3>
-                    <p class="text-muted">Kambô opens the door. Integration changes your life. 3 ceremonies + 3 somatic integration sessions.</p>
-                    <ul class="feature-list text-left mb-md" style="font-size: 0.85rem; border: none;">
-                        <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Somatic + emotional processing</li>
-                        <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Nervous-system anchoring</li>
-                        <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Personalised integration practices</li>
-                    </ul>
-                    <div class="pricing-amount">€666 – €777</div>
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary">Book Package</a>
+                
+                <div class="pricing-card-bg" style="background-image: url('../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg'); border-radius: 12px;">
+                    <div class="pricing-card-overlay" style="border-radius: 12px; background: rgba(26, 26, 26, 0.9);"></div>
+                    <div class="pricing-card-content" style="padding: var(--space-lg);">
+                        <div class="featured-tag" style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--color-gold); color: var(--color-text-dark); padding: 0.5rem 1.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; z-index: 3;">Most Popular</div>
+                        <h3>Warrior Integration</h3>
+                        <p class="text-muted">Kambô opens the door. Integration changes your life. 3 ceremonies + 3 somatic integration sessions.</p>
+                        <ul class="feature-list text-left mb-md" style="font-size: 0.85rem; border: none; max-width: 300px; margin: 0 auto;">
+                            <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Somatic + emotional processing</li>
+                            <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Nervous-system anchoring</li>
+                            <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Personalised integration practices</li>
+                        </ul>
+                        <div class="pricing-amount" style="font-size: 2.5rem;">€666 – €777</div>
+                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary">Book Package</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -317,7 +316,7 @@
         <div class="container">
             <div class="grid grid-2" style="gap: 4rem; align-items: center;">
                 <div>
-                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-50.jpg" alt="Preparation for Ceremony" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
+                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" alt="Preparation for Ceremony" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
                 </div>
                 <div>
                     <div class="ornament"><span></span></div>
@@ -345,19 +344,63 @@
         </div>
     </section>
 
+    <!-- ========== GALLERY ========== -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <p class="tagline">Ceremonial Field</p>
+                <h2>A Glimpse into the Space</h2>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Ceremonial detail" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred space" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="Deep presence" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" alt="Integration circle" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" alt="Medicine detail" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Soft light" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== FINAL CTA ========== -->
-    <section class="section section-dark text-center">
-        <div class="container container-narrow">
+    <section class="section section-dark text-center" style="position: relative; overflow: hidden; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <video 
+            class="video-background"
+            data-lazy-video
+            data-background-video
+            data-autoplay
+            data-src="../assets/videos/sandi-group-6.mov"
+            poster="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg"
+            preload="none"
+            muted
+            loop
+            playsinline
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
+        ></video>
+        <div class="hero-overlay" style="z-index: 2; background: rgba(26, 26, 26, 0.7);"></div>
+        <div class="container container-narrow" style="position: relative; z-index: 3;">
             <div class="ornament"><span></span></div>
-            <h2>Ready to Begin?</h2>
-            <p class="mb-lg">Choose the path that serves your soul's current season.</p>
+            <h2 style="color: white;">Ready to Begin?</h2>
+            <p class="mb-lg" style="color: var(--color-text);">Choose the path that serves your soul's current season.</p>
             <div class="btn-group">
                 <a href="../events/index.html" class="btn btn-primary">Book Group Ceremony</a>
-                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn">Book Private Ceremony</a>
+                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn" style="background: rgba(26, 26, 26, 0.5); color: var(--color-gold);">Book Private Ceremony</a>
             </div>
             <div class="btn-group mt-md">
-                <a href="../events/index.html" class="btn btn-small">Warrior Cleanse</a>
-                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-small">Warrior Integration</a>
+                <a href="../events/index.html" class="btn btn-small" style="background: rgba(26, 26, 26, 0.5);">Warrior Cleanse</a>
+                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-small" style="background: rgba(26, 26, 26, 0.5);">Warrior Integration</a>
             </div>
         </div>
     </section>

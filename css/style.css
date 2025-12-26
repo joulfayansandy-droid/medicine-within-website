@@ -885,6 +885,10 @@ p {
     transform: scale(1.05);
 }
 
+.offering-card.reverse {
+    flex-direction: row-reverse;
+}
+
 .offering-card-divider {
     width: 2px;
     background: var(--color-gold);
@@ -3789,18 +3793,18 @@ a.formkit-powered-by {
 
 /* Sub-Navigation */
 .sub-nav {
-    background: var(--color-bg-dark);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: var(--space-md) 0;
-    position: sticky;
-    top: 80px;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 1.25rem 0;
     z-index: 90;
+    /* Removed sticky positioning as it felt "hanging" and disconnected from content */
 }
 
 .sub-nav-list {
     display: flex;
     justify-content: center;
-    gap: var(--space-lg);
+    gap: 2.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -3808,29 +3812,41 @@ a.formkit-powered-by {
 
 .sub-nav-link {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: color 0.3s ease;
+    letter-spacing: 0.12em;
+    transition: all 0.3s ease;
     text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
 }
 
 .sub-nav-link:hover,
 .sub-nav-link.active {
     color: var(--color-gold);
+    border-bottom-color: var(--color-gold);
 }
 
 @media (max-width: 768px) {
     .sub-nav {
-        top: 70px;
         overflow-x: auto;
         white-space: nowrap;
-        padding: var(--space-sm) 0;
+        padding: 1rem 0;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .sub-nav::-webkit-scrollbar {
+        display: none;
     }
     
     .sub-nav-list {
         justify-content: flex-start;
         padding: 0 var(--space-md);
+        gap: 1.5rem;
+    }
+    
+    .sub-nav-link {
+        font-size: 0.75rem;
     }
 }

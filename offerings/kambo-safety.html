@@ -108,33 +108,41 @@
                 <li><a href="kambo-ceremonies.html" class="sub-nav-link">Ceremonies</a></li>
                 <li><a href="kambo-benefits.html" class="sub-nav-link">Benefits</a></li>
                 <li><a href="kambo-safety.html" class="sub-nav-link active">Safety</a></li>
+                <li><a href="kambo-integration.html" class="sub-nav-link">Integration</a></li>
             </ul>
         </div>
     </nav>
     
     <!-- ========== CONTRAINDICATIONS ========== -->
     <section class="section section-elevated">
-        <div class="container container-narrow">
-            <div class="section-header">
-                <div class="ornament"><span></span></div>
-                <h2>Absolute Contraindications</h2>
-                <p class="text-muted">If any of these apply, you cannot receive Kambô.</p>
+        <div class="container">
+            <div class="grid grid-2" style="gap: var(--space-xl); align-items: flex-start;">
+                <div>
+                    <div class="section-header text-left">
+                        <div class="ornament"><span></span></div>
+                        <h2>Absolute Contraindications</h2>
+                        <p class="text-muted">If any of these apply, you cannot receive Kambô.</p>
+                    </div>
+                    <ul class="feature-list">
+                        <li>Serious heart conditions</li>
+                        <li>Heart surgery, pacemaker, stents</li>
+                        <li>Stroke history</li>
+                        <li>Blood pressure medication</li>
+                        <li>Epilepsy</li>
+                        <li>Pregnancy</li>
+                        <li>Breastfeeding (first 6 months)</li>
+                        <li>Recent major surgery</li>
+                        <li>Under 18 years old</li>
+                        <li>Severe mental illness (psychosis, bipolar)</li>
+                        <li>Water fasting 24h before (dangerous)</li>
+                        <li>Alcohol or drugs within 24h</li>
+                    </ul>
+                    <p class="mt-md">If unsure &rarr; <a href="mailto:info@medicinewithin.nl">info@medicinewithin.nl</a></p>
+                </div>
+                <div class="animate-fadeInRight">
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred Elements" class="img-rounded" style="width: 100%; height: 600px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
             </div>
-            <ul class="feature-list">
-                <li>Serious heart conditions</li>
-                <li>Heart surgery, pacemaker, stents</li>
-                <li>Stroke history</li>
-                <li>Blood pressure medication</li>
-                <li>Epilepsy</li>
-                <li>Pregnancy</li>
-                <li>Breastfeeding (first 6 months)</li>
-                <li>Recent major surgery</li>
-                <li>Under 18 years old</li>
-                <li>Severe mental illness (psychosis, bipolar)</li>
-                <li>Water fasting 24h before (dangerous)</li>
-                <li>Alcohol or drugs within 24h</li>
-            </ul>
-            <p class="mt-md text-center">If unsure &rarr; <a href="mailto:info@medicinewithin.nl">info@medicinewithin.nl</a></p>
             
             <div class="mt-xl">
                 <h3>Relative Contraindications (Case-by-Case)</h3>
@@ -156,8 +164,17 @@
     <section class="section">
         <div class="container">
             <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div class="animate-fadeInLeft">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Safety Protocols" class="img-rounded" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                <div class="animate-fadeInLeft" style="position: relative; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <!-- Video Background for Safety Protocols -->
+                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Safety Protocols" class="video-poster-fallback" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                    <video 
+                        class="video-background" 
+                        data-lazy-video 
+                        data-background-video 
+                        data-src="../assets/videos/sandi-group-3.mov"
+                        muted loop playsinline
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2;"
+                    ></video>
                 </div>
                 <div class="animate-fadeInRight">
                     <div class="section-header text-left" style="margin-bottom: var(--space-md);">
@@ -181,34 +198,39 @@
     <!-- ========== PREP & AFTERCARE ========== -->
     <section class="section section-dark">
         <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl);">
-                <div>
-                    <h3>Preparation</h3>
-                    <p><strong>24 hours before:</strong></p>
-                    <ul class="feature-list">
-                        <li>Eat clean, light food</li>
-                        <li>No alcohol or recreational drugs</li>
-                        <li>Hydrate gently and sleep well</li>
-                    </ul>
-                    <p class="mt-md"><strong>Morning of:</strong></p>
-                    <ul class="feature-list">
-                        <li>No coffee or caffeine</li>
-                        <li>No fasting</li>
-                        <li>Light meal 3-4h before</li>
-                    </ul>
+            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
+                <div class="grid grid-2" style="gap: var(--space-xl);">
+                    <div>
+                        <h3>Preparation</h3>
+                        <p><strong>24 hours before:</strong></p>
+                        <ul class="feature-list">
+                            <li>Eat clean, light food</li>
+                            <li>No alcohol or recreational drugs</li>
+                            <li>Hydrate gently and sleep well</li>
+                        </ul>
+                        <p class="mt-md"><strong>Morning of:</strong></p>
+                        <ul class="feature-list">
+                            <li>No coffee or caffeine</li>
+                            <li>No fasting</li>
+                            <li>Light meal 3-4h before</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Aftercare</h3>
+                        <p><strong>Integration is key:</strong></p>
+                        <ul class="feature-list">
+                            <li>Rest and allow the medicine to settle</li>
+                            <li>Eat light, nourishing food</li>
+                            <li>Hydrate well</li>
+                            <li>Avoid alcohol for 24-48 hours</li>
+                            <li>Spend time in nature, journaling or stillness</li>
+                        </ul>
+                        <p class="mt-md"><strong>Optional support:</strong></p>
+                        <p>&rarr; <a href="../mentorship/integration.html" class="text-gold">Book an Integration Session</a></p>
+                    </div>
                 </div>
-                <div>
-                    <h3>Aftercare</h3>
-                    <p><strong>Integration is key:</strong></p>
-                    <ul class="feature-list">
-                        <li>Rest and allow the medicine to settle</li>
-                        <li>Eat light, nourishing food</li>
-                        <li>Hydrate well</li>
-                        <li>Avoid alcohol for 24-48 hours</li>
-                        <li>Spend time in nature, journaling or stillness</li>
-                    </ul>
-                    <p class="mt-md"><strong>Optional support:</strong></p>
-                    <p>&rarr; <a href="../mentorship/integration.html" class="text-gold">Book an Integration Session</a></p>
+                <div class="animate-fadeInRight">
+                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg" alt="Sandi - Integration Stillness" class="img-rounded" style="width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
                 </div>
             </div>
         </div>
@@ -246,8 +268,11 @@
     </section>
 
     <!-- ========== CTA SECTION ========== -->
-    <section class="section section-dark text-center">
-        <div class="container container-narrow">
+    <section class="section section-dark text-center" style="position: relative; overflow: hidden;">
+        <!-- Background Ornament/Image for CTA -->
+        <img src="../assets/img/methodology/sparkles.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1; z-index: 1;">
+        <div class="container container-narrow" style="position: relative; z-index: 2;">
+            <div class="ornament"><span></span></div>
             <h2 class="mb-lg">Take the Next Step</h2>
             <div class="grid grid-2" style="gap: var(--space-md);">
                 <a href="kambo-ceremonies.html" class="btn btn-primary">Book a Ceremony</a>
@@ -300,5 +325,6 @@
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/video-loader.js"></script>
 </body>
 </html>

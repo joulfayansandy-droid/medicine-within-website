@@ -126,7 +126,10 @@
         const clickToPlayVideos = document.querySelectorAll('video[data-click-to-play]');
         
         clickToPlayVideos.forEach(video => {
-            const poster = video.querySelector('.video-poster');
+            const parent = video.parentElement;
+            if (!parent) return;
+            
+            const poster = parent.querySelector('.video-poster');
             
             if (!poster) return;
 

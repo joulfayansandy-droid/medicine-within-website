@@ -150,17 +150,32 @@
     </section>
 
     <!-- ========== THE LINEAGE ========== -->
-    <section class="section section-elevated">
-        <div class="container container-narrow text-center">
+    <section class="section section-dark" style="position: relative; overflow: hidden; min-height: 60vh; display: flex; align-items: center;">
+        <video 
+            class="video-background"
+            data-lazy-video
+            data-background-video
+            data-autoplay
+            data-src="../assets/videos/sandi-group-3.mov"
+            poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg"
+            preload="none"
+            muted
+            loop
+            playsinline
+            aria-hidden="true"
+            style="opacity: 0.4;"
+        >
+        </video>
+        <div class="container container-narrow text-center" style="position: relative; z-index: 2;">
             <div class="section-header">
                 <p class="tagline">The Roots</p>
-                <h2>The Lineage of Temple Arts</h2>
+                <h2 style="color: var(--color-gold);">The Lineage of Temple Arts</h2>
             </div>
-            <div style="font-size: 1.1rem; line-height: 1.8;">
+            <div style="font-size: 1.1rem; line-height: 1.8; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
                 <p>Before intimacy became casual. Before sexuality became performative. Before healing became clinical. <strong>There were temples.</strong></p>
                 <p class="mt-md">Across cultures and lineages, temple spaces existed so humans could meet the most powerful forces of life — eros, grief, devotion, longing, truth — inside sacred structure.</p>
                 <p class="mt-md">Temple Arts were never about sex. They were about life force — and how it moves through the body and between humans when it is honored rather than suppressed or consumed.</p>
-                <p class="mt-md" style="font-family: var(--font-heading); font-style: italic; font-size: 1.3rem; color: var(--color-gold);">
+                <p class="mt-md" style="font-family: var(--font-heading); font-style: italic; font-size: 1.4rem; color: var(--color-gold);">
                     Private Temple returns intimacy to its rightful place: as devotion, as prayer, as embodied truth.
                 </p>
             </div>
@@ -168,26 +183,28 @@
     </section>
 
     <!-- ========== WHY PRIVATE TEMPLE ========== -->
-    <section class="section section-dark">
-        <div class="container">
+    <section class="section section-dark" style="position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: url('../assets/img/methodology/sparkles.jpg'); background-size: cover; pointer-events: none;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
             <div class="section-header">
                 <p class="tagline">The Invitation</p>
                 <h2>Why Private Temple?</h2>
             </div>
             <div class="grid grid-3">
                 <div class="card">
+                    <div class="ornament" style="margin: 0 0 var(--space-sm) 0; justify-content: flex-start;"><span></span></div>
                     <h3 class="text-gold">Precision & Slowness</h3>
                     <p class="text-muted">Some encounters require a depth of listening and a pace that cannot be found in public spaces. Here, truth has time to unfold.</p>
                 </div>
                 <div class="card">
+                    <div class="ornament" style="margin: 0 0 var(--space-sm) 0; justify-content: flex-start;"><span></span></div>
                     <h3 class="text-gold">Relationship as Ceremony</h3>
                     <p class="text-muted">For moments when your relationship wants ceremony — not discussion. Something sacred asking to be honored properly.</p>
                 </div>
                 <div class="card">
-                    <div class="card-content">
-                        <h3 class="text-gold">Embodied Presence</h3>
-                        <p class="text-muted">Eros becomes intelligence, boundaries become clarity, and devotion becomes embodied truth. Meeting what is alive, correctly.</p>
-                    </div>
+                    <div class="ornament" style="margin: 0 0 var(--space-sm) 0; justify-content: flex-start;"><span></span></div>
+                    <h3 class="text-gold">Embodied Presence</h3>
+                    <p class="text-muted">Eros becomes intelligence, boundaries become clarity, and devotion becomes embodied truth. Meeting what is alive, correctly.</p>
                 </div>
             </div>
         </div>
@@ -228,6 +245,24 @@
                 <h2>How a Private Temple Ritual Unfolds</h2>
                 <p class="text-muted">Each ritual is unique. There is no script. Presence leads.</p>
             </div>
+            
+            <div class="video-container mb-xl" style="max-width: 900px; margin-left: auto; margin-right: auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                <video 
+                    data-lazy-video
+                    data-autoplay
+                    data-background-video
+                    data-src="../assets/videos/sandi-group-4.mov"
+                    poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg"
+                    preload="none"
+                    muted
+                    loop
+                    playsinline
+                    aria-hidden="true"
+                >
+                </video>
+                <div class="video-overlay" style="background: linear-gradient(to top, rgba(26,26,26,0.6), transparent);"></div>
+            </div>
+
             <div class="grid grid-3">
                 <div class="card">
                     <h4 class="text-gold">Opening & Intention</h4>
@@ -264,24 +299,65 @@
                 <p class="tagline">Reflections</p>
                 <h2>What People Experience</h2>
             </div>
-            <div class="grid grid-3">
-                <div class="testimonial">
-                    <p class="testimonial-quote">"Something softened that words never touched."</p>
+            <div class="grid grid-3" style="gap: var(--space-lg);">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg" alt="Temple atmosphere" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
+                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"Something softened that words never touched."</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"We felt closer without having to explain anything."</p>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" alt="Shared presence" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
+                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"We felt closer without having to explain anything."</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"I met my desire without shame for the first time."</p>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" alt="Erotic devotion" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
+                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"I met my desire without shame for the first time."</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"It felt ancient. Simple. True."</p>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" alt="Ancient ritual" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
+                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"It felt ancient. Simple. True."</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"I trusted my body again."</p>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="Embodied trust" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
+                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"I trusted my body again."</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"Always, it is embodied."</p>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred space" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
+                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"Always, it is embodied."</p>
+                    </div>
                 </div>
             </div>
         </div>
