@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Hero Style Variants</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Tokens from Brand Guide */
+            --teal: #2F4347;
+            --gold: #D4AF37;
+            --charcoal: #1A1A1F;
+            --burgundy: #3A1F26;
+            --bone: #E8E1D8;
+            --blush: #F2D6C9;
+            
+            --font-headlines: 'Cinzel', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --font-support: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .variant-header {
+            background: #111;
+            padding: 1rem;
+            text-align: center;
+            font-family: var(--font-support);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #666;
+            border-bottom: 1px solid #222;
+        }
+
+        /* Common Hero Structure */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end; /* Default to bottom-weighted */
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            width: 100%; /* Ensure full width for flex positioning */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end; /* Default */
+            align-items: center; /* Default center-align children */
+        }
+
+        .hero-label {
+            font-family: var(--font-support);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: var(--font-headlines);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            display: block;
+            font-size: 0.45em;
+            letter-spacing: 0.3em;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 2.2rem;
+            font-family: var(--font-headlines);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.7rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+        }
+
+        /* VARIANT 1: THE ALCHEMICAL DEEP (Split Alignment) */
+        .v1 {
+            background-color: var(--teal);
+            align-items: stretch; /* Allow content to span top to bottom */
+        }
+        .v1 .hero-bg { filter: brightness(0.7); }
+        .v1 .hero-overlay {
+            background: linear-gradient(to bottom, 
+                rgba(47, 67, 71, 0.8) 0%, 
+                rgba(47, 67, 71, 0) 40%, 
+                rgba(47, 67, 71, 0) 60%, 
+                rgba(47, 67, 71, 0.8) 100%);
+        }
+        .v1 .hero-content {
+            justify-content: space-between; /* Pushes content to top and bottom */
+            padding: 2vh 0;
+            align-items: center;
+        }
+        .v1 .hero-top {
+            margin-top: 4vh;
+        }
+        .v1 .hero-bottom {
+            margin-bottom: 4vh;
+        }
+        .v1 .hero-label { color: var(--gold); }
+        .v1 .hero-title { color: var(--bone); }
+        .v1 .hero-title span { color: var(--gold); }
+        .v1 .hero-subtitle { color: var(--bone); }
+        .v1 .btn {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+        .v1 .btn:hover { background: var(--gold); color: var(--teal); }
+
+        /* VARIANT 2: THE SACRED SANCTUARY (Bone/Teal focus) */
+        .v2 {
+            background-color: var(--bone);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .v2 .hero-bg { 
+            filter: brightness(0.9) sepia(0.2) contrast(1.1);
+            opacity: 0.5;
+        }
+        .v2 .hero-overlay {
+            background: radial-gradient(circle, rgba(232, 225, 216, 0.2), rgba(232, 225, 216, 0.8));
+        }
+        .v2 .hero-content { 
+            max-width: 800px;
+            justify-content: center;
+        }
+        .v2 .hero-label { color: var(--teal); }
+        .v2 .hero-title { color: var(--charcoal); }
+        .v2 .hero-title span { color: var(--teal); border: none; padding-left: 0; margin-left: 0.5rem; display: block; }
+        .v2 .hero-subtitle { color: var(--charcoal); font-weight: 400; opacity: 1; }
+        .v2 .btn { 
+            background: var(--teal); 
+            color: var(--bone); 
+            border: 1px solid var(--teal); 
+        }
+        .v2 .btn:hover {
+            background: transparent;
+            color: var(--teal);
+        }
+
+        /* VARIANT 3: ASYMMETRIC DRAMA (Right Aligned) */
+        .v3 {
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 8vw;
+            text-align: right;
+        }
+        .v3 .hero-bg { 
+            object-position: 25% center; 
+            filter: contrast(1.1) brightness(0.85);
+        }
+        .v3 .hero-overlay {
+            background: linear-gradient(to left, rgba(26, 26, 31, 0.8) 0%, rgba(26, 26, 31, 0) 60%);
+        }
+        .v3 .hero-content { 
+            max-width: 450px;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .v3 .hero-label { color: var(--burgundy); font-weight: 600; }
+        .v3 .hero-title { color: var(--bone); font-size: 4rem; }
+        .v3 .hero-title span { display: block; font-family: var(--font-body); text-transform: none; italic: true; letter-spacing: 0; color: var(--gold); margin-top: 0.2rem; }
+        .v3 .hero-subtitle { margin-right: 0; color: var(--bone); opacity: 0.7; font-size: 1.2rem; }
+        .v3 .btn { background: transparent; border: 1px solid var(--bone); color: var(--bone); }
+        .v3 .btn:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* MOBILE OPTIMIZATIONS */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            /* V1 Mobile: Push content even further apart to clear face */
+            .v1 .hero-content {
+                padding: 4vh 0;
+            }
+            .v1 .hero-top { margin-top: 2vh; }
+            .v1 .hero-bottom { margin-bottom: 2vh; }
+
+            /* V2 Mobile: Center text if it's blocking Sandi at the bottom */
+            .v2 {
+                align-items: flex-start; /* Move text to top on mobile for this image */
+                padding-top: 8vh;
+                text-align: center;
+                justify-content: center;
+            }
+            .v2 .hero-overlay {
+                background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 100%);
+            }
+            .v2 .hero-content {
+                justify-content: flex-start;
+                max-width: 100%;
+            }
+            .v2 .hero-title span {
+                display: block;
+                border-left: none;
+                padding-left: 0;
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            /* V3 Mobile: Center align for better balance on small screens */
+            .v3 {
+                padding-right: 2rem;
+                text-align: center;
+                justify-content: center;
+                align-items: flex-end;
+                padding-bottom: 8vh;
+            }
+            .v3 .hero-bg {
+                object-position: center; /* Center image on mobile */
+            }
+            .v3 .hero-overlay {
+                background: linear-gradient(to top, rgba(26, 26, 31, 0.9) 0%, rgba(26, 26, 31, 0) 50%);
+            }
+            .v3 .hero-content {
+                max-width: 100%;
+            }
+            .v3 .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        .sticky-selector {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sticky-selector a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-family: var(--font-support);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-selector a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .sticky-selector a.active {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* Marker for comparison */
+        .v-tag {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(0,0,0,0.5);
+            padding: 0.5rem 1rem;
+            font-family: var(--font-support);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            z-index: 10;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sticky-selector">
+        <a href="#v1">The Alchemical Deep</a>
+        <a href="#v2">The Sacred Sanctuary</a>
+        <a href="#v3">The Night Ritual</a>
+    </div>
+
+    <!-- VARIANT 1: THE ALCHEMICAL DEEP -->
+    <div id="v1" class="variant-header">Variant 1: The Alchemical Deep (Split Alignment)</div>
+    <section class="hero v1">
+        <div class="v-tag">STYLE: TOP + BOTTOM SPLIT</div>
+        <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg" alt="" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-top">
+                <span class="hero-label">Medicine Within</span>
+                <h1 class="hero-title">PURIFICATION<span>TO PLEASURE</span></h1>
+            </div>
+            <div class="hero-bottom">
+                <p class="hero-subtitle">Step into the temple of your becoming. Where the sacred meets the embodied.</p>
+                <a href="#" class="btn">Enter the Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VARIANT 2: THE SACRED SANCTUARY -->
+    <div id="v2" class="variant-header">Variant 2: The Sacred Sanctuary (Grounded & Clear)</div>
+    <section class="hero v2">
+        <div class="v-tag">STYLE: BONE + TEAL</div>
+        <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" alt="" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-top">
+                <span class="hero-label">A Sacred Invitation</span>
+                <h1 class="hero-title">EMBODIED<span>WISDOM</span></h1>
+            </div>
+            <div class="hero-bottom">
+                <p class="hero-subtitle">The medicine is already inside you. We simply clear the path.</p>
+                <a href="#" class="btn">Begin Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VARIANT 3: ASYMMETRIC DRAMA -->
+    <div id="v3" class="variant-header">Variant 3: Asymmetric Drama (Right-Aligned, Side Fade)</div>
+    <section class="hero v3">
+        <div class="v-tag">STYLE: SIDE-FADE + NEGATIVE SPACE</div>
+        <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" alt="" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-label">Intimate • Powerful</span>
+            <h1 class="hero-title">THE TEMPLE<span>OF SENSES</span></h1>
+            <p class="hero-subtitle">Surrender to the fire of your own devotion. An alchemical journey of the soul.</p>
+            <a href="#" class="btn">Claim Your Space</a>
+        </div>
+    </section>
+
+    <footer style="padding: 4rem; text-align: center; background: #000; color: #444; font-family: var(--font-support); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em;">
+        Scroll to compare the emotional resonance of each style.
+    </footer>
+
+    <script>
+        // Simple active state for sticky nav on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.sticky-selector a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

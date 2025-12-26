@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Hero Component Documentation</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mw-teal: #2F4347;
+            --mw-gold: #D4AF37;
+            --mw-charcoal: #1A1A1F;
+            --mw-bone: #E8E1D8;
+            --mw-burgundy: #3A1F26;
+            
+            --mw-font-headlines: 'Cinzel', serif;
+            --mw-font-body: 'Cormorant Garamond', serif;
+            --mw-font-support: 'Inter', sans-serif;
+        }
+
+        /* 
+           ==========================================================================
+           MW HERO COMPONENT
+           ========================================================================== 
+        */
+
+        .mw-hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            background-color: var(--mw-charcoal);
+            padding: 4rem; /* Safe padding for text */
+        }
+
+        /* Media Container */
+        .mw-hero__media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .mw-hero__media img,
+        .mw-hero__media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Overlay */
+        .mw-hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Content Container */
+        .mw-hero__content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mw-hero__label {
+            font-family: var(--mw-font-support);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            margin-bottom: 1rem;
+            color: var(--mw-gold);
+        }
+
+        .mw-hero__title {
+            font-family: var(--mw-font-headlines);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--mw-bone);
+        }
+
+        .mw-hero__title span {
+            display: block;
+            font-size: 0.5em;
+            color: var(--mw-gold);
+            margin-top: 0.5rem;
+        }
+
+        .mw-hero__subtitle {
+            font-family: var(--mw-font-body);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            color: var(--mw-bone);
+            opacity: 0.9;
+        }
+
+        .mw-hero__cta .btn {
+            display: inline-block;
+            padding: 1.1rem 2.2rem;
+            font-family: var(--mw-font-headlines);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.7rem;
+            text-decoration: none;
+            border: 1px solid var(--mw-gold);
+            color: var(--mw-gold);
+            transition: all 0.4s ease;
+        }
+
+        .mw-hero__cta .btn:hover {
+            background: var(--mw-gold);
+            color: var(--mw-charcoal);
+        }
+
+        /* PLACEMENT MODIFIERS */
+        .mw-hero--place-center { justify-content: center; align-items: center; }
+        .mw-hero--place-center .mw-hero__content { align-items: center; text-align: center; }
+
+        .mw-hero--place-bottom-left { justify-content: flex-start; align-items: flex-end; }
+        .mw-hero--place-bottom-left .mw-hero__content { align-items: flex-start; text-align: left; }
+
+        .mw-hero--place-bottom-right { justify-content: flex-end; align-items: flex-end; }
+        .mw-hero--place-bottom-right .mw-hero__content { align-items: flex-end; text-align: right; }
+
+        .mw-hero--place-top-left { justify-content: flex-start; align-items: flex-start; }
+        .mw-hero--place-top-left .mw-hero__content { align-items: flex-start; text-align: left; }
+
+        .mw-hero--place-top-right { justify-content: flex-end; align-items: flex-start; }
+        .mw-hero--place-top-right .mw-hero__content { align-items: flex-end; text-align: right; }
+
+        .mw-hero--place-split { align-items: stretch; justify-content: center; }
+        .mw-hero--place-split .mw-hero__content { justify-content: space-between; height: 100%; align-items: center; text-align: center; }
+
+        /* OVERLAY MODIFIERS */
+        .mw-hero--overlay-bottom { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); }
+        .mw-hero--overlay-top { background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 60%); }
+        .mw-hero--overlay-left { background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 60%); }
+        .mw-hero--overlay-right { background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 60%); }
+        .mw-hero--overlay-vignette { background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.6) 100%); }
+        .mw-hero--overlay-teal { background: rgba(47, 67, 71, 0.4); }
+
+        /* MEDIA ALIGNMENT MODIFIERS */
+        .mw-hero--media-top img { object-position: top center; }
+        .mw-hero--media-bottom img { object-position: bottom center; }
+        .mw-hero--media-left img { object-position: center left; }
+        .mw-hero--media-right img { object-position: center right; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .mw-hero { 
+                padding: 2rem; 
+                justify-content: center !important; 
+                align-items: center !important; 
+            }
+            .mw-hero__content { 
+                align-items: center !important; 
+                text-align: center !important; 
+            }
+            .mw-hero__title { font-size: 2.5rem; }
+        }
+
+        /* 
+           ==========================================================================
+           DOCUMENTATION STYLES (Ignore for component)
+           ========================================================================== 
+        */
+        .doc-section { padding: 4rem 2rem; background: #fff; color: #333; }
+        .doc-container { max-width: 1000px; margin: 0 auto; }
+        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        pre { background: #1a1a1f; color: #e8e1d8; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+        .config-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .config-table th, .config-table td { text-align: left; padding: 1rem; border-bottom: 1px solid #eee; }
+        .example-label { background: var(--mw-gold); color: #000; padding: 0.5rem 1rem; display: inline-block; font-family: var(--mw-font-support); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="doc-section">
+        <div class="doc-container">
+            <h1 style="font-family: var(--mw-font-headlines); margin-bottom: 1rem;">MW Hero Component</h1>
+            <p>A highly configurable, visual-first hero section component for Medicine Within. Designed to handle images, videos, and various text placements without blocking critical media elements.</p>
+            
+            <h3 style="margin-top: 2rem;">Basic Usage</h3>
+<pre><code>&lt;section class="mw-hero mw-hero--place-bottom-left mw-hero--overlay-bottom"&gt;
+    &lt;div class="mw-hero__media"&gt;
+        &lt;img src="path/to/image.jpg" alt="Description"&gt;
+    &lt;/div&gt;
+    &lt;div class="mw-hero__overlay"&gt;&lt;/div&gt;
+    &lt;div class="mw-hero__content"&gt;
+        &lt;span class="mw-hero__label"&gt;Label&lt;/span&gt;
+        &lt;h1 class="mw-hero__title"&gt;Heading&lt;/h1&gt;
+        &lt;p class="mw-hero__subtitle"&gt;Subheading text...&lt;/p&gt;
+        &lt;div class="mw-hero__cta"&gt;
+            &lt;a href="#" class="btn"&gt;Call to Action&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+            <h3>Configuration Options</h3>
+            <table class="config-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Class Modifier</th>
+                        <th>Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Placement</strong></td>
+                        <td><code>mw-hero--place-center</code></td>
+                        <td>Centered text (Default)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>mw-hero--place-bottom-left</code></td>
+                        <td>Text in bottom-left corner</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>mw-hero--place-split</code></td>
+                        <td>Title at top, CTA at bottom (Face-safe)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Overlays</strong></td>
+                        <td><code>mw-hero--overlay-bottom</code></td>
+                        <td>Black fade at bottom</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><code>mw-hero--overlay-teal</code></td>
+                        <td>Branded teal tint</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Media</strong></td>
+                        <td><code>mw-hero--media-top</code></td>
+                        <td>Aligns image focus to top</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- EXAMPLE 1: SPLIT ALIGNMENT (VARIANT 1 STYLE) -->
+    <div class="example-label">Example 1: Split Alignment (Face-Safe)</div>
+    <section class="mw-hero mw-hero--place-split mw-hero--overlay-vignette">
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-9.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <div class="mw-hero__top">
+                <span class="mw-hero__label">Medicine Within</span>
+                <h1 class="mw-hero__title">PURIFICATION<span>TO PLEASURE</span></h1>
+            </div>
+            <div class="mw-hero__bottom">
+                <p class="mw-hero__subtitle">The sacred meets the embodied.</p>
+                <div class="mw-hero__cta">
+                    <a href="#" class="btn">Enter the Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE 2: BOTTOM LEFT (VARIANT 2 STYLE) -->
+    <div class="example-label">Example 2: Bottom Left (Visual First)</div>
+    <section class="mw-hero mw-hero--place-bottom-left mw-hero--overlay-bottom mw-hero--media-top">
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">A Sacred Invitation</span>
+            <h1 class="mw-hero__title">EMBODIED WISDOM</h1>
+            <p class="mw-hero__subtitle">The medicine is already inside you. We simply clear the path.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Begin Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE 3: ASYMMETRIC RIGHT (VARIANT 3 STYLE) -->
+    <div class="example-label">Example 3: Asymmetric Right (Negative Space)</div>
+    <section class="mw-hero mw-hero--place-bottom-right mw-hero--overlay-right mw-hero--media-left">
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Intimate • Powerful</span>
+            <h1 class="mw-hero__title">THE TEMPLE OF SENSES</h1>
+            <p class="mw-hero__subtitle">An alchemical journey of the soul.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Claim Your Space</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE 4: VIDEO BACKGROUND -->
+    <div class="example-label">Example 4: Video Background (Center)</div>
+    <section class="mw-hero mw-hero--place-center mw-hero--overlay-teal">
+        <div class="mw-hero__media">
+            <video autoplay muted loop playsinline>
+                <source src="https://benji-cpu.github.io/medicine-within-website/assets/videos/sandi-group-3.mov" type="video/quicktime">
+                <source src="https://benji-cpu.github.io/medicine-within-website/assets/videos/sandi-group-3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Ritual in Motion</span>
+            <h1 class="mw-hero__title">SACRED MOVEMENT</h1>
+            <p class="mw-hero__subtitle">Awaken the wild within.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Watch the Story</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+

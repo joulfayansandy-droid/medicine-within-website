@@ -1,83 +1,46 @@
-# Medicine Within Website
+# Medicine Within v2: The Astro Migration
 
-This is the static HTML/CSS/JavaScript version of the Medicine Within website
+This is a professional rebuild of the Medicine Within website using modern web technologies.
 
-**Live URL**: https://benji-cpu.github.io/medicine-within-website/
+## Tech Stack
 
-**Repository**: https://github.com/Benji-cpu/medicine-within-website
+- **Framework**: [Astro](https://astro.build/) (Static Site Generator)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [View Transitions API](https://docs.astro.build/en/guides/view-transitions/)
+- **Asset Optimization**: Astro's built-in Image component
+- **Integrations**:
+  - Hipsy (Event Management)
+  - ConvertKit (Newsletter)
+  - Calendly (Booking)
 
-## 🔧 Development
+## Project Structure
 
-### Local Testing
+- `src/layouts/`: Master layouts for the site.
+- `src/components/`: Reusable Astro components (Header, Footer, Navigation, etc.).
+- `src/pages/`: File-based routing for all site pages.
+- `src/assets/`: Images and other assets processed by Astro's asset manager.
+- `src/scripts/`: Modularized JavaScript/TypeScript logic.
+- `public/`: Static assets that don't need processing (videos, favicons).
 
-Simply open `index.html` in a web browser, or use a local server:
+## Getting Started
 
-```bash
-# Python 3
-python3 -m http.server 8000
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-# Node.js (if you have http-server installed)
-npx http-server
+2.  **Start development server**:
+    ```bash
+    npm run dev
+    ```
 
-# Then visit: http://localhost:8000
-```
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
 
-### Git Branch Naming Strategy
+## Development Workflow
 
-To keep the development organized, use the following naming convention for branches:
-
-- `feat/` - New features (e.g., `feat/contact-form`)
-- `fix/` - Bug fixes (e.g., `fix/navigation-issue`)
-- `refactor/` - Code restructuring or improvements (e.g., `refactor/folder-structure`)
-- `docs/` - Documentation updates (e.g., `docs/readme-update`)
-- `style/` - CSS or UI styling changes (e.g., `style/mobile-responsive`)
-- `chore/` - Maintenance or configuration (e.g., `chore/gitignore-update`)
-
-**Workflow:**
-1. Create a branch: `git checkout -b type/description`
-2. Make changes and commit
-3. Push to GitHub: `git push origin type/description`
-4. Merge into `main` after review
-
-### ConvertKit Integration
-
-- **API Keys**: Stored in `js/config.js` (excluded from git for security)
-- **Tag-based Subscriptions**: Configured and tested (see `CONFIG_SUMMARY.md`)
-- **Forms**: Work automatically via `js/main.js`
-
-**Note**: For GitHub Pages deployment, you'll need to manually add `js/config.js` with your API keys, or use environment variables if migrating to a service that supports them.
-
-## 🔒 Security
-
-- `js/config.js` is excluded from git (see `.gitignore`)
-- API keys should never be committed to version control
-- For production, consider using environment variables or server-side configuration
-
-
-## 🆘 Troubleshooting
-
-**GitHub Pages not updating?**
-- Wait 1-2 minutes after pushing
-- Hard refresh browser (Cmd+Shift+R / Ctrl+Shift+R)
-- Check GitHub repository Actions tab for deployment status
-
-**Forms not working?**
-- Verify `js/config.js` exists with correct API keys
-- Check browser console for JavaScript errors
-- See `CONFIG_SUMMARY.md` for API key details
-
-**Images/videos not loading?**
-- Verify file paths are correct (all relative paths)
-- Check that files exist in `assets/` directory
-- For videos, ensure they're in the correct format
-
-## 📞 Support
-
-For deployment issues:
-- GitHub Pages: https://docs.github.com/pages
-- Repository: https://github.com/Benji-cpu/medicine-within-website
-
-
-
-
-
+- Edit `.astro` files in `src/pages/` or `src/components/`.
+- Modular JS goes into `src/scripts/`.
+- Styling is handled via Tailwind classes and `src/styles/global.css`.

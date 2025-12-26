@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Brand Identity Kit</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Core Palette */
+            --deep-teal: #2F4347;
+            --gold: #D4AF37;
+            --charcoal: #1A1A1F;
+            --burgundy: #3A1F26;
+            --warm-bone: #E8E1D8;
+            --soft-blush: #F2D6C9;
+            
+            /* Gold as a Texture (Linear Gradient) */
+            --gold-texture: linear-gradient(
+                135deg, 
+                #9c7a22 0%, 
+                #d4af37 25%, 
+                #f9e4a8 50%, 
+                #d4af37 75%, 
+                #9c7a22 100%
+            );
+
+            /* Typography */
+            --font-headlines: 'Cinzel', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --font-support: 'Inter', sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            
+            /* Defaults */
+            --bg-primary: var(--deep-teal);
+            --text-primary: var(--warm-bone);
+            --accent: var(--gold);
+        }
+
+        /* Gold Texture Utility */
+        .gold-texture-text {
+            background: var(--gold-texture);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .shimmer-text {
+            background: linear-gradient(
+                90deg, 
+                #9c7a22 0%, 
+                #f9e4a8 50%, 
+                #9c7a22 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 8s linear infinite;
+        }
+
+        /* Media Utilities */
+    .media-container {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        width: 100%;
+    }
+
+    .media-container img, .media-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: sepia(0.2) contrast(1.1) brightness(0.8);
+        transition: filter 0.5s ease;
+    }
+
+    .media-container:hover img {
+        filter: sepia(0) contrast(1.2) brightness(0.9);
+    }
+
+    .bg-video-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .bg-video-wrap video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.4;
+        filter: grayscale(1) contrast(1.2);
+    }
+
+    .overlay-vignette {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, transparent 20%, rgba(26, 26, 31, 0.8) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--charcoal);
+            color: var(--warm-bone);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: var(--space-lg) var(--space-md);
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-headlines);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-md);
+        }
+
+        .label {
+            font-family: var(--font-support);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+
+        /* Hero styles */
+        .hero-section {
+            background-color: var(--charcoal);
+            text-align: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 5rem);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-style: italic;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Color Swatches */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .swatch {
+            aspect-ratio: 1;
+            border-radius: 4px;
+            padding: var(--space-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .swatch:hover {
+            transform: translateY(-5px);
+        }
+
+        .swatch span {
+            font-family: var(--font-support);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Typography Styles */
+        .type-lab {
+            display: grid;
+            gap: var(--space-lg);
+        }
+
+        .type-sample h2 { font-size: clamp(2rem, 8vw, 3.5rem); line-height: 1.1; }
+        .type-sample p { font-size: clamp(1.1rem, 4vw, 1.5rem); max-width: 800px; }
+        .type-sample.support p { font-family: var(--font-support); font-size: 0.9rem; letter-spacing: 0.05em; }
+        .quote-sample { font-size: clamp(1.4rem, 5vw, 2rem); font-style: italic; }
+
+        /* Brand Mood Sections */
+        .mood-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 0;
+        }
+
+        .mood-section .content {
+            padding: var(--space-lg);
+            z-index: 2;
+        }
+
+        .mood-section .media-container {
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        .mood-section.deep-anchor {
+            background-color: var(--deep-teal);
+            color: var(--warm-bone);
+        }
+
+        .mood-section.night-temple {
+            background-color: var(--burgundy);
+            color: var(--soft-blush);
+        }
+
+        .mood-section.soft-sanctuary {
+            background-color: var(--warm-bone);
+            color: var(--charcoal);
+        }
+        
+        .mood-section.soft-sanctuary .label { color: var(--deep-teal); }
+
+        .ornament {
+            font-family: var(--font-headlines);
+            color: var(--gold);
+            font-size: 2rem;
+            margin: var(--space-md) 0;
+            display: block;
+        }
+
+        /* Symbolic Language */
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            text-align: center;
+        }
+
+        .symbol {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Image Style Placeholder */
+        .photo-style {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .photo-guidelines {
+            margin-top: var(--space-lg);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .media-filter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: var(--space-sm);
+            z-index: 100;
+            background: rgba(26, 26, 31, 0.8);
+            backdrop-filter: blur(10px);
+            font-family: var(--font-support);
+            font-size: 0.7rem;
+            display: flex;
+            gap: var(--space-sm);
+            max-width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .sticky-nav a {
+            color: var(--warm-bone);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .sticky-nav a:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            section {
+                padding: var(--space-md) var(--space-sm);
+            }
+
+            .mood-section {
+                grid-template-columns: 1fr;
+            }
+
+            .mood-section .content {
+                padding: var(--space-md);
+                order: 2;
+            }
+
+            .mood-section .media-container {
+                min-height: 300px;
+                order: 1;
+            }
+
+            .symbol-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: var(--space-md);
+            }
+
+            .photo-style, .photo-guidelines, .media-filter-grid { 
+                grid-template-columns: 1fr; 
+            }
+
+            .media-filter-grid .media-container {
+                max-width: 300px;
+                margin: 2rem auto 0;
+            }
+
+            .sticky-nav {
+                top: auto;
+                bottom: 0;
+                width: 100%;
+                justify-content: flex-start;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .symbol-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <a href="#palette">Palette</a>
+        <a href="#typography">Typography</a>
+        <a href="#anchor">Deep Anchor</a>
+        <a href="#temple">Night Temple</a>
+        <a href="#sanctuary">Soft Sanctuary</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#symbols">Symbols</a>
+        <a href="https://benji-cpu.github.io/medicine-within-website/mocks/testimonial-variants.html" target="_blank" style="color: var(--gold);">Full Variants ↗</a>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="hero-section">
+        <div class="bg-video-wrap">
+            <video playsinline autoplay muted loop poster="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg">
+                <source src="https://benji-cpu.github.io/medicine-within-website/assets/videos/sandi-group-1.mov" type="video/mp4">
+            </video>
+            <div class="overlay-vignette"></div>
+        </div>
+        <div class="container">
+            <span class="label">Visual Identity Kit 2025</span>
+            <h1 class="shimmer-text hero-title">Medicine Within</h1>
+            <p class="hero-subtitle">
+                Alchemical • Erotic • Sacred • Grounded<br>
+                A journey from Deep Teal shadows to <span class="gold-texture-text" style="font-weight: bold;">Golden light</span>.
+            </p>
+        </div>
+    </section>
+
+    <!-- 1. Color Palette -->
+    <section id="palette">
+        <div class="container">
+            <span class="label">Core Color Palette</span>
+            <h2>The <span class="gold-texture-text">Alchemical</span> Spectrum</h2>
+            <div class="palette-grid">
+                <div class="swatch" style="background-color: #2F4347; color: #E8E1D8;">
+                    <span>Deep Teal</span>
+                    <span>#2F4347</span>
+                    <span style="font-size: 0.6rem; margin-top: 5px; opacity: 0.7;">PRIMARY BASE (Dominant Anchor)</span>
+                </div>
+                <div class="swatch" style="background: var(--gold-texture); color: #1A1A1F;">
+                    <span>Gold (Texture)</span>
+                    <span>#D4AF37++</span>
+                    <span style="font-size: 0.6rem; margin-top: 5px; opacity: 0.7;">SACRED HIGHLIGHT (Light & Depth)</span>
+                </div>
+                <div class="swatch" style="background-color: #3A1F26; color: #F2D6C9;">
+                    <span>Burgundy</span>
+                    <span>#3A1F26</span>
+                    <span style="font-size: 0.6rem; margin-top: 5px; opacity: 0.7;">ACCENT OPTION (Sensual/Erotic)</span>
+                </div>
+                <div class="swatch" style="background-color: #1A1A1F; color: #E8E1D8; border: 1px solid rgba(212,175,55,0.3);">
+                    <span>Charcoal</span>
+                    <span>#1A1A1F</span>
+                    <span style="font-size: 0.6rem; margin-top: 5px; opacity: 0.7;">SUPPORTING DARK (Text/Contrast)</span>
+                </div>
+                <div class="swatch" style="background-color: #E8E1D8; color: #1A1A1F;">
+                    <span>Warm Bone</span>
+                    <span>#E8E1D8</span>
+                    <span style="font-size: 0.6rem; margin-top: 5px; opacity: 0.7;">SOFT NEUTRAL (Reading Sections)</span>
+                </div>
+                <div class="swatch" style="background-color: #F2D6C9; color: #1A1A1F;">
+                    <span>Soft Blush</span>
+                    <span>#F2D6C9</span>
+                    <span style="font-size: 0.6rem; margin-top: 5px; opacity: 0.7;">SOFT NEUTRAL (Gentle Warmth)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Typography -->
+    <section id="typography" style="background-color: #15151a;">
+        <div class="container">
+            <span class="label">Typography Feel</span>
+            <h2>The Voice of the Temple</h2>
+            
+            <div class="type-lab">
+                <div class="type-sample">
+                    <span class="label" style="opacity: 0.5;">Headlines / Cinzel</span>
+                    <h2>SACRED ARCHETYPE</h2>
+                    <p style="font-family: var(--font-headlines); font-style: normal; opacity: 0.9;">
+                        Bold, timeless, and ritualistic.
+                    </p>
+                </div>
+
+                <div class="type-sample">
+                    <span class="label" style="opacity: 0.5;">Body / Cormorant Garamond</span>
+                    <p class="quote-sample">
+                        "The medicine is not outside of you. It is the very rhythm of your breath, the heat in your blood, and the silence in your bones."
+                    </p>
+                    <p style="margin-top: 1rem; opacity: 0.8;">
+                        Intimate, powerful, and warm. This font carries the weight of ancient wisdom with the lightness of a whisper.
+                    </p>
+                </div>
+
+                <div class="type-sample support">
+                    <span class="label" style="opacity: 0.5;">Support / Inter</span>
+                    <p>PRICING: €144 | TIME: 19:00 - 22:00 | LOCATION: THE TEMPLE</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">
+                        Used for data, info blocks, and navigation to ensure modern clarity amidst the mysticism.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Brand Mood: Deep Anchor -->
+    <section id="anchor" class="mood-section deep-anchor">
+        <div class="media-container">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" alt="Deep Anchor Visual">
+        </div>
+        <div class="content">
+            <span class="label">Style One: The Deep Anchor</span>
+            <h2>Dominant Base System</h2>
+            <span class="ornament">◊</span>
+            <p style="font-size: clamp(1.1rem, 4vw, 1.4rem);">
+                This is the new primary state of the website. Replacing pure black with <strong>Deep Teal (#2F4347)</strong> creates a richer, more alchemical space that feels like a sacred sanctuary.
+            </p>
+            <div style="margin-top: var(--space-md);">
+                <a href="#" style="display: inline-block; padding: 1rem 2rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; font-family: var(--font-headlines); letter-spacing: 0.2em; font-size: 0.8rem;">Enter the Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Brand Mood: Night Temple -->
+    <section id="temple" class="mood-section night-temple">
+        <div class="content">
+            <span class="label">Style Two: Night Temple</span>
+            <h2>Sensual & Devotional</h2>
+            <span class="ornament">✺</span>
+            <p style="font-size: clamp(1.1rem, 4vw, 1.4rem);">
+                Used for erotic emphasis or ritual-specific pages. <strong>Burgundy (#3A1F26)</strong> paired with <strong>Soft Blush</strong> accents evokes the mood of a candlelit temple at midnight.
+            </p>
+        </div>
+        <div class="media-container">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Night Temple Visual">
+        </div>
+    </section>
+
+    <!-- 5. Brand Mood: Soft Sanctuary -->
+    <section id="sanctuary" class="mood-section soft-sanctuary">
+        <div class="media-container">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/methodology/embody.jpg" alt="Soft Sanctuary Visual">
+        </div>
+        <div class="content">
+            <span class="label">Style Three: Soft Sanctuary</span>
+            <h2>Grounded Clarity</h2>
+            <span class="ornament">☾</span>
+            <p style="font-size: clamp(1.1rem, 4vw, 1.4rem);">
+                For long-form reading, integration blogs, or calm information blocks. <strong>Warm Bone (#E8E1D8)</strong> provides a rest for the eyes while maintaining organic warmth.
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. Testimonial Preview -->
+    <section id="testimonials" style="background-color: var(--deep-teal);">
+        <div class="container">
+            <span class="label">Social Proof</span>
+            <h2>Voices of the <span class="gold-texture-text">Temple</span></h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg);">
+                <div style="padding: var(--space-md); border: 1px solid rgba(212,175,55,0.2); text-align: center;">
+                    <span class="ornament" style="color: var(--gold);">◊</span>
+                    <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 1rem;">
+                        "What an intense sensation for my first temple. I felt so free, so safe, so held."
+                    </p>
+                    <span class="label" style="font-size: 0.6rem;">Sanne Louman</span>
+                </div>
+                <div style="padding: var(--space-md); border: 1px solid rgba(212,175,55,0.2); text-align: center;">
+                    <span class="ornament" style="color: var(--gold);">✺</span>
+                    <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 1rem;">
+                        "The way Sandi works is very unique, creative, deep but also so fun and playful."
+                    </p>
+                    <span class="label" style="font-size: 0.6rem;">Santa Simule</span>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-md);">
+                <a href="https://benji-cpu.github.io/medicine-within-website/mocks/testimonial-variants.html" style="font-family: var(--font-support); color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; border-bottom: 1px solid var(--gold);">VIEW ALL DESIGN VARIANTS →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Symbolic Language -->
+    <section id="symbols">
+        <div class="container">
+            <span class="label">Symbolic Language</span>
+            <h2>Sacred Iconography</h2>
+            <div class="symbol-grid">
+                <div>
+                    <div class="symbol">☾</div>
+                    <span class="label">Crescent Moon</span>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">The cycles of the feminine</p>
+                </div>
+                <div>
+                    <div class="symbol">◊</div>
+                    <span class="label">Alchemical Seed</span>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">The spark of medicine within</p>
+                </div>
+                <div>
+                    <div class="symbol">✺</div>
+                    <span class="label">The Flame</span>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Transformation and eros</p>
+                </div>
+                <div>
+                    <div class="symbol">〰</div>
+                    <span class="label">The Serpent</span>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Subtle embodied wisdom</p>
+                </div>
+                <div>
+                    <div class="symbol">⚱</div>
+                    <span class="label">The Vessel</span>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">The body as a temple</p>
+                </div>
+                <div>
+                    <div class="symbol">❈</div>
+                    <span class="label">Eden Reference</span>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Nature's wild devotion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Photography & Visual Direction -->
+    <section style="background-color: var(--charcoal);">
+        <div class="container">
+            <span class="label">Image & Photo Style</span>
+            <h2>Shadow & <span class="gold-texture-text">Glow</span></h2>
+            
+            <div class="photo-style">
+                <div class="media-container" style="aspect-ratio: 4/5;">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" alt="Candlelit Style">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); font-size: 0.8rem; font-style: italic;">
+                        [CANDLELIT] Low light, strong shadows, warm glow on natural skin texture.
+                    </div>
+                </div>
+                <div class="media-container" style="aspect-ratio: 4/5;">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" alt="Ritual in Motion">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); font-size: 0.8rem; font-style: italic;">
+                        [RITUAL IN MOTION] Movement blur, hands, smoke, and fabric.
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-guidelines">
+                <div>
+                    <h4 style="color: var(--gold); margin-bottom: 0.5rem;">ALLOWED</h4>
+                    <ul style="list-style: none; opacity: 0.8;">
+                        <li>• Breath-led movement</li>
+                        <li>• Real bodies & emotion</li>
+                        <li>• Bare feet on earth</li>
+                        <li>• Fire and smoke</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--burgundy); margin-bottom: 0.5rem;">NOT ALLOWED</h4>
+                    <ul style="list-style: none; opacity: 0.8;">
+                        <li>• Studio lighting</li>
+                        <li>• Overexposed white backgrounds</li>
+                        <li>• Stock-photo spirituality</li>
+                        <li>• Posed influencer yoga</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Media Treatment -->
+    <section style="background-color: #15151a;">
+        <div class="container">
+            <span class="label">Atmospheric Treatment</span>
+            <h2>The Media Filter</h2>
+            <div class="media-filter-grid">
+                <div>
+                    <p style="font-size: clamp(1rem, 4vw, 1.2rem); margin-bottom: 1.5rem;">
+                        To maintain the "Sacred & Alchemical" feel, all media should undergo a subtle atmospheric treatment:
+                    </p>
+                    <ul style="list-style: none; font-family: var(--font-support); font-size: 0.9rem; opacity: 0.8; line-height: 2;">
+                        <li><span style="color: var(--gold);">• SEPIA (0.2):</span> Warms the skin tones and pulls images into the "Bone & Gold" palette.</li>
+                        <li><span style="color: var(--gold);">• CONTRAST (1.1):</span> Deepens the shadows (Deep Teal) to create mystery.</li>
+                        <li><span style="color: var(--gold);">• BRIGHTNESS (0.8):</span> Lowers digital "glare" for a candlelit, intimate feel.</li>
+                    </ul>
+                </div>
+                <div class="media-container" style="border-radius: 50%; aspect-ratio: 1; overflow: hidden; border: 4px solid var(--gold);">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg" alt="Filtered Portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer of the Kit -->
+    <footer style="padding: var(--space-lg) var(--space-md); text-align: center; border-top: 1px solid rgba(212,175,55,0.1);">
+        <div class="container">
+            <span class="label">Medicine Within</span>
+            <p style="opacity: 0.5; font-size: 0.8rem; font-family: var(--font-support);">
+                Generated for Redesign Review • December 2025
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

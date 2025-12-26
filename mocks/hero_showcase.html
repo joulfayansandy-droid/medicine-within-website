@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Hero Section Showcase</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mw-teal: #2F4347;
+            --mw-gold: #D4AF37;
+            --mw-charcoal: #1A1A1F;
+            --mw-bone: #E8E1D8;
+            --mw-burgundy: #3A1F26;
+            
+            --mw-font-headlines: 'Cinzel', serif;
+            --mw-font-body: 'Cormorant Garamond', serif;
+            --mw-font-support: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--mw-font-body);
+            background-color: var(--mw-charcoal);
+            color: var(--mw-bone);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 
+           ==========================================================================
+           MW HERO COMPONENT (From hero-component.html)
+           ========================================================================== 
+        */
+
+        .mw-hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            background-color: var(--mw-charcoal);
+            padding: 4rem;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .mw-hero__media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .mw-hero__media img,
+        .mw-hero__media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mw-hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .mw-hero__content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            pointer-events: none; /* Allow scrolling/clicking through if needed */
+        }
+        
+        .mw-hero__content > * { pointer-events: auto; }
+
+        .mw-hero__label {
+            font-family: var(--mw-font-support);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            margin-bottom: 1rem;
+            color: var(--mw-gold);
+            display: block;
+        }
+
+        .mw-hero__title {
+            font-family: var(--mw-font-headlines);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--mw-bone);
+        }
+
+        .mw-hero__title span {
+            display: block;
+            font-size: 0.45em;
+            letter-spacing: 0.3em;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            color: var(--mw-gold);
+        }
+
+        .mw-hero__subtitle {
+            font-family: var(--mw-font-body);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            color: var(--mw-bone);
+            opacity: 0.9;
+        }
+
+        .mw-hero__cta .btn {
+            display: inline-block;
+            padding: 1.1rem 2.2rem;
+            font-family: var(--mw-font-headlines);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.7rem;
+            text-decoration: none;
+            border: 1px solid var(--mw-gold);
+            color: var(--mw-gold);
+            transition: all 0.4s ease;
+        }
+
+        .mw-hero__cta .btn:hover {
+            background: var(--mw-gold);
+            color: var(--mw-charcoal);
+        }
+
+        /* PLACEMENT MODIFIERS */
+        .mw-hero--place-center { justify-content: center; align-items: center; }
+        .mw-hero--place-center .mw-hero__content { align-items: center; text-align: center; }
+
+        .mw-hero--place-bottom-left { justify-content: flex-start; align-items: flex-end; }
+        .mw-hero--place-bottom-left .mw-hero__content { align-items: flex-start; text-align: left; }
+
+        .mw-hero--place-bottom-right { justify-content: flex-end; align-items: flex-end; }
+        .mw-hero--place-bottom-right .mw-hero__content { align-items: flex-end; text-align: right; }
+
+        .mw-hero--place-top-left { justify-content: flex-start; align-items: flex-start; }
+        .mw-hero--place-top-left .mw-hero__content { align-items: flex-start; text-align: left; }
+
+        .mw-hero--place-top-right { justify-content: flex-end; align-items: flex-start; }
+        .mw-hero--place-top-right .mw-hero__content { align-items: flex-end; text-align: right; }
+
+        .mw-hero--place-split { align-items: stretch; justify-content: center; }
+        .mw-hero--place-split .mw-hero__content { justify-content: space-between; height: 100%; align-items: center; text-align: center; }
+
+        /* OVERLAY MODIFIERS */
+        .mw-hero--overlay-bottom { background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%); }
+        .mw-hero--overlay-top { background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 60%); }
+        .mw-hero--overlay-left { background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, transparent 60%); }
+        .mw-hero--overlay-right { background: linear-gradient(to left, rgba(0,0,0,0.85) 0%, transparent 60%); }
+        .mw-hero--overlay-vignette { background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.7) 100%); }
+        .mw-hero--overlay-teal { background: rgba(47, 67, 71, 0.45); }
+
+        /* MEDIA ALIGNMENT MODIFIERS */
+        .mw-hero--media-top img { object-position: top center; }
+        .mw-hero--media-bottom img { object-position: bottom center; }
+
+        /* Navigation */
+        .showcase-nav {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            font-family: var(--mw-font-support);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            max-width: 90vw;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .showcase-nav a {
+            color: var(--mw-bone);
+            text-decoration: none;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .showcase-nav a:hover, .showcase-nav a.active {
+            opacity: 1;
+            color: var(--mw-gold);
+        }
+
+        .hero-info-tag {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(0,0,0,0.6);
+            padding: 0.5rem 1rem;
+            font-family: var(--mw-font-support);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border-radius: 4px;
+            z-index: 10;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* MOBILE OPTIMIZATIONS */
+        @media (max-width: 768px) {
+            .mw-hero { padding: 1.5rem; }
+            .mw-hero__title { font-size: 2.4rem; }
+            .mw-hero__subtitle { font-size: 1rem; margin-bottom: 1.5rem; }
+            
+            /* Allow mobile-specific placements instead of forcing center */
+            .mw-hero--mobile-top { justify-content: flex-start; align-items: flex-start; text-align: left; }
+            .mw-hero--mobile-bottom { justify-content: flex-start; align-items: flex-end; text-align: left; }
+            .mw-hero--mobile-center { justify-content: center; align-items: center; text-align: center; }
+            .mw-hero--mobile-top-right { justify-content: flex-end; align-items: flex-start; text-align: right; }
+            .mw-hero--mobile-bottom-right { justify-content: flex-end; align-items: flex-end; text-align: right; }
+            
+            /* Mobile Overlay overrides */
+            .mw-hero--mobile-overlay-bottom { background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, transparent 100%); }
+            .mw-hero--mobile-overlay-top { background: linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, transparent 100%); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="showcase-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#temple">Temple</a>
+        <a href="#feminine">Feminine</a>
+        <a href="#kambo">Kambo</a>
+        <a href="#mentorship">Mentorship</a>
+        <a href="#ritual">Ritual</a>
+        <a href="#coaching">Coaching</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- 1. HOME HERO -->
+    <section id="home" class="mw-hero mw-hero--place-split mw-hero--overlay-vignette">
+        <div class="hero-info-tag">PAGE: HOME | PLACEMENT: SPLIT</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <div class="mw-hero__top">
+                <span class="mw-hero__label">Medicine Within</span>
+                <h1 class="mw-hero__title">PURIFICATION<span>TO PLEASURE</span></h1>
+            </div>
+            <div class="mw-hero__bottom">
+                <p class="mw-hero__subtitle">Step into the temple of your becoming. Where the sacred meets the embodied.</p>
+                <div class="mw-hero__cta">
+                    <a href="#" class="btn">Enter the Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT HERO -->
+    <section id="about" class="mw-hero mw-hero--place-bottom-left mw-hero--overlay-bottom mw-hero--media-top mw-hero--mobile-bottom mw-hero--mobile-overlay-bottom">
+        <div class="hero-info-tag">PAGE: ABOUT | PLACEMENT: BOTTOM-LEFT | MOBILE: BOTTOM</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Your Guide Home</span>
+            <h1 class="mw-hero__title">ABOUT SANDI</h1>
+            <p class="mw-hero__subtitle">Kambo practitioner, embodiment guide, and founder of Medicine Within.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">My Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TEMPLE WORK HERO -->
+    <section id="temple" class="mw-hero mw-hero--place-center mw-hero--overlay-teal">
+        <div class="hero-info-tag">PAGE: TEMPLE WORK | PLACEMENT: CENTER</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">The Tantric Lover</span>
+            <h1 class="mw-hero__title">TEMPLE WORK</h1>
+            <p class="mw-hero__subtitle">Tantrik–shamanic temple spaces for truth, presence, prayer, and play.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">View Upcoming Temples</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SACRED FEMININE HERO -->
+    <section id="feminine" class="mw-hero mw-hero--place-bottom-right mw-hero--overlay-right mw-hero--mobile-top mw-hero--mobile-overlay-top">
+        <div class="hero-info-tag">PAGE: SACRED FEMININE | PLACEMENT: BOTTOM-RIGHT | MOBILE: TOP</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">A Devotional Space for Women</span>
+            <h1 class="mw-hero__title">SACRED FEMININE</h1>
+            <p class="mw-hero__subtitle">Sacred Feminine Embodiment, Ritual & Archetypal Awakening.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">The Retreat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. KAMBO HERO -->
+    <section id="kambo" class="mw-hero mw-hero--place-top-left mw-hero--overlay-top mw-hero--mobile-bottom mw-hero--mobile-overlay-bottom">
+        <div class="hero-info-tag">PAGE: KAMBO | PLACEMENT: TOP-LEFT | MOBILE: BOTTOM</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">The Medicine Woman</span>
+            <h1 class="mw-hero__title">KAMBO</h1>
+            <p class="mw-hero__subtitle">Ancient Amazonian medicine for deep purification and awakening.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Book Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. MENTORSHIP HERO -->
+    <section id="mentorship" class="mw-hero mw-hero--place-bottom-left mw-hero--overlay-bottom mw-hero--mobile-bottom-right mw-hero--mobile-overlay-bottom">
+        <div class="hero-info-tag">PAGE: MENTORSHIP | PLACEMENT: BOTTOM-LEFT | MOBILE: BOTTOM-RIGHT</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Transformational Container</span>
+            <h1 class="mw-hero__title">THE ALCHEMIST<span>MENTORSHIP</span></h1>
+            <p class="mw-hero__subtitle">3-month journey to reclaim your aliveness, sensuality, and power.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PRIVATE RITUAL HERO -->
+    <section id="ritual" class="mw-hero mw-hero--place-bottom-right mw-hero--overlay-right mw-hero--mobile-bottom-right mw-hero--mobile-overlay-bottom">
+        <div class="hero-info-tag">PAGE: PRIVATE RITUAL | PLACEMENT: BOTTOM-RIGHT | MOBILE: BOTTOM-RIGHT</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Dedicated to Your Process</span>
+            <h1 class="mw-hero__title">PRIVATE RITUAL</h1>
+            <p class="mw-hero__subtitle">Custom ceremonial containers for deep transformation and celebration.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Inquire Privately</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ARCHETYPAL COACHING HERO -->
+    <section id="coaching" class="mw-hero mw-hero--place-bottom-right mw-hero--overlay-right mw-hero--mobile-bottom-right mw-hero--mobile-overlay-bottom">
+        <div class="hero-info-tag">PAGE: COACHING | PLACEMENT: BOTTOM-RIGHT | MOBILE: BOTTOM-RIGHT</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-9.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Somatic Reclamation</span>
+            <h1 class="mw-hero__title">ARCHETYPAL<span>COACHING</span></h1>
+            <p class="mw-hero__subtitle">Reclaim the lost parts of your feminine power. Shift from performing to being.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Book Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. EVENTS HERO -->
+    <section id="events" class="mw-hero mw-hero--place-top-right mw-hero--overlay-top mw-hero--mobile-top mw-hero--mobile-overlay-top">
+        <div class="hero-info-tag">PAGE: EVENTS | PLACEMENT: TOP-RIGHT | MOBILE: TOP</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Join the Tribe</span>
+            <h1 class="mw-hero__title">EVENTS</h1>
+            <p class="mw-hero__subtitle">Women's circles, sacred ceremonies, and embodied connection.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">View Calendar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CONTACT HERO -->
+    <section id="contact" class="mw-hero mw-hero--place-bottom-left mw-hero--overlay-bottom mw-hero--mobile-bottom mw-hero--mobile-overlay-bottom">
+        <div class="hero-info-tag">PAGE: CONTACT | PLACEMENT: BOTTOM-LEFT | MOBILE: BOTTOM</div>
+        <div class="mw-hero__media">
+            <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day02-byShariVandeCraen-1.jpg" alt="">
+        </div>
+        <div class="mw-hero__overlay"></div>
+        <div class="mw-hero__content">
+            <span class="mw-hero__label">Let's Connect</span>
+            <h1 class="mw-hero__title">CONTACT</h1>
+            <p class="mw-hero__subtitle">Ready to begin your journey? I'm here to support you every step of the way.</p>
+            <div class="mw-hero__cta">
+                <a href="#" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const navLinks = document.querySelectorAll('.showcase-nav a');
+        const sections = document.querySelectorAll('.mw-hero');
+
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
