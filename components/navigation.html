@@ -1,50 +1,101 @@
-<!-- ========== HEADER ========== -->
+<!-- Navigation -->
 <header class="header">
-    <div class="container">
-        <div class="header-inner">
-            <a href="/index.html" class="logo">
-                <img src="/assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                Medicine <span>Within</span>
-            </a>
-            
-            <nav class="nav" aria-label="Main">
-                <div class="nav-dropdown-wrapper">
-                    <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                        Offerings <span class="caret">▾</span>
-                    </button>
-                    <div class="nav-dropdown-menu" role="menu">
-                        <a href="/offerings/temple-work.html">Tantrik Temple</a>
-                        <a href="/offerings/sacred-feminine.html">Sacred Feminine Embodiment</a>
-                        <a href="/offerings/embodied-tantra.html">Embodied Tantra</a>
-                        <a href="/offerings/kambo.html">Kambô</a>
-                        <a href="/offerings/retreats.html">Retreats</a>
-                    </div>
-                </div>
+    <div class="header-container">
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="/assets/img/logo-gold.svg" alt="Medicine Within" class="logo-icon">
+            <span class="logo-text">Medicine <span class="logo-accent">Within</span></span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        Offerings
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/offerings/temple-work.html">Tantrik Temple</a></li>
+                        <li><a href="/offerings/sacred-feminine.html">Sacred Feminine Embodiment</a></li>
+                        <li><a href="/offerings/embodied-tantra.html">Embodied Tantra</a></li>
+                        <li><a href="/offerings/kambo.html">Kambô</a></li>
+                        <li><a href="/offerings/retreats.html">Retreats</a></li>
+                    </ul>
+                </li>
                 
-                <div class="nav-dropdown-wrapper">
-                    <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                        1:1 Work <span class="caret">▾</span>
-                    </button>
-                    <div class="nav-dropdown-menu" role="menu">
-                        <a href="/mentorship/index.html">Mentorship</a>
-                        <a href="/mentorship/private-ritual.html">Private Ritual</a>
-                        <a href="/mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                        <a href="/mentorship/couples.html">Couples 1:1</a>
-                        <a href="/mentorship/integration.html">Integration Sessions</a>
-                    </div>
-                </div>
-                <a href="/events/index.html">Events</a>
-                <a href="/testimonials/index.html">Testimonials</a>
-                <a href="/about/index.html">About</a>
-                <a href="/contact/index.html">Contact</a>
-            </nav>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        1:1 Work
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/mentorship/">Mentorship</a></li>
+                        <li><a href="/mentorship/private-ritual.html">Private Ritual</a></li>
+                        <li><a href="/mentorship/archetypal-coaching.html">Archetypal Coaching</a></li>
+                        <li><a href="/mentorship/couples.html">Couples</a></li>
+                        <li><a href="/mentorship/integration.html">Integration Sessions</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item"><a href="/events/" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="/testimonials/" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile">
+        <ul class="mobile-menu">
+            <li class="mobile-item">
+                <button class="mobile-link mobile-dropdown-toggle">
+                    Offerings
+                    <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="/offerings/temple-work.html">Tantrik Temple</a></li>
+                    <li><a href="/offerings/sacred-feminine.html">Sacred Feminine Embodiment</a></li>
+                    <li><a href="/offerings/embodied-tantra.html">Embodied Tantra</a></li>
+                    <li><a href="/offerings/kambo.html">Kambô</a></li>
+                    <li><a href="/offerings/retreats.html">Retreats</a></li>
+                </ul>
+            </li>
+            
+            <li class="mobile-item">
+                <button class="mobile-link mobile-dropdown-toggle">
+                    1:1 Work
+                    <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="mobile-submenu">
+                    <li><a href="/mentorship/">Mentorship</a></li>
+                    <li><a href="/mentorship/private-ritual.html">Private Ritual</a></li>
+                    <li><a href="/mentorship/archetypal-coaching.html">Archetypal Coaching</a></li>
+                    <li><a href="/mentorship/couples.html">Couples</a></li>
+                    <li><a href="/mentorship/integration.html">Integration Sessions</a></li>
+                </ul>
+            </li>
+            
+            <li class="mobile-item"><a href="/events/" class="mobile-link">Events</a></li>
+            <li class="mobile-item"><a href="/testimonials/" class="mobile-link">Testimonials</a></li>
+            <li class="mobile-item"><a href="/about/" class="mobile-link">About</a></li>
+            <li class="mobile-item"><a href="/contact/" class="mobile-link">Contact</a></li>
+        </ul>
+    </nav>
 </header>
-

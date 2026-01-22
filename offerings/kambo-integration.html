@@ -8,98 +8,33 @@
     <title>Kambô Integration Sessions | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    <a href="../index.html">Home</a>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="temple-work.html">Tantrik Temple</a>
-                            <a href="sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="embodied-tantra.html">Embodied Tantra</a>
-                            <a href="kambo.html" class="active">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="../mentorship/couples.html">Couples 1:1</a>
-                            <a href="../mentorship/integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" 
-            alt="Kambô Integration" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">Grounding the cleanse</p>
-                <h2 class="hero-page-title">Kambô Integration Sessions</h2>
-                <p class="hero-subtitle">
-                    Listening to what shifted. Walking the medicine home. 
-                    Support for the phase where the real work begins.
-                </p>
-                <div class="hero-cta">
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-large">Book Integration Session</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="Grounding the cleanse"
+        data-hero-title="KAMBO INTEGRATION"
+        data-hero-subtitle="Listening to what shifted. Walking the medicine home. Support for the phase where the real work begins."
+        data-hero-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg"
+        data-hero-place="mw-hero--place-bottom-left"
+        data-hero-overlay="mw-hero--overlay-bottom"
+        data-hero-cta-text="Book Integration Session"
+        data-hero-cta-link="mailto:info@medicinewithin.nl"
+    ></div>
     
     <!-- ========== KAMBO SUB-NAV ========== -->
     <nav class="sub-nav">
@@ -114,451 +49,60 @@
         </div>
     </nav>
 
-    <!-- ========== INTRO ========== -->
-    <section class="section section-elevated">
+    <!-- ========== INTRO (Media Block) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="Grounding the Cleanse"
+        data-tagline="The Real Work Begins"
+        data-content="<p>Kambô is not finished when the purge ends. In many ways, that is where the real work begins.</p><p class='mt-sm'>After the physical cleanse, the system continues to reorganize — emotionally, energetically, neurologically, relationally. What is released wants to be met. What is revealed wants to be integrated.</p><p class='mt-sm'>Kambô Integration Sessions exist for this phase. Not to add more, not to analyze, but to listen carefully — and support the medicine in completing its work through the body and lived reality.</p>"
+        data-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg"
+        data-image-alt="Kambô Integration"
+        data-section-class="section-elevated"
+    ></div>
+
+    <!-- ========== WHAT WE DO ========== -->
+    <section class="section section-dark">
         <div class="container">
             <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div>
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="Kambô Integration" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
+                <div class="content-block__media">
+                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" alt="Integration Circle">
                 </div>
                 <div>
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">The Real Work Begins</p>
-                    <h2>Grounding the Cleanse</h2>
-                    <p>
-                        Kambô is not finished when the purge ends. In many ways, that is where the real work begins.
-                    </p>
-                    <p>
-                        After the physical cleanse, the system continues to reorganize — emotionally, energetically, neurologically, relationally. 
-                        What is released wants to be met. What is revealed wants to be integrated. What is cleared wants to land in your life.
-                    </p>
-                    <p>
-                        Kambô Integration Sessions exist for this phase. Not to add more, not to analyze, but to listen carefully — and support the medicine in completing its work through the body, the nervous system, and lived reality.
-                    </p>
+                    <div class="ornament"><span>◊</span></div>
+                    <p class="tagline">Somatic Support</p>
+                    <h2>What happens in a session?</h2>
+                    <p>Integration is not just talking. It is an embodied process of anchoring shifts into your nervous system.</p>
+                    <ul class="feature-list mt-md">
+                        <li>Somatic processing of ceremonial experiences</li>
+                        <li>Nervous system regulation and anchoring</li>
+                        <li>Identifying new boundaries and desires</li>
+                        <li>Practical lifestyle integration tools</li>
+                    </ul>
                     <div class="mt-md">
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn">Book Integration Session</a>
+                        <button onclick="window.openCalendlyPopup()" class="btn btn-primary">Book Discovery Call</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== WHEN PEOPLE SEEK INTEGRATION ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div class="order-mobile-1">
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">When to Listen</p>
-                    <h2>When People Seek Kambô Integration</h2>
-                    <p>People often book integration when:</p>
-                    <ul class="feature-list mb-md">
-                        <li>Emotional material surfaced (grief, anger, tenderness, relief)</li>
-                        <li>Old patterns appeared alongside physical cleansing</li>
-                        <li>There is clarity — but also questions</li>
-                        <li>The nervous system feels sensitive, raw, or wide open</li>
-                        <li>Energy feels different in the body, heart, or relationships</li>
-                        <li>The medicine continues to “work” days later</li>
-                        <li>They don’t want to rush past what opened</li>
-                    </ul>
-                    <p>
-                        Kambô works across many layers at once. Integration helps those layers speak to each other.
-                    </p>
-                </div>
-                <div class="order-mobile-2">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Integration Listening" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== WHAT A SESSION IS ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div>
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" alt="Ritual Space" style="border-radius: 12px; width: 100%; height: 600px; object-fit: cover;">
-                </div>
-                <div>
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">The Private Container</p>
-                    <h2>What a Kambô Integration Session Is</h2>
-                    <p>
-                        A Kambô Integration Session is a private, embodied ritual space to meet what the medicine activated — gently, consciously, and without urgency. 
-                    </p>
-                    <p>We listen to:</p>
-                    <ul class="feature-list mb-md">
-                        <li>How the cleanse affected your body and energy</li>
-                        <li>What emotional or psychological patterns were touched</li>
-                        <li>What wants rest, movement, expression, or boundaries</li>
-                        <li>How your system is reorganizing post-ceremony</li>
-                        <li>How the insights want to translate into daily life</li>
-                    </ul>
-                    <p class="small text-muted mb-md">
-                        This is not medical advice. It is somatic, tantric, and shamanic integration — grounded in presence and respect for the intelligence of the medicine.
-                    </p>
-                    <div class="mt-md">
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary">This feels supportive — book my session</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== VIDEO TESTIMONIAL ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <p class="tagline">Real Transformation</p>
-                <h2>Integration Experiences</h2>
-            </div>
-            <div class="container container-narrow">
-                <div class="video-featured">
-                    <video 
-                        data-click-to-play
-                        data-src="../assets/videos/sandi-group-5.mov"
-                        poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg"
-                        preload="none"
-                        controls
-                        playsinline
-                        aria-label="Client testimonials and transformation stories"
-                        style="border-radius: 12px; width: 100%;"
-                    >
-                        Your browser does not support the video tag.
-                    </video>
-                    <img 
-                        src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" 
-                        alt="Transformation stories" 
-                        class="video-poster"
-                        loading="lazy"
-                        style="border-radius: 12px;"
-                    >
-                </div>
-                <div class="mt-lg text-center">
-                    <p class="testimonial-quote" style="font-size: 1.2rem; font-style: italic;">
-                        "I didn’t want to lose what opened. This helped me anchor it into my actual life."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== HOW WE WORK ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <p class="tagline">The Process</p>
-                <h2>How We Work in Integration</h2>
-                <p class="text-muted">Each session is responsive and unique, guided by what is alive in you.</p>
-            </div>
-            
-            <div class="grid grid-3">
-                <div class="pricing-card" style="padding: 2rem; text-align: left;">
-                    <h4 style="color: var(--color-gold); margin-bottom: 1rem;">Nervous System</h4>
-                    <p class="small text-muted">Grounding and regulation to help your system settle after the intensity of the cleanse.</p>
-                </div>
-                <div class="pricing-card" style="padding: 2rem; text-align: left;">
-                    <h4 style="color: var(--color-gold); margin-bottom: 1rem;">Somatic Tracking</h4>
-                    <p class="small text-muted">Listening to the language of sensation and emotion as it moves through your body.</p>
-                </div>
-                <div class="pricing-card" style="padding: 2rem; text-align: left;">
-                    <h4 style="color: var(--color-gold); margin-bottom: 1rem;">Embodied Tantra</h4>
-                    <p class="small text-muted">Practices to anchor clarity, presence, and your authentic truth in the here and now.</p>
-                </div>
-                <div class="pricing-card" style="padding: 2rem; text-align: left;">
-                    <h4 style="color: var(--color-gold); margin-bottom: 1rem;">Shamanic Listening</h4>
-                    <p class="small text-muted">Holding space for what wants to settle, complete, or reveal itself through the medicine's wisdom.</p>
-                </div>
-                <div class="pricing-card" style="padding: 2rem; text-align: left;">
-                    <h4 style="color: var(--color-gold); margin-bottom: 1rem;">Ritual Closure</h4>
-                    <p class="small text-muted">Honoring the journey and creating a conscious transition back into your daily rhythm.</p>
-                </div>
-                <div class="pricing-card" style="padding: 2rem; text-align: left;">
-                    <h4 style="color: var(--color-gold); margin-bottom: 1rem;">Daily Integration</h4>
-                    <p class="small text-muted">Translating insights into habits, boundaries, relationships, and self-trust.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-xl">
-                <p style="font-style: italic;">Nothing is forced. Nothing is rushed. The body leads — we follow your truth.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== WHY INTEGRATION MATTERS ========== -->
-    <section class="section section-elevated" style="position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div class="order-mobile-1">
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">From Event to Relationship</p>
-                    <h2>Why Integration Matters After Kambô</h2>
-                    <p>
-                        Kambô is a warrior medicine. It clears. It strips. It reveals. 
-                    </p>
-                    <p>Integration ensures that:</p>
-                    <ul class="feature-list mb-md">
-                        <li>The clarity stays accessible</li>
-                        <li>The nervous system doesn’t collapse after expansion</li>
-                        <li>Insights turn into embodied choices</li>
-                        <li>The cleanse supports long-term change — not just a reset</li>
-                        <li>You don’t unconsciously recreate what was released</li>
-                    </ul>
-                    <p>
-                        This is how Kambô becomes a relationship, not an event.
-                    </p>
-                </div>
-                <div class="order-mobile-2" style="position: relative;">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Warrior Medicine" style="border-radius: 12px; width: 100%; height: 600px; object-fit: cover;">
-                    <div style="position: absolute; bottom: 20px; right: 20px; left: 20px; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--color-gold);">
-                        <p style="color: white; margin: 0; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;">
-                            "Kambô opens the door. Integration is the path that walks you through it."
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== THIS SESSION IS FOR YOU IF ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div>
-                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Who this is for" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
-                </div>
-                <div>
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">The Call</p>
-                    <h2>This Session is for You If…</h2>
-                    <ul class="feature-list mb-md">
-                        <li>You recently sat with Kambô (with me or elsewhere)</li>
-                        <li>You feel something has shifted and want to meet it consciously</li>
-                        <li>You respect the intelligence of plant & animal medicines</li>
-                        <li>You want embodied support — not mental processing</li>
-                        <li>You don’t want to “move on too fast”</li>
-                        <li>You feel a threshold moment integrating</li>
-                    </ul>
-                    <p>
-                        Many people book integration <strong>3–10 days after ceremony</strong>, once the dust has settled and truth begins to speak.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== YOUR GUIDE ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div class="order-mobile-1">
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">Your Guide</p>
-                    <h2>Sandi Djoulfian</h2>
-                    <p>
-                        These sessions are held by Sandi Djoulfian — Kambô practitioner, Tantrika, and shamanic facilitator.
-                    </p>
-                    <p>Sandi’s integration work bridges:</p>
-                    <ul class="feature-list mb-md">
-                        <li>Kambô medicine wisdom</li>
-                        <li>Embodied Tantra</li>
-                        <li>Nervous system awareness</li>
-                        <li>Ritual and somatic listening</li>
-                    </ul>
-                    <p>
-                        Her approach is precise, grounded, and deeply respectful — of the medicine, and of the human experience moving through it.
-                    </p>
-                </div>
-                <div class="order-mobile-2">
-                    <div class="video-featured">
-                        <video 
-                            data-click-to-play
-                            data-src="../assets/videos/sandi-group-4.mov"
-                            poster="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg"
-                            preload="none"
-                            controls
-                            playsinline
-                            aria-label="Sandi working with clients and facilitating transformation"
-                            style="border-radius: 12px; width: 100%;"
-                        >
-                            Your browser does not support the video tag.
-                        </video>
-                        <img 
-                            src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" 
-                            alt="Sandi - Medicine Within Founder" 
-                            class="video-poster"
-                            loading="lazy"
-                            style="border-radius: 12px; width: 100%; height: auto;"
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PRACTICAL DETAILS ========== -->
-    <section class="section section-dark">
+    <!-- ========== FINAL CTA ========== -->
+    <section class="section section-elevated text-center">
         <div class="container container-narrow">
-            <div class="section-header">
-                <p class="tagline">The Exchange</p>
-                <h2>Practical Details</h2>
-            </div>
-            
-            <div class="pricing-card featured" style="max-width: 600px; margin: 0 auto; padding: 3rem;">
-                <ul class="pricing-features" style="margin-bottom: 2rem;">
-                    <li><strong>Session length:</strong> 75 minutes</li>
-                    <li><strong>Format:</strong> In person (Amsterdam) or online</li>
-                    <li><strong>Who it’s for:</strong> Kambô participants (group or private)</li>
-                    <li><strong>When to book:</strong> Ideally within 3–10 days after ceremony</li>
-                </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-large">Book Integration Session</a>
-                    <a href="../contact/index.html" class="btn btn-large">Ask a Question</a>
-                </div>
+            <h2>Ready to anchor the medicine?</h2>
+            <p class="mb-lg">Book a single session or a package to support your journey home.</p>
+            <div class="btn-group">
+                <button onclick="window.openCalendlyPopup()" class="btn btn-primary">Book a Session</button>
+                <a href="../contact/" class="btn">Ask a Question</a>
             </div>
         </div>
     </section>
-
-    <!-- ========== ONGOING SUPPORT ========== -->
-    <section class="section" style="background: linear-gradient(to bottom, var(--color-bg), var(--color-bg-elevated));">
-        <div class="container">
-            <div class="section-header">
-                <div class="ornament"><span></span></div>
-                <p class="tagline">The Journey Continues</p>
-                <h2>Deepening the Path</h2>
-                <p class="text-muted" style="max-width: 700px; margin: 0 auto;">
-                    Kambô opens the door. Integration walks you through it. For those who feel called to stay in the field, we offer deeper containers for sustained transformation.
-                </p>
-            </div>
-            
-            <div class="offering-cards mt-lg">
-                <!-- Option 1: Warrior Cleanse -->
-                <article class="offering-card">
-                    <div class="offering-card-image">
-                        <img src="../assets/img/methodology/purge.jpg" alt="Warrior Cleanse" loading="lazy">
-                    </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-content">
-                        <h3 class="offering-card-title">✧ The Warrior Cleanse</h3>
-                        <p class="offering-card-description">
-                            The traditional protocol for deep physical and energetic reset. A powerful way to clear "panema" (unluckiness/heaviness) and reclaim your vital life force.
-                        </p>
-                        <ul class="offering-feature-list">
-                            <li>3 Shamanic ceremonies within one moon cycle</li>
-                            <li>Full somatic integration support for each session</li>
-                            <li>Preparation & aftercare protocols</li>
-                            <li>Deep immune & nervous system reboot</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Option 2: Shamanic Sessions (Reversed) -->
-                <article class="offering-card reverse">
-                    <div class="offering-card-image">
-                        <img src="../assets/img/methodology/embody.jpg" alt="1:1 Shamanic Sessions" loading="lazy">
-                    </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-content">
-                        <h3 class="offering-card-title">✧ 1:1 Shamanic Ritual</h3>
-                        <p class="offering-card-description">
-                            Private, high-touch sessions for when you are at a threshold. We use ritual, breath, and somatic listening to meet what is ready to be released or reclaimed.
-                        </p>
-                        <ul class="offering-feature-list">
-                            <li>Targeted support for major life transitions</li>
-                            <li>Shamanic extraction & soul retrieval</li>
-                            <li>Trauma-aware emotional release</li>
-                            <li>Grounded in ancient medicine wisdom</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- Option 3: Mentorship Containers -->
-                <article class="offering-card">
-                    <div class="offering-card-image">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg" alt="Mentorship Containers" loading="lazy">
-                    </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-content">
-                        <h3 class="offering-card-title">✧ Archetypal Mentorship</h3>
-                        <p class="offering-card-description">
-                            A 3-month devoted container for women ready to live from their truth. We move beyond "healing" into the embodiment of your unique power and purpose.
-                        </p>
-                        <ul class="offering-feature-list">
-                            <li>Fortnightly 1:1 deep-dive sessions</li>
-                            <li>Archetypal mapping of your life & relationships</li>
-                            <li>Embodied Tantra & erotic reclamation</li>
-                            <li>Ongoing guidance between sessions</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="text-center mt-xl p-lg bg-card border-gold" style="border-radius: 12px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: var(--space-md); font-family: var(--font-heading); font-style: italic;">
-                    "Integration is where the field of ritual meets the reality of life."
-                </p>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="../mentorship/index.html" class="btn btn-primary btn-large">Explore Private Mentorship</a>
-                    <a href="../offerings/kambo.html" class="btn btn-large">View All Offerings</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SEO FOOTER ========== -->
-    <section class="section" style="padding: 2rem 0; opacity: 0.5; font-size: 0.8rem;">
-        <div class="container text-center">
-            <p>
-                Kambô integration session &middot; Kambo aftercare &middot; Post-Kambô support &middot; Somatic integration after ceremony &middot; Kambô integration Amsterdam
-            </p>
-        </div>
-    </section>
-
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/video-loader.js"></script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
-

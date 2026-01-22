@@ -1,498 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-clean">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="1:1 Private Work with Sandi - Embodied, Tantric, and Shamanic sessions for integration, ritual, and deep mentorship. Book a session or discovery call.">
+    <meta name="description" content="1:1 Mentorship & Private Work with Sandi - Embodied, Tantric, and Shamanic containers for deep transformation.">
     
     <title>1:1 Private Work | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    <a href="../index.html">Home</a>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../offerings/temple-work.html">Tantrik Temple</a>
-                            <a href="../offerings/sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="../offerings/embodied-tantra.html">Embodied Tantra</a>
-                            <a href="../offerings/kambo.html">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="index.html" class="active">Mentorship</a>
-                            <a href="private-ritual.html">Private Ritual</a>
-                            <a href="archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="couples.html">Couples 1:1</a>
-                            <a href="integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" 
-            alt="Sandi - 1:1 Mentorship" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <h2 class="hero-page-title">The Alchemist Mentorship</h2>
-                <p class="hero-subtitle">
-                    3-month transformational container for women ready to reclaim their aliveness, sensuality, and power.
-                </p>
-                <div class="hero-cta">
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-large">Book Discovery Call</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="Transformational Container"
+        data-hero-title="THE ALCHEMIST<span>MENTORSHIP</span>"
+        data-hero-subtitle="3-month journey to reclaim your aliveness, sensuality, and power."
+        data-hero-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg"
+        data-hero-place="mw-hero--place-bottom-left"
+        data-hero-overlay="mw-hero--overlay-bottom"
+        data-hero-mobile="mw-hero--mobile-bottom-right"
+        data-hero-cta-text="Apply Now"
+        data-hero-cta-link="../contact/"
+    ></div>
     
-    <!-- ========== 1:1 PRIVATE WORK INTRO ========== -->
+    <!-- ========== INTRO ========== -->
     <section class="section section-elevated">
-        <div class="container container-narrow">
-            <div class="section-header">
-                <div class="ornament"><span></span></div>
-                <p class="tagline">Embodied • Tantric • Shamanic</p>
-                <h2>1:1 Private Work</h2>
+        <div class="container container-narrow text-center">
+            <div class="ornament"><span>◊</span></div>
+            <h2>Meeting What is Alive</h2>
+            <div class="content-text">
+                <p>Some moments in life don’t want fixing. They want to be met. Some openings are too tender, too charged, or too specific for group spaces. They need slowness. Precision. Presence.</p>
+                <p>My 1:1 work exists for exactly this reason. Not to analyze you. Not to give advice. Not to make you “better.” But to walk with you while what has opened integrates into your body, your nervous system, and your lived truth.</p>
             </div>
-            
-            <div style="font-size: 1.15rem; line-height: 1.9; text-align: center; margin-bottom: var(--space-lg);">
-                <p>
-                    Some moments in life don't want fixing. <strong>They want to be met.</strong>
-                </p>
-                <p>
-                    Some openings are too tender, too charged, or too specific for group spaces. They need slowness. Precision. Presence.
-                </p>
-            </div>
-            
-            <div style="margin: var(--space-lg) 0; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <img 
-                    src="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" 
-                    alt="Ceremonial presence" 
-                    style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"
-                    loading="lazy"
-                >
-            </div>
-            
-            <div style="font-size: 1.1rem; line-height: 1.8;">
-                <p>
-                    My 1:1 work exists for exactly this reason. Not to analyze you. Not to give advice. Not to make you "better."
-                </p>
-                <p class="mt-md">
-                    But to walk with you while what has opened integrates into your body, your nervous system, and your lived truth. This is private ceremonial work — grounded, embodied, relational, and deeply human.
-                </p>
-            </div>
-            
-            <div class="text-center mt-lg">
-                <a href="#offerings" class="btn btn-primary">Explore the ways we can work together</a>
-            </div>
-            
         </div>
     </section>
-    
-    <!-- ========== TRANSITION IMAGE ========== -->
-    <section class="section section-dark" style="padding: 0;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <img 
-                src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" 
-                alt="Transformation journey" 
-                style="width: 100%; height: 500px; object-fit: cover; display: block;"
-                loading="lazy"
-            >
-        </div>
-    </section>
-    
-    <!-- ========== WHY PEOPLE CHOOSE 1:1 ========== -->
+
+    <!-- ========== MEDIA BLOCK (Split) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="The Private Temple"
+        data-tagline="Precision & Presence"
+        data-content="<p>In 1:1 space, we have the luxury of time and focus. We can follow the thread of your body’s intelligence wherever it leads, without the distraction of a group field.</p>"
+        data-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg"
+        data-image-alt="Private Mentorship Space"
+        data-section-class="section-dark"
+    ></div>
+
+    <!-- ========== WAYS TO WORK ========== -->
     <section class="section section-dark">
         <div class="container">
             <div class="section-header">
-                <p class="tagline">Deep Transformation</p>
-                <h2>Why People Choose 1:1 Work</h2>
-                <p class="text-muted" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-                    This work meets you where you are — and listens for what is ready to move next.
-                </p>
+                <p class="tagline">The Containers</p>
+                <h2>Three Ways to Work Together</h2>
             </div>
             
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div class="card" style="padding: var(--space-lg);">
-                    <h3 class="mb-md" style="color: var(--color-gold);">People come to private sessions when:</h3>
-                    <ul class="feature-list" style="font-size: 1.05rem;">
-                        <li>A Temple, ceremony, or retreat opened something big</li>
-                        <li>Their nervous system needs support to integrate expansion or contraction</li>
-                        <li>Old emotional, erotic, or relational patterns surfaced</li>
-                        <li>They are at a threshold moment in life, intimacy, or identity</li>
-                        <li>Something beautiful opened — and they don't want to lose it</li>
-                        <li>They want ritual, embodiment, and truth — not advice</li>
-                        </ul>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 class="text-gold">✧ Integration Sessions</h3>
+                    <p>For when something has already opened. Private sessions to anchor experiences from Temple, Kambô, or Retreats into daily life.</p>
+                    <a href="integration.html" class="link-arrow mt-md">Explore Integration</a>
                 </div>
-                <div>
-                    <img 
-                        src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" 
-                        alt="Deep connection" 
-                        style="width: 100%; border-radius: 12px;"
-                        loading="lazy"
-                    >
-                    <p class="mt-md" style="font-style: italic; color: var(--color-gold); text-align: center;">
-                        "Tantric, shamanic, embodied, and relational."
-                    </p>
-                </div>
-                        </div>
-        </div>
-    </section>
-    
-    <!-- ========== HOW THIS WORK IS DIFFERENT ========== -->
-    <section class="section section-elevated">
-        <div class="container container-narrow">
-            <div class="section-header">
-                <p class="tagline">Activation vs Integration</p>
-                <h2>How This Work is Different</h2>
-            </div>
-            
-            <div class="grid grid-2" style="gap: var(--space-md);">
-                <div class="info-box" style="margin: 0;">
-                    <h4 style="font-size: 1.25rem;">Group Spaces</h4>
-                    <p>Group spaces <strong>activate</strong>. They mirror and open the field, creating collective energy and shared experience.</p>
-                </div>
-                <div class="info-box" style="margin: 0; border-color: var(--color-gold);">
-                    <h4 style="font-size: 1.25rem;">Private Work</h4>
-                    <p>Private work <strong>integrates</strong>. It digests and anchors the transformation into your body, relationships, and daily life.</p>
-                </div>
-                </div>
-                
-            <div class="mt-lg" style="text-align: center;">
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    This is why many people come 1:1 after Temple or Kambô, during relationship transitions, or when something needs <strong>precision rather than stimulation</strong>.
-                </p>
-                <p class="mt-md" style="color: var(--color-gold); font-weight: 500;">
-                    Integration here is not an afterthought. It is the core value of the work.
-                </p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ========== THREE WAYS TO WORK TOGETHER ========== -->
-    <section id="offerings" class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <p class="tagline">Your Path</p>
-                <h2>Three Ways to Work Together 1:1</h2>
-                <p class="text-muted" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Whether you are integrating a single experience or ready for a deep path of mentorship.
-                </p>
-            </div>
-            
-            <div class="offering-cards">
-                <!-- Option 1: Integration Sessions -->
-                <article class="offering-card">
-                    <div class="offering-card-image">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="Integration session" loading="lazy">
-                    </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-content">
-                        <h3 class="offering-card-title">✧ Integration Sessions</h3>
-                        <p class="offering-card-description">
-                            For when something has already opened. Private sessions to integrate experiences from Temple Nights, weekends, Kambô, or retreats.
-                        </p>
-                        <ul class="offering-feature-list">
-                            <li>Work with what expanded or contracted</li>
-                            <li>Anchor revelations into daily life</li>
-                            <li>Embodied tantra & nervous system awareness</li>
-                            <li>Shamanic ritual & relational insight</li>
-                        </ul>
-                        <div class="mt-auto">
-                            <a href="integration.html" class="btn btn-primary">Explore Integration Sessions</a>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Option 2: Shamanic Sessions -->
-                <article class="offering-card">
-                    <div class="offering-card-image">
-                        <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Shamanic ritual" loading="lazy">
-                    </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-content">
-                        <h3 class="offering-card-title">✧ 1:1 Shamanic Sessions</h3>
-                        <p class="offering-card-description">
-                            Private ritual & embodied healing. A deep ceremonial space for when words are no longer enough.
-                        </p>
-                        <ul class="offering-feature-list">
-                            <li>Emotional release (grief, anger, desire)</li>
-                            <li>Nervous system regulation</li>
-                            <li>Soul re-orientation</li>
-                            <li>Healing through presence, not performance</li>
-                        </ul>
-                        <div class="mt-auto">
-                            <a href="private-ritual.html" class="btn btn-primary">Explore Shamanic Sessions</a>
-                        </div>
-                    </div>
-                </article>
+                <div class="card">
+                    <h3 class="text-gold">✧ 1:1 Shamanic Sessions</h3>
+                    <p>Private ritual & embodied healing. A deep ceremonial space for emotional release and soul re-orientation.</p>
+                    <a href="private-ritual.html" class="link-arrow mt-md">Explore Ritual</a>
+                </div>
 
-                <!-- Option 3: Archetypal Containers -->
-                <article class="offering-card">
-                    <div class="offering-card-image">
-                        <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="Archetypal mentorship" loading="lazy">
-                </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-content">
-                        <h3 class="offering-card-title">✧ Archetypal Containers</h3>
-                        <p class="offering-card-description">
-                            For those who feel: "This isn't a moment — it's a path." Longer, high-touch containers for deeper mentorship.
-                        </p>
-                        <ul class="offering-feature-list">
-                            <li>Archetypal embodiment</li>
-                            <li>Feminine & relational patterns</li>
-                            <li>Eros, leadership, and truth</li>
-                            <li>Sustained integration over time</li>
-                    </ul>
-                        <div class="mt-auto">
-                            <a href="archetypal-coaching.html" class="btn btn-primary">Inquire about Archetypal Work</a>
-                        </div>
-                </div>
-                </article>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ========== YOUR GUIDE ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center; max-width: 1200px; margin: 0 auto;">
-                <div>
-                    <div class="video-featured">
-                        <video 
-                            data-click-to-play
-                            data-src="../assets/videos/sandi-group-4.mov"
-                            poster="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg"
-                            preload="none"
-                            controls
-                            playsinline
-                            aria-label="Sandi Djoulfian - Medicine Within"
-                            style="border-radius: 12px; width: 100%;"
-                        >
-                            Your browser does not support the video tag.
-                        </video>
-                        <img 
-                            src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" 
-                            alt="Sandi Djoulfian" 
-                            class="video-poster"
-                            loading="lazy"
-                            style="border-radius: 12px; width: 100%; height: auto;"
-                        >
-                    </div>
-                </div>
-                <div>
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">Your Guide</p>
-                        <h2>Sandi Djoulfian</h2>
-                    </div>
-                    <div style="font-size: 1.05rem; line-height: 1.9;">
-                        <p>
-                            Tantrika. Temple facilitator. Shamanic practitioner. I work at the intersection of Embodied Tantra, Shamanic ritual, Nervous system awareness, and Relational and erotic healing.
-                        </p>
-                        <p class="mt-md">
-                            I don't diagnose. I don't fix. I listen — and guide the ritual field so truth can move without force.
-                        </p>
-                        <p class="mt-md" style="color: var(--color-gold); font-style: italic; font-size: 1.1rem;">
-                            "This work is not about becoming someone else. It is about remembering what is already alive in you."
-                        </p>
-                    </div>
+                <div class="card">
+                    <h3 class="text-gold">✧ Archetypal & Ongoing</h3>
+                    <p>For those who feel: "This isn’t a moment — it’s a path." Longer, high-touch containers for identity-level work.</p>
+                    <a href="archetypal-coaching.html" class="link-arrow mt-md">Inquire about Archetypal</a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- ========== HOW TO BEGIN & INTEGRATION ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: start;">
-                <div>
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">Next Steps</p>
-                        <h2>How to Begin</h2>
-                    </div>
-                    
-                    <div class="card" style="margin-bottom: var(--space-md);">
-                        <h4 style="color: var(--color-gold); margin-bottom: var(--space-sm);">If you already know what you need:</h4>
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-sm">Book a session directly</a>
-                    </div>
-                    
-                    <div class="card" style="margin-bottom: var(--space-md);">
-                        <h4 style="color: var(--color-gold); margin-bottom: var(--space-sm);">If you're integrating something specific:</h4>
-                        <p class="text-muted mb-sm">(Temple / Kambô / Retreat)</p>
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-sm">Book and note the context</a>
-            </div>
-            
-                    <div class="card">
-                        <h4 style="color: var(--color-gold); margin-bottom: var(--space-sm);">If you're unsure:</h4>
-                        <p class="text-muted mb-sm">We listen together.</p>
-                        <a href="mailto:info@medicinewithin.nl" class="btn btn-primary btn-sm">Email info@medicinewithin.nl</a>
-                </div>
-            </div>
-            
-                <div style="padding-top: var(--space-lg);">
-                    <div class="info-box" style="padding: var(--space-lg); border-color: var(--color-gold); background: var(--color-bg-card);">
-                        <h3 style="color: var(--color-gold);">A Note on Integration</h3>
-                        <p style="font-size: 1.1rem; line-height: 1.8;">
-                            Integration is not an "extra." It is what allows transformation to land safely — and last.
-                        </p>
-                        <p class="mt-md" style="font-style: italic;">
-                            "You don't have to hold everything alone."
-                        </p>
-                        <div style="margin-top: var(--space-lg);">
-                            <img src="../assets/img/methodology/embody.jpg" alt="Integration" style="width: 100%; border-radius: 8px; opacity: 0.8;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- ========== FINAL INVITATION ========== -->
-    <section id="apply" class="section section-elevated">
-        <div class="container container-narrow">
-            <div class="section-header">
-                <p class="tagline">Final Invitation</p>
-                <h2>You Are Welcome Here</h2>
-                <div style="font-size: 1.15rem; line-height: 1.8; text-align: center; margin-bottom: var(--space-lg);">
-                    <p>
-                        If your body is asking to be met —<br>
-                        if your emotions want space without judgment —<br>
-                        if your soul longs for ritual rather than advice —
-                    </p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <div class="btn-group">
-                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-large">
-                        Book a 1:1 Session
-                    </a>
-                    <a href="mailto:info@medicinewithin.nl" class="btn btn-outline btn-large">
-                        Reach out to feel alignment
-                </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                    <div class="social-links mt-md">
-                        <a href="https://www.instagram.com/medicinewithin_nl?igsh=MXFlNHRjaXAza3cxZw%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="mailto:hello@medicinewithin.nl" aria-label="Email">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="../offerings/temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="../offerings/sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="../offerings/embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="../offerings/kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.instagram.com/medicinewithin_nl?igsh=MXFlNHRjaXAza3cxZw%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/video-loader.js"></script>
-    
-    <!-- Calendly Widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    
-    <!-- Instagram Embed Script -->
-    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
-

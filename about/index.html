@@ -3,421 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet Sandi, the founder of Medicine Within. Kambo practitioner, embodiment guide, and space holder for women's transformation.">
+    <meta name="description" content="About Sandi - Founder of Medicine Within. Embodied Tantra guide, Temple facilitator, and Kambô practitioner.">
     
     <title>About Sandi | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../offerings/temple-work.html">Tantrik Temple</a>
-                            <a href="../offerings/sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="../offerings/embodied-tantra.html">Embodied Tantra</a>
-                            <a href="../offerings/kambo.html">Kambô</a>
-                            <a href="../offerings/retreats.html">Retreats</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 Work <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../testimonials/index.html">Testimonials</a>
-                    <a href="index.html" class="active">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" 
-            alt="Sandi - Medicine Within" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">Your Guide Home</p>
-                <h2 class="hero-page-title">About Sandi</h2>
-                <p class="hero-subtitle">
-                    Kambo practitioner, embodiment guide, and founder of Medicine Within.
-                </p>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="Your Guide Home"
+        data-hero-title="ABOUT SANDI"
+        data-hero-subtitle="Kambo practitioner, embodiment guide, and founder of Medicine Within."
+        data-hero-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg"
+        data-hero-place="mw-hero--place-bottom-left"
+        data-hero-overlay="mw-hero--overlay-bottom"
+        data-hero-media="mw-hero--media-top"
+        data-hero-mobile="mw-hero--mobile-bottom"
+        data-hero-cta-text="My Story"
+        data-hero-cta-link="#explore"
+    ></div>
     
-    <!-- ========== INTRO SECTION ========== -->
+    <!-- ========== INTRO ========== -->
     <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center; max-width: 1200px; margin: 0 auto;">
-                <div class="animate-fadeInLeft">
-                    <img 
-                        src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" 
-                        alt="Sandi - The Woman Behind Medicine Within" 
-                        style="width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-lg);"
-                        loading="lazy"
-                    >
-                </div>
-                <div class="animate-fadeInRight">
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">The Woman Behind Medicine Within</p>
-                        <h2>Following the Mystery</h2>
-                    </div>
-                    <div style="font-size: 1.1rem; line-height: 1.8;">
-                        <p>
-                            I have always followed the mystery—in the same way nature moves. Instinctively. Cyclically. Without apology.
-                        </p>
-                        <p class="mt-md">
-                            I was a wild child. I grew into a wild woman. And now, I stand as a wild queen—not wild as chaotic, but wild as nature itself.
-                        </p>
-                        <p class="mt-md">
-                            By wild, I mean this: I listen. I follow what moves beneath logic. I trust the deeper current—even when my mind doesn't yet understand it. This has been the guiding thread of my life.
-                        </p>
-                    </div>
-                </div>
+        <div class="container container-narrow">
+            <div class="section-header">
+                <div class="ornament"><span>◊</span></div>
+                <p class="tagline">From Mind to Embodiment</p>
+                <h2>My Journey</h2>
+            </div>
+            <div class="content-text">
+                <p>I arrived to this work through embodiment. Through living in my body. Through crossing thresholds. Through sitting in temples, ceremonies, initiations, and long nights of truth. Through learning when to open — and when to slow down.</p>
+                <p>My formal education began in the mind: a Bachelor’s in Communication Arts and a Master’s in Advertising. I was trained to understand psychology, narrative, perception, desire — how humans think, choose, attach, and respond.</p>
+                <p>And yet, something deeper was calling. In 2018, my life shifted decisively. Just before my first Ayahuasca ceremony, I sat with Kambô — and that encounter changed everything. The medicine met me in layers I didn’t yet have language for. It spoke to my body. It cleared something ancient. It restored a sense of inner authority I had forgotten.</p>
+                <p>I didn’t decide to work with medicine. I was called. From there, spirit began arranging the path through resonance.</p>
             </div>
         </div>
     </section>
 
-    <!-- ========== EMBODIMENT SECTION ========== -->
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center; max-width: 1200px; margin: 0 auto;">
-                <div class="animate-fadeInLeft">
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">The Shift</p>
-                        <h2>From Mind to Embodiment</h2>
-                    </div>
-                    <div style="font-size: 1.1rem; line-height: 1.8;">
-                        <p>
-                            I arrived to this work through embodiment. Through living in my body. Through crossing thresholds. Through sitting in temples, ceremonies, initiations, and long nights of truth. Through learning when to open—and when to slow down.
-                        </p>
-                        <p class="mt-md">
-                            My formal education began in the mind: a Bachelor's in Communication Arts and a Master's in Advertising. I was trained to understand psychology, narrative, perception, desire—how humans think, choose, attach, and respond.
-                        </p>
-                        <p class="mt-md">
-                            And yet, something deeper was calling. In 2018, my life shifted decisively. Just before my first Ayahuasca ceremony, I sat with Kambô—and that encounter changed everything.
-                        </p>
-                        <p class="mt-md">
-                            The medicine met me in layers I didn't yet have language for. It spoke to my body. It cleared something ancient. It restored a sense of inner authority I had forgotten.
-                        </p>
-                    </div>
-                </div>
-                <div class="animate-fadeInRight">
-                    <img 
-                        src="../assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg" 
-                        alt="Sandi - Embodiment Journey" 
-                        style="width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-lg);"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
+    <!-- ========== MEDIA MOMENT (YouTube) ========== -->
+    <section class="section section-dark">
+        <div class="container container-narrow">
+            <div 
+                data-component="youtube-embed"
+                data-youtube-url="https://www.youtube.com/watch?v=eDpXMxzQf0o"
+                data-youtube-title="About Sandi's Path"
+                data-ratio-class="ratio-9x16"
+                data-caption="A transmission on the call to medicine and embodiment."
+            ></div>
         </div>
     </section>
 
-    <!-- ========== FEMININE ARCHETYPES SECTION ========== -->
+    <!-- ========== LINEAGE ========== -->
     <section class="section section-dark">
         <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center; max-width: 1200px; margin: 0 auto;">
-                <div class="animate-fadeInLeft">
-                    <img 
-                        src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" 
-                        alt="Meeting the Feminine" 
-                        style="width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-lg);"
-                        loading="lazy"
-                    >
+            <div class="grid grid-2 align-items-center">
+                <div>
+                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg" alt="Sandi's Lineage" style="border-radius: 12px;">
                 </div>
-                <div class="animate-fadeInRight">
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">The Awakening</p>
-                        <h2>Meeting the Feminine</h2>
+                <div>
+                    <div class="section-header" style="text-align: left;">
+                        <p class="tagline">Lived Wisdom</p>
+                        <h2>My Lineage</h2>
                     </div>
-                    <div style="font-size: 1.1rem; line-height: 1.8;">
-                        <p>
-                            Around the same time, something else revealed itself. The Feminine—not as an aesthetic, not as an identity, but as a living force inside me.
-                        </p>
-                        <p class="mt-md">
-                            I saw clearly how parts of me had learned to survive in structure and control—how my depth, eros, and sensitivity had gone into hiding because they didn't feel safe to exist in the world as they were.
-                        </p>
-                        <p class="mt-md">
-                            And when she began to emerge, she didn't come alone—she came with archetypes:
-                        </p>
-                        <ul class="mt-md" style="list-style: none; padding-left: 0; columns: 2;">
-                            <li style="margin-bottom: 0.5rem; color: var(--color-gold);">✧ The Wild Woman</li>
-                            <li style="margin-bottom: 0.5rem; color: var(--color-gold);">✧ The Tantrika</li>
-                            <li style="margin-bottom: 0.5rem; color: var(--color-gold);">✧ The Queen</li>
-                            <li style="margin-bottom: 0.5rem; color: var(--color-gold);">✧ The Devotional One</li>
-                            <li style="margin-bottom: 0.5rem; color: var(--color-gold);">✧ The Fierce Protector</li>
-                            <li style="margin-bottom: 0.5rem; color: var(--color-gold);">✧ The Mystic</li>
+                    <div class="content-text">
+                        <p>To me, lineage is how someone holds the room. How they listen. How they pace truth. How they meet vulnerability. How they don’t rush what needs time.</p>
+                        <ul class="feature-list">
+                            <li>Embodied Tantra & Tantrik Ritual</li>
+                            <li>Temple Facilitation (Mixed & Women-only)</li>
+                            <li>Archetypal Embodiment & Transpersonal Psychology</li>
+                            <li>Shamanic Ritual Arts & Ceremonial Space-holding</li>
+                            <li>Kambô & Soft Plant Allies</li>
+                            <li>Nervous-system-aware Facilitation & Integration</li>
                         </ul>
-                        <p class="mt-md">
-                            This didn't start a career. It began a soul journey.
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ========== LINEAGE SECTION ========== -->
-    <section class="section section-elevated">
+
+    <!-- ========== FINAL INVITATION ========== -->
+    <section class="section">
         <div class="container container-narrow text-center">
-            <div class="ornament"><span></span></div>
-            <p class="tagline">The Path</p>
-            <h2>My Lineage is Lived</h2>
-            <div style="text-align: left; max-width: 800px; margin: var(--space-lg) auto 0;">
-                <p style="font-size: 1.15rem; line-height: 1.9; text-align: center;">
-                    My work is shaped by years of devotion to embodied tantra, archetypal embodiment, and the medicine of Kambô. To me, lineage is how someone holds the room—how they listen, pace truth, and meet vulnerability.
-                </p>
-                
-                <div class="grid grid-2 mt-xl" style="gap: var(--space-lg);">
-                    <div>
-                        <h4 style="color: var(--color-gold); margin-bottom: var(--space-sm);">Areas of Devotion</h4>
-                        <ul style="list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 0.5rem;">• Embodied Tantra & Ritual</li>
-                            <li style="margin-bottom: 0.5rem;">• Temple Facilitation</li>
-                            <li style="margin-bottom: 0.5rem;">• Archetypal Embodiment</li>
-                            <li style="margin-bottom: 0.5rem;">• Shamanic Ritual Arts</li>
-                            <li style="margin-bottom: 0.5rem;">• Kambô & Plant Allies</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--color-gold); margin-bottom: var(--space-sm);">The Field I Hold</h4>
-                        <ul style="list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 0.5rem;">• Deeply safe without being flat</li>
-                            <li style="margin-bottom: 0.5rem;">• Erotically alive</li>
-                            <li style="margin-bottom: 0.5rem;">• Devotional without dogmatic</li>
-                            <li style="margin-bottom: 0.5rem;">• Playful without careless</li>
-                            <li style="margin-bottom: 0.5rem;">• Precise without rigid</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <p class="mt-xl text-center" style="font-style: italic; color: var(--color-gold); font-size: 1.2rem;">
-                    "This work doesn't force catharsis. It listens."
-                </p>
+            <div class="section-header">
+                <p class="tagline">The Path Ahead</p>
+                <h2>Medicine Within as a Path</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- ========== PHILOSOPHY & CLIENTS SECTION ========== -->
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); max-width: 1200px; margin: 0 auto;">
-                <div class="animate-fadeInLeft">
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">The Vision</p>
-                        <h2>What I Care About</h2>
-                    </div>
-                    <div style="font-size: 1.1rem; line-height: 1.8;">
-                        <p>
-                            I care about integration—living the Temple Life. About what happens after the opening. About how truth becomes lived. I am not interested in peak experiences that leave people fragmented.
-                        </p>
-                        <p class="mt-md">
-                            I am interested in paths that:
-                        </p>
-                        <ul class="mt-md" style="list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 0.5rem;">• Build emotional maturity</li>
-                            <li style="margin-bottom: 0.5rem;">• Deepen relational capacity</li>
-                            <li style="margin-bottom: 0.5rem;">• Strengthen nervous system resilience</li>
-                            <li style="margin-bottom: 0.5rem;">• Bring spirituality into daily life</li>
-                            <li style="margin-bottom: 0.5rem;">• Allow eros to exist without domination or collapse</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="animate-fadeInRight">
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">The Resonance</p>
-                        <h2>Who I Work With</h2>
-                    </div>
-                    <div style="font-size: 1.1rem; line-height: 1.8;">
-                        <p>
-                            I work with humans who are done with surface-level spirituality and feel the pull toward depth, truth, and embodied presence.
-                        </p>
-                        <p class="mt-md">
-                            Those who:
-                        </p>
-                        <ul class="mt-md" style="list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 0.5rem;">• Are curious about eros but no longer want chaos</li>
-                            <li style="margin-bottom: 0.5rem;">• Value ritual and discernment</li>
-                            <li style="margin-bottom: 0.5rem;">• Want to live awake—not just visit altered states</li>
-                            <li style="margin-bottom: 0.5rem;">• Are ready for the real, raw, unapologetic life</li>
-                        </ul>
-                        <p class="mt-md">
-                            There is no hierarchy here. Only readiness.
-                        </p>
-                    </div>
+            <div class="content-text">
+                <p>Medicine Within is not a school where you learn more. It is a space where you remember who you are before the world told you who to be.</p>
+                <div class="mt-lg">
+                    <a href="../contact/" class="btn btn-primary">Reach Out</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FINAL NOTE SECTION ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center; max-width: 1200px; margin: 0 auto;">
-                <div class="animate-fadeInLeft">
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">The Path</p>
-                        <h2>Medicine Within</h2>
-                    </div>
-                    <div style="font-size: 1.1rem; line-height: 1.8;">
-                        <p>
-                            Medicine Within is a living body of work. A temple school in the old sense—where humans remember through experience, where wisdom is embodied, and where truth is the heart's compass.
-                        </p>
-                        <div class="mt-xl" style="background: rgba(255,255,255,0.05); padding: var(--space-lg); border-radius: 12px; border-left: 3px solid var(--color-gold);">
-                            <h4 style="color: var(--color-gold); margin-bottom: var(--space-sm);">A Note From Me</h4>
-                            <p>
-                                I don't fix people. I don't promise transformation. I don't push anyone further than their system can go.
-                            </p>
-                            <p class="mt-md">
-                                I listen. I hold the field. I name what is already there. And I trust the intelligence of the body far more than the urgency of the mind.
-                            </p>
-                            <p class="mt-md" style="font-style: italic;">
-                                If you feel a quiet yes—that's enough.
-                            </p>
-                            <p class="mt-lg" style="color: var(--color-gold);">
-                                With wild love & devotion,<br>
-                                <strong>Sandi</strong>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="animate-fadeInRight">
-                    <img 
-                        src="../assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" 
-                        alt="Sandi - Medicine Within Path" 
-                        style="width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-lg);"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CTA SECTION ========== -->
-    <section class="section section-elevated">
-        <div class="container text-center">
-            <h2>Ready to Begin?</h2>
-            <p class="text-muted mb-lg">Choose the path that calls to you.</p>
-            <div class="grid grid-3" style="max-width: 900px; margin: 0 auto;">
-                <a href="../offerings/temple-work.html" class="btn">Explore the Work</a>
-                <a href="../mentorship/index.html" class="btn btn-primary">Work Privately With Me</a>
-                <a href="../newsletter/index.html" class="btn">Join the Temple Letter</a>
-            </div>
-        </div>
-    </section>
-    
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                    <div class="social-links mt-md">
-                        <a href="https://www.instagram.com/medicinewithin_nl?igsh=MXFlNHRjaXAza3cxZw%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="mailto:hello@medicinewithin.nl" aria-label="Email">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="../offerings/temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="../offerings/sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="../offerings/embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="../offerings/kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.instagram.com/medicinewithin_nl?igsh=MXFlNHRjaXAza3cxZw%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/video-loader.js"></script>
-    
-    <!-- Calendly Widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    
 </body>
 </html>

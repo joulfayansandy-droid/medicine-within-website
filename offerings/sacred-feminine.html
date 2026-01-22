@@ -1,443 +1,123 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-dream">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sacred Feminine Women’s Temple — a devotional space for Sacred Feminine embodiment, ritual, and archetypal awakening in Amsterdam.">
+    <meta name="description" content="Sacred Feminine Temple with Sandi - A devotional space for Sacred Feminine embodiment, ritual, and archetypal awakening.">
     
-    <title>Sacred Feminine | Medicine Within</title>
+    <title>Sacred Feminine Temple | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="temple-work.html">Tantrik Temple</a>
-                            <a href="sacred-feminine.html" class="active">Sacred Feminine Embodiment</a>
-                            <a href="embodied-tantra.html">Embodied Tantra</a>
-                            <a href="kambo.html">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="../mentorship/couples.html">Couples 1:1</a>
-                            <a href="../mentorship/integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" 
-            alt="Sacred Feminine Temple" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">A Devotional Space for Women</p>
-                <h2 class="hero-page-title">Sacred Feminine Work</h2>
-                <p class="hero-subtitle">
-                    Sacred Feminine Embodiment, Ritual & Archetypal Awakening. Before workshops or self-help, there were Temples — this is the modern rebirth of that lineage.
-                </p>
-                <div class="hero-cta">
-                    <a href="../events/index.html" class="btn btn-primary btn-large">View Upcoming Temples</a>
-                    <a href="#offering" class="btn btn-large">The Series</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="A Devotional Space for Women"
+        data-hero-title="SACRED FEMININE"
+        data-hero-subtitle="Sacred Feminine Embodiment, Ritual & Archetypal Awakening."
+        data-hero-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg"
+        data-hero-place="mw-hero--place-bottom-right"
+        data-hero-overlay="mw-hero--overlay-right"
+        data-hero-mobile="mw-hero--mobile-top"
+        data-hero-cta-text="The Retreat"
+        data-hero-cta-link="retreats.html"
+    ></div>
     
-    <!-- ========== WHAT IS A TEMPLE ========== -->
+    <!-- ========== INTRO ========== -->
     <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div>
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" alt="Temple space with candles" style="border-radius: 12px; width: 100%;" loading="lazy">
-                </div>
-                <div>
-                    <p class="tagline">The Sanctuary</p>
-                    <h2>What is a Sacred Feminine Temple?</h2>
-                    <p style="font-size: 1.15rem; line-height: 1.8;">
-                        A Sacred Feminine Temple is a trauma-aware, devotional space where women gather to feel, soften, express, pray, release, and return to the truth of who they are. 
-                        This is the modern rebirth of an ancient lineage — a living sanctuary where the feminine is honoured through breath, movement, emotion, devotion, and sisterhood.
-                    </p>
-                    <div class="grid grid-2 text-left mt-lg" style="gap: var(--space-md);">
-                        <ul class="feature-list">
-                            <li>Embodiment & Ritual</li>
-                            <li>Emotional Honesty</li>
-                            <li>Sensuality & Erotic Innocence</li>
-                            <li>Archetypal Embodiment</li>
-                        </ul>
-                        <ul class="feature-list">
-                            <li>Nothing is forced</li>
-                            <li>Everything is optional</li>
-                            <li>All expressions are welcome</li>
-                            <li>Your body leads</li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="container container-narrow text-center">
+            <div class="ornament"><span>◊</span></div>
+            <h2>A Return to Truth</h2>
+            <div class="content-text">
+                <p>Women’s Temples are ancient spaces of remembrance — places where women gather to feel, soften, express, pray, release, and return to the truth of who they are. Living sanctuaries where the feminine was honoured through breath, movement, emotion, devotion, and sisterhood.</p>
             </div>
         </div>
     </section>
 
+    <!-- ========== YOUTUBE TRANSMISSION ========== -->
+    <section class="section section-dark">
+        <div class="container container-narrow">
+            <div 
+                data-component="youtube-embed"
+                data-youtube-url="https://www.youtube.com/watch?v=eDpXMxzQf0o"
+                data-youtube-title="Sacred Feminine Transmission"
+                data-ratio-class="ratio-9x16"
+                data-caption="A transmission on the return to the Sacred Feminine."
+            ></div>
+        </div>
+    </section>
+
+    <!-- ========== MEDIA BLOCK (Split) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="Reclaiming the Full Spectrum"
+        data-tagline="The Archetypal Journey"
+        data-content="<p>Through embodiment and ritual, we awaken the dormant forces that shape how you love, lead, and create in the world. From the fierce boundaries of Durga to the sensual radiance of Lakshmi, we meet every part of what it means to be a woman.</p>"
+        data-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-9.jpg"
+        data-image-alt="Archetypal Embodiment"
+        data-section-class="section-elevated"
+    ></div>
+
     <!-- ========== ARCHETYPES ========== -->
-    <section id="archetypes" class="section section-dark" style="position: relative; overflow: hidden;">
-        <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1; z-index: 0;">
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="section-header text-center">
-                <p class="tagline">The Heart of This Work</p>
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <p class="tagline">Full Spectrum Being</p>
                 <h2>The Archetypal Feminine</h2>
-                <p class="container-narrow" style="margin: 0 auto;">
-                    Women are full-spectrum beings. Yet most are conditioned to live from only one or two expressions. 
-                    Sacred Feminine Archetypes are universal energies alive in every woman — when awakened, they restore confidence, clarity, and sensual aliveness.
-                </p>
             </div>
-            
-            <div class="grid grid-3 mt-xl">
+            <div class="grid grid-3">
                 <div class="card">
                     <h3 class="text-gold">Durga</h3>
-                    <p class="text-muted small">Boundaries, power, truth. The fire that protects and empowers.</p>
+                    <p class="tagline">Power & Truth</p>
+                    <p>Reclaiming boundaries and standing in your inner authority.</p>
                 </div>
                 <div class="card">
                     <h3 class="text-gold">Lakshmi</h3>
-                    <p class="text-muted small">Pleasure, sensuality, magnetism. Softening into receiving.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-gold">Saraswati</h3>
-                    <p class="text-muted small">Intuition, voice, wisdom. Moving from intuitive clarity.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-gold">Kali</h3>
-                    <p class="text-muted small">Emotional alchemy, fire, and liberation.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-gold">The Queen</h3>
-                    <p class="text-muted small">Sovereignty, leadership, and anchored presence.</p>
+                    <p class="tagline">Pleasure & Magnetism</p>
+                    <p>Softening into receiving and inhabiting your sensual radiance.</p>
                 </div>
                 <div class="card">
                     <h3 class="text-gold">The Tantrika</h3>
-                    <p class="text-muted small">Eros, devotion, and deep somatic connection.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-lg">
-                <p class="byline">A woman does not learn an archetype. She becomes it.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== IMAGE BREAK ========== -->
-    <section class="section-image" style="height: 60vh; position: relative; overflow: hidden;">
-        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" alt="Temple sisterhood" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" loading="lazy">
-        <div class="hero-overlay" style="background: rgba(26, 26, 26, 0.4);"></div>
-    </section>
-
-    <!-- ========== HOW IT UNFOLDS ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div>
-                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Women gathering in ritual" style="border-radius: 12px; width: 100%;" loading="lazy">
-                </div>
-                <div>
-                    <p class="tagline">The Experience</p>
-                    <h2>How a Women’s Temple Unfolds</h2>
-                    <p class="mb-lg">Each Temple weaves three strands of feminine awakening:</p>
-                    
-                    <div class="mb-md">
-                        <h3 class="text-gold" style="font-size: 1.25rem;">1 — Embodiment</h3>
-                        <p class="text-muted small">Somatic activation through movement, breath, and sound to awaken the archetype in the body first. This is remembrance, not performance.</p>
-                    </div>
-                    
-                    <div class="mb-md">
-                        <h3 class="text-gold" style="font-size: 1.25rem;">2 — Sister Circle</h3>
-                        <p class="text-muted small">Archetypal teaching and activation where you are mirrored, not analyzed. A space to reveal how the archetype lives in you.</p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-gold" style="font-size: 1.25rem;">3 — Devotional Free-Flow</h3>
-                        <p class="text-muted small">A ritual field where you may pray, express, release, or dance. Where devotion becomes embodied and the mystery moves through you.</p>
-                    </div>
+                    <p class="tagline">Eros & Devotion</p>
+                    <p>Meeting life force with reverence and presence.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== CURRENT OFFERING ========== -->
-    <section id="offering" class="section section-dark">
-        <div class="container">
-            <div class="section-header text-center">
-                <p class="tagline">The Series</p>
-                <h2>The Sacred Feminine Temple Series</h2>
-                <p class="container-narrow" style="margin: 0 auto;">
-                    A 3-Month Journey into Power · Pleasure · Presence. 
-                    Offered once a year as a curated pilgrimage through three Sacred Feminine Archetypes.
-                </p>
-                <div class="mt-md">
-                    <span class="badge" style="background: var(--color-gold); color: var(--color-text-dark); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">JANUARY – MARCH 2026 · AMSTERDAM</span>
-                </div>
+    <section class="section">
+        <div class="container container-narrow text-center">
+            <div class="info-box">
+                <h3 class="text-gold">The Sacred Feminine Temple Series</h3>
+                <p>A 3-Month Journey into Power · Pleasure · Presence</p>
+                <p class="mt-sm">January – March 2026 · Amsterdam</p>
             </div>
-
-            <div class="grid grid-3 mt-xl">
-                <div class="card text-center" style="padding: 0; overflow: hidden;">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Power Archetype" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: var(--space-md);">
-                        <h3 class="text-gold">January — POWER</h3>
-                        <p class="text-muted small"><strong>Durga</strong> · Jan 24, 2026<br>Reclaim boundaries, stand in truth, and awaken your inner fire.</p>
-                    </div>
-                </div>
-                <div class="card text-center" style="padding: 0; overflow: hidden;">
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg" alt="Pleasure Archetype" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: var(--space-md);">
-                        <h3 class="text-gold">February — PLEASURE</h3>
-                        <p class="text-muted small"><strong>Lakshmi</strong> · Feb 28, 2026<br>Soften into receiving and awaken your sensual innocence.</p>
-                    </div>
-                </div>
-                <div class="card text-center" style="padding: 0; overflow: hidden;">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Presence Archetype" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: var(--space-md);">
-                        <h3 class="text-gold">March — PRESENCE</h3>
-                        <p class="text-muted small"><strong>Saraswati</strong> · Mar 28, 2026<br>Listen deeply, speak truth, and move from intuitive clarity.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== YOUR GUIDE (VIDEO) ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center; max-width: 1200px; margin: 0 auto;">
-                <div class="video-featured" style="min-height: 400px;">
-                    <video 
-                        data-click-to-play
-                        data-src="../assets/videos/sandi-group-4.mov"
-                        preload="none"
-                        controls
-                        playsinline
-                        aria-label="Sandi Djoulfian - Medicine Within"
-                        style="width: 100%; border-radius: 12px;"
-                    >
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-poster" style="background-image: url('../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg'); background-size: cover; background-position: center; border-radius: 12px; width: 100%; height: 100%; min-height: 400px;"></div>
-                </div>
-                <div>
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">Your Guide</p>
-                        <h2>A Message from Sandi</h2>
-                    </div>
-                    <div style="font-size: 1.05rem; line-height: 1.9;">
-                        <p>
-                            "This work is not about fixing or adding anything. It is about uncovering what has always been there. Through awakening your archetypes, you become grounded, intuitive, and fully yourself."
-                        </p>
-                        <p class="mt-md" style="color: var(--color-gold); font-style: italic;">
-                            Sandi works at the intersection of Embodied Tantra, Shamanic ritual, and Archetypal healing.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PRACTICALS & FLOW ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl);">
-                <div>
-                    <p class="tagline">The Day</p>
-                    <h2>Temple Day Flow</h2>
-                    <ul class="feature-list">
-                        <li><strong>11:00</strong> — Embodiment & Activation</li>
-                        <li><strong>12:30</strong> — Lunch Break</li>
-                        <li><strong>13:15</strong> — Sister Circle & Teaching</li>
-                        <li><strong>15:30</strong> — Devotional Free-Flow Temple</li>
-                        <li><strong>18:00</strong> — Closing Ceremony</li>
-                    </ul>
-                    <p class="mt-md text-muted italic small">Integration is woven into every step of the day.</p>
-                    
-                    <div class="mt-xl">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg" alt="Temple ceremony" style="border-radius: 12px; width: 100%;" loading="lazy">
-                    </div>
-                </div>
-                <div>
-                    <p class="tagline">The Exchange</p>
-                    <h2>Pricing & Tickets</h2>
-                    <div class="grid grid-1" style="gap: var(--space-md);">
-                        <div class="pricing-card" style="padding: var(--space-lg) var(--space-md); text-align: center;">
-                            <h3>One Temple</h3>
-                            <div class="pricing-amount">€88</div>
-                            <p class="text-muted small">Single day immersion in Amsterdam.</p>
-                        </div>
-                        
-                        <div class="pricing-card featured" style="padding: var(--space-lg) var(--space-md); text-align: center;">
-                            <h3>Full Journey</h3>
-                            <div class="pricing-amount">€222</div>
-                            <p class="text-muted small">3 Temples (January – March). Save €42.</p>
-                        </div>
-                        
-                        <div class="pricing-card" style="padding: var(--space-lg) var(--space-md); text-align: center;">
-                            <h3>Journey + 1:1</h3>
-                            <div class="pricing-amount">€633</div>
-                            <p class="text-muted small">Full 3-month journey + 3× Private sessions.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-lg">
-                        <a href="../contact/index.html" class="btn btn-primary btn-large" style="width: 100%; text-align: center;">Join the Temple Series</a>
-                        <p class="mt-sm small text-muted text-center">Payment plans available · Tickets are transferable.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FINAL INVITATION ========== -->
-    <section class="section section-dark text-center" style="position: relative; padding: var(--space-xl) 0;">
-        <div class="container container-narrow" style="position: relative; z-index: 2;">
-            <p class="tagline">The Call</p>
-            <h2>Why This Journey Matters</h2>
-            <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem;">
-                This work is not about fixing or adding anything. It is about uncovering what has always been there. 
-                Through awakening your archetypes, you become grounded, intuitive, and fully yourself.
-            </p>
-            <p class="mb-xl" style="font-style: italic; font-size: 1.25rem;">
-                If something in your body or heart whispers yes, trust it.
-            </p>
-            <div class="cta-box" style="background: rgba(36, 36, 36, 0.9); padding: var(--space-lg); border-radius: 12px; border: 1px solid var(--color-gold); position: relative; overflow: hidden;">
-                <video 
-                    data-background-video
-                    data-lazy-video
-                    data-src="../assets/videos/sandi-group-5.mov"
-                    poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2; z-index: 0;"
-                ></video>
-                <div style="position: relative; z-index: 1;">
-                    <h3 style="margin-bottom: 1.5rem;">Embody the woman your soul remembers.</h3>
-                    <a href="../contact/index.html" class="btn btn-primary btn-large">Join the Sacred Feminine Temple</a>
-                </div>
+            <div class="mt-lg">
+                <a href="../events/" class="btn btn-primary">Join the Temple Series</a>
             </div>
         </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                    <div class="social-links mt-md">
-                        <a href="https://www.instagram.com/medicinewithin_nl?igsh=MXFlNHRjaXAza3cxZw%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="mailto:hello@medicinewithin.nl" aria-label="Email">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.instagram.com/medicinewithin_nl?igsh=MXFlNHRjaXAza3cxZw%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/video-loader.js"></script>
-    
-    <!-- Calendly Widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    
-    <!-- Instagram Embed Script -->
-    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
-

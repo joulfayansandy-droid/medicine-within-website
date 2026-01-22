@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Video Player Mock</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mw-teal: #2F4347;
+            --mw-gold: #D4AF37;
+            --mw-charcoal: #1A1A1F;
+            --mw-bone: #E8E1D8;
+            
+            --mw-font-headlines: 'Cinzel', serif;
+            --mw-font-body: 'Cormorant Garamond', serif;
+            --mw-font-support: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--mw-charcoal);
+            color: var(--mw-bone);
+            font-family: var(--mw-font-body);
+            margin: 0;
+            padding: 4rem 2rem;
+        }
+
+        .doc-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .doc-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 2rem;
+        }
+
+        .doc-header h1 {
+            font-family: var(--mw-font-headlines);
+            color: var(--mw-gold);
+            margin: 0;
+        }
+
+        /* 
+           ==========================================================================
+           VIDEO PLAYER COMPONENT
+           ========================================================================== 
+        */
+
+        /* Base Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        /* Aspect Ratio Helpers */
+        .video-container--16-9 { aspect-ratio: 16/9; }
+        .video-container--4-5 { aspect-ratio: 4/5; }
+        .video-container--full { height: 80vh; }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Poster / Placeholder Layer */
+        .video-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            cursor: pointer;
+            transition: opacity 0.6s ease;
+        }
+
+        .video-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) sepia(0.2);
+        }
+
+        /* Play Button Overlay */
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(47, 67, 71, 0.8);
+            border: 1px solid var(--mw-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mw-gold);
+            font-size: 1.5rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .video-poster:hover .video-play-btn {
+            background: var(--mw-gold);
+            color: var(--mw-charcoal);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Atmospheric Overlay */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(26, 26, 31, 0.4) 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Captions Overlay */
+        .video-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 6;
+            max-width: 400px;
+            font-family: var(--mw-font-headlines);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            color: var(--mw-gold);
+            pointer-events: none;
+        }
+
+        /* Documentation Helpers */
+        .example-section { margin-top: 4rem; }
+        .example-label { 
+            display: inline-block;
+            background: var(--mw-gold);
+            color: var(--mw-charcoal);
+            padding: 0.25rem 0.75rem;
+            font-family: var(--mw-font-support);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        pre {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border: 1px solid #333;
+            margin: 1rem 0 3rem 0;
+        }
+        code { font-family: monospace; color: #e8e1d8; }
+
+        .mock-note {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--mw-gold);
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-container">
+        <header class="doc-header">
+            <h1>Video Player</h1>
+            <p>Unified video handling for background atmospheres and focused storytelling.</p>
+        </header>
+
+        <div class="mock-note">
+            Note: This mock simulates the behavior of <code>js/video-loader.js</code> which handles lazy loading, mobile source switching, and "click-to-play" transitions.
+        </div>
+
+        <div class="example-section">
+            <span class="example-label">1. Click to Play (Narrative Focus)</span>
+            
+            <div class="video-container video-container--16-9">
+                <!-- Poster Layer (Hidden on Play) -->
+                <div class="video-poster" onclick="this.style.opacity='0'; setTimeout(()=>this.style.display='none', 600)">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg" alt="">
+                    <div class="video-play-btn">▶</div>
+                </div>
+
+                <div class="video-overlay"></div>
+                <video muted loop controls>
+                    <source src="https://benji-cpu.github.io/medicine-within-website/assets/videos/sandi-group-3.mov" type="video/quicktime">
+                </video>
+            </div>
+        </div>
+
+        <div class="example-section">
+            <span class="example-label">2. Atmospheric Background (Autoplay)</span>
+            
+            <div class="video-container video-container--4-5" style="max-width: 400px; margin: 0 auto 3rem auto;">
+                <div class="video-overlay"></div>
+                <div class="video-caption">The Flow of Devotion</div>
+                <video autoplay muted loop playsinline>
+                    <source src="https://benji-cpu.github.io/medicine-within-website/assets/videos/sandi-group-5.mov" type="video/quicktime">
+                </video>
+            </div>
+        </div>
+
+        <div class="example-section">
+            <span class="example-label">Implementation Guide</span>
+            <p>The <code>video-loader.js</code> expects specific data attributes to optimize performance:</p>
+            <pre><code>&lt;!-- Optimized Video Container --&gt;
+&lt;div class="video-container"&gt;
+    &lt;!-- Fallback image / Poster --&gt;
+    &lt;div class="video-poster"&gt;
+        &lt;img src="/img/poster.jpg" class="video-poster-fallback"&gt;
+        &lt;div class="video-play-btn"&gt;▶&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Video element with lazy loading data attributes --&gt;
+    &lt;video 
+        data-lazy-video 
+        data-src="/videos/desktop.mp4" 
+        data-src-mobile="/videos/mobile.mp4"
+        data-click-to-play
+        muted loop
+    &gt;&lt;/video&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+    </div>
+
+</body>
+</html>
+

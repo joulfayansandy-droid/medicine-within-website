@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Navigation Component Documentation</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mw-teal: #2F4347;
+            --mw-gold: #D4AF37;
+            --mw-gold-light: #E8C547;
+            --mw-charcoal: #1A1A1F;
+            --mw-bone: #E8E1D8;
+            --mw-burgundy: #3A1F26;
+            
+            --mw-font-headlines: 'Cinzel', serif;
+            --mw-font-body: 'Cormorant Garamond', serif;
+            --mw-font-support: 'Inter', sans-serif;
+            --mw-font-raleway: 'Raleway', sans-serif;
+
+            --transition-base: 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            font-family: var(--mw-font-support);
+            color: var(--mw-charcoal);
+        }
+
+        /* 
+           ==========================================================================
+           MW NAVIGATION COMPONENT
+           ========================================================================== 
+        */
+
+        .mw-header {
+            width: 100%;
+            padding: 1.5rem 0;
+            background: transparent;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .mw-header--dark {
+            background: var(--mw-charcoal);
+        }
+
+        .mw-header--scrolled {
+            padding: 1rem 0;
+            background: rgba(26, 26, 31, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .mw-header__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .mw-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--mw-bone);
+            font-family: var(--mw-font-headlines);
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .mw-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .mw-logo span {
+            color: var(--mw-gold);
+        }
+
+        /* Nav Links */
+        .mw-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mw-nav__link {
+            text-decoration: none;
+            color: var(--mw-bone);
+            font-family: var(--mw-font-raleway);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .mw-nav__link:hover {
+            color: var(--mw-gold);
+        }
+
+        .mw-nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--mw-gold);
+            transition: width 0.3s ease;
+        }
+
+        .mw-nav__link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown */
+        .mw-dropdown {
+            position: relative;
+        }
+
+        .mw-dropdown__toggle {
+            background: none;
+            border: none;
+            color: var(--mw-bone);
+            font-family: var(--mw-font-raleway);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s ease;
+        }
+
+        .mw-dropdown__toggle:hover {
+            color: var(--mw-gold);
+        }
+
+        .mw-dropdown__toggle .caret {
+            font-size: 0.6rem;
+            opacity: 0.7;
+            transition: transform 0.3s ease;
+        }
+
+        .mw-dropdown:hover .mw-dropdown__toggle .caret {
+            transform: rotate(180deg);
+        }
+
+        .mw-dropdown__menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--mw-charcoal);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 0;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .mw-dropdown:hover .mw-dropdown__menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mw-dropdown__item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: var(--mw-bone);
+            font-family: var(--mw-font-body);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .mw-dropdown__item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--mw-gold);
+            padding-left: 2rem;
+        }
+
+        /* Mobile Toggle */
+        .mw-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mw-nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--mw-bone);
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 1024px) {
+            .mw-nav {
+                display: none;
+            }
+            .mw-nav-toggle {
+                display: block;
+            }
+        }
+
+        /* 
+           ==========================================================================
+           DOCUMENTATION STYLES
+           ========================================================================== 
+        */
+        .doc-section { padding: 4rem 2rem; background: #fff; border-bottom: 1px solid #eee; }
+        .doc-container { max-width: 1000px; margin: 0 auto; }
+        .example-header { background: #f0f0f0; padding: 1rem 2rem; border-bottom: 1px solid #ddd; font-family: var(--mw-font-support); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666; }
+        .example-stage { padding: 4rem 0; position: relative; }
+        .example-stage--dark { background: var(--mw-charcoal); }
+        .example-stage--image { background-image: url('https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg'); background-size: cover; background-position: center; }
+        .example-stage--image::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
+        
+        pre { background: #1a1a1f; color: #e8e1d8; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; font-size: 0.9rem; }
+        code { font-family: 'Monaco', 'Consolas', monospace; }
+        .items-list { list-style: none; padding: 0; }
+        .items-list li { padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        .items-list span { color: var(--mw-gold); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="doc-section">
+        <div class="doc-container">
+            <h1 style="font-family: var(--mw-font-headlines); margin-bottom: 1rem;">Navigation Component</h1>
+            <p>The global navigation system for Medicine Within. This component uses <strong>Cinzel</strong> for the logo, <strong>Raleway</strong> for primary navigation links (uppercase, tracked), and <strong>Cormorant Garamond</strong> for dropdown menu items (italic/serif feel).</p>
+            
+            <div style="margin-top: 2rem;">
+                <h3 style="font-family: var(--mw-font-headlines); font-size: 1.2rem; margin-bottom: 1rem;">Final Item Architecture</h3>
+                <ul class="items-list">
+                    <li>Offerings <span>(Dropdown: Temple Work, Sacred Feminine, Embodied Tantra, Kambô, Retreats)</span></li>
+                    <li>1:1 Work <span>(Dropdown: Mentorship, Private Ritual, Archetypal Coaching)</span></li>
+                    <li>Events <span>(/events/index.html)</span></li>
+                    <li>Testimonials <span>(/testimonials/index.html)</span></li>
+                    <li>About <span>(/about/index.html)</span></li>
+                    <li>Contact <span>(/contact/index.html)</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXAMPLE 1: OVER IMAGE (HERO STATE) -->
+    <div class="example-header">Variant 1: Transparent (Hero State)</div>
+    <div class="example-stage example-stage--image">
+        <header class="mw-header">
+            <div class="mw-header__container">
+                <a href="#" class="mw-logo">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/logo-gold.svg" alt="Logo">
+                    Medicine <span>Within</span>
+                </a>
+                
+                <nav class="mw-nav">
+                    <div class="mw-dropdown">
+                        <button class="mw-dropdown__toggle">Offerings <span class="caret">▼</span></button>
+                        <div class="mw-dropdown__menu">
+                            <a href="/offerings/temple-work.html" class="mw-dropdown__item">Tantrik Temple</a>
+                            <a href="/offerings/sacred-feminine.html" class="mw-dropdown__item">Sacred Feminine Embodiment</a>
+                            <a href="/offerings/embodied-tantra.html" class="mw-dropdown__item">Embodied Tantra</a>
+                            <a href="/offerings/kambo.html" class="mw-dropdown__item">Kambô</a>
+                            <a href="/offerings/retreats.html" class="mw-dropdown__item">Retreats</a>
+                        </div>
+                    </div>
+
+                    <div class="mw-dropdown">
+                        <button class="mw-dropdown__toggle">1:1 Work <span class="caret">▼</span></button>
+                        <div class="mw-dropdown__menu">
+                            <a href="/mentorship/index.html" class="mw-dropdown__item">Mentorship</a>
+                            <a href="/mentorship/private-ritual.html" class="mw-dropdown__item">Private Ritual</a>
+                            <a href="/mentorship/archetypal-coaching.html" class="mw-dropdown__item">Archetypal Coaching</a>
+                        </div>
+                    </div>
+
+                    <a href="/events/index.html" class="mw-nav__link">Events</a>
+                    <a href="/testimonials/index.html" class="mw-nav__link">Testimonials</a>
+                    <a href="/about/index.html" class="mw-nav__link">About</a>
+                    <a href="/contact/index.html" class="mw-nav__link">Contact</a>
+                </nav>
+
+                <button class="mw-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- EXAMPLE 2: SCROLLED STATE -->
+    <div class="example-header">Variant 2: Scrolled / Solid State</div>
+    <div class="example-stage">
+        <header class="mw-header mw-header--scrolled">
+            <div class="mw-header__container">
+                <a href="#" class="mw-logo">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/logo-gold.svg" alt="Logo">
+                    Medicine <span>Within</span>
+                </a>
+                
+                <nav class="mw-nav">
+                    <div class="mw-dropdown">
+                        <button class="mw-dropdown__toggle">Offerings <span class="caret">▼</span></button>
+                        <div class="mw-dropdown__menu">
+                            <a href="#" class="mw-dropdown__item">Tantrik Temple</a>
+                            <a href="#" class="mw-dropdown__item">Sacred Feminine Embodiment</a>
+                            <a href="#" class="mw-dropdown__item">Embodied Tantra</a>
+                            <a href="#" class="mw-dropdown__item">Kambô</a>
+                            <a href="#" class="mw-dropdown__item">Retreats</a>
+                        </div>
+                    </div>
+                    <div class="mw-dropdown">
+                        <button class="mw-dropdown__toggle">1:1 Work <span class="caret">▼</span></button>
+                        <div class="mw-dropdown__menu">
+                            <a href="#" class="mw-dropdown__item">Mentorship</a>
+                            <a href="#" class="mw-dropdown__item">Private Ritual</a>
+                            <a href="#" class="mw-dropdown__item">Archetypal Coaching</a>
+                        </div>
+                    </div>
+                    <a href="#" class="mw-nav__link">Events</a>
+                    <a href="#" class="mw-nav__link">Testimonials</a>
+                    <a href="#" class="mw-nav__link">About</a>
+                    <a href="#" class="mw-nav__link">Contact</a>
+                </nav>
+
+                <button class="mw-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <div class="doc-section">
+        <div class="doc-container">
+            <h3 style="font-family: var(--mw-font-headlines);">Clean HTML Implementation</h3>
+            <p>Copy this structure for use in the main project templates.</p>
+<pre><code>&lt;header class="mw-header"&gt;
+    &lt;div class="mw-header__container"&gt;
+        &lt;a href="/" class="mw-logo"&gt;
+            &lt;img src="/assets/img/logo-gold.svg" alt="Medicine Within"&gt;
+            Medicine &lt;span&gt;Within&lt;/span&gt;
+        &lt;/a&gt;
+        
+        &lt;nav class="mw-nav"&gt;
+            &lt;div class="mw-dropdown"&gt;
+                &lt;button class="mw-dropdown__toggle"&gt;Offerings &lt;span class="caret"&gt;▼&lt;/span&gt;&lt;/button&gt;
+                &lt;div class="mw-dropdown__menu"&gt;
+                    &lt;a href="/offerings/temple-work.html" class="mw-dropdown__item"&gt;Tantrik Temple&lt;/a&gt;
+                    &lt;a href="/offerings/sacred-feminine.html" class="mw-dropdown__item"&gt;Sacred Feminine Embodiment&lt;/a&gt;
+                    &lt;a href="/offerings/embodied-tantra.html" class="mw-dropdown__item"&gt;Embodied Tantra&lt;/a&gt;
+                    &lt;a href="/offerings/kambo.html" class="mw-dropdown__item"&gt;Kambô&lt;/a&gt;
+                    &lt;a href="/offerings/retreats.html" class="mw-dropdown__item"&gt;Retreats&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="mw-dropdown"&gt;
+                &lt;button class="mw-dropdown__toggle"&gt;1:1 Work &lt;span class="caret"&gt;▼&lt;/span&gt;&lt;/button&gt;
+                &lt;div class="mw-dropdown__menu"&gt;
+                    &lt;a href="/mentorship/index.html" class="mw-dropdown__item"&gt;Mentorship&lt;/a&gt;
+                    &lt;a href="/mentorship/private-ritual.html" class="mw-dropdown__item"&gt;Private Ritual&lt;/a&gt;
+                    &lt;a href="/mentorship/archetypal-coaching.html" class="mw-dropdown__item"&gt;Archetypal Coaching&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;a href="/events/index.html" class="mw-nav__link"&gt;Events&lt;/a&gt;
+            &lt;a href="/testimonials/index.html" class="mw-nav__link"&gt;Testimonials&lt;/a&gt;
+            &lt;a href="/about/index.html" class="mw-nav__link"&gt;About&lt;/a&gt;
+            &lt;a href="/contact/index.html" class="mw-nav__link"&gt;Contact&lt;/a&gt;
+        &lt;/nav&gt;
+
+        &lt;button class="mw-nav-toggle" aria-label="Toggle Navigation"&gt;
+            &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

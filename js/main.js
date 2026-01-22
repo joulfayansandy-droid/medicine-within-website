@@ -149,166 +149,196 @@ const CalendlyLoader = (function() {
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==========================================================================
-    // Mobile Navigation Toggle
+    // Component Loader
     // ==========================================================================
     
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav a');
-    
-    if (navToggle && nav) {
-        navToggle.addEventListener('click', function() {
-            nav.classList.toggle('open');
-            navToggle.classList.toggle('active');
-            
-            // Toggle body class for backdrop overlay
-            document.body.classList.toggle('nav-open');
-            
-            // Toggle body scroll when menu is open
-            document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    /**
+     * Get the appropriate ConvertKit tag IDs based on the current page
+     */
+    const getNewsletterTagIdsForPath = (pathname) => {
+        const alwaysTag = '4488028'; // Awaken from Within
+        let extraTag = null;
 
-            // If menu is closing, also collapse any open dropdowns
-            if (!nav.classList.contains('open')) {
-                document.querySelectorAll('.nav-dropdown-wrapper.open').forEach(function(wrapper) {
-                    wrapper.classList.remove('open');
-                    const btn = wrapper.querySelector('.nav-dropdown-toggle');
-                    if (btn) btn.setAttribute('aria-expanded', 'false');
-                });
-            }
-        });
+        // Kambo pages
+        if (pathname.includes('/offerings/kambo')) {
+            extraTag = '4488029';
+        } 
+        // Mentorship/1:1 pages
+        else if (pathname.includes('/mentorship/')) {
+            extraTag = '13000751';
+        }
+        // Temple & Tantra (Mixed)
+        else if (pathname.includes('/offerings/temple-work.html') || pathname.includes('/offerings/embodied-tantra.html')) {
+            extraTag = '5463427';
+        }
+        // Women's Work & Retreats
+        else if (pathname.includes('/offerings/sacred-feminine.html') || pathname.includes('/offerings/retreats.html')) {
+            extraTag = '5463428';
+        }
+
+        return extraTag ? `${alwaysTag},${extraTag}` : alwaysTag;
+    };
+
+    /**
+     * Extract YouTube ID from various URL formats
+     */
+    const getYouTubeId = (url) => {
+        if (!url) return '';
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : url;
+    };
+
+    const loadComponents = async () => {
+        const placeholders = document.querySelectorAll('[data-component]');
+        if (placeholders.length === 0) return;
+
+        // Determine path to root based on directory depth
+        // This handles cases like /index.html (depth 0) and /offerings/kambo.html (depth 1)
+        const pathParts = window.location.pathname.split('/').filter(p => p.length > 0);
+        // If the last part is an .html file, don't count it as a directory depth
+        const depth = pathParts.length > 0 && pathParts[pathParts.length - 1].endsWith('.html') 
+            ? pathParts.length - 1 
+            : pathParts.length;
         
-        // Close menu when clicking a link
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                nav.classList.remove('open');
-                navToggle.classList.remove('active');
-                document.body.classList.remove('nav-open');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Close menu when clicking outside (including backdrop)
-        document.addEventListener('click', function(e) {
-            if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
-                nav.classList.remove('open');
-                navToggle.classList.remove('active');
-                document.body.classList.remove('nav-open');
-                document.body.style.overflow = '';
+        const rootPath = depth > 0 ? '../'.repeat(depth) : './';
 
-                // Collapse any open dropdowns
-                document.querySelectorAll('.nav-dropdown-wrapper.open').forEach(function(wrapper) {
-                    wrapper.classList.remove('open');
-                    const btn = wrapper.querySelector('.nav-dropdown-toggle');
-                    if (btn) btn.setAttribute('aria-expanded', 'false');
-                });
-            }
-        });
-    }
+        for (const el of placeholders) {
+            const component = el.dataset.component;
+            try {
+                const response = await fetch(`${rootPath}components/${component}.html`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                let html = await response.text();
+                
+                // Fix root-relative paths (/...) in the loaded component to be relative to the current page
+                if (depth > 0) {
+                    html = html.replace(/(href|src)="\/([^"]*)"/g, (match, p1, p2) => {
+                        // Skip external links or anchor links
+                        if (p2.startsWith('http') || p2.startsWith('#')) return match;
+                        return `${p1}="${rootPath}${p2}"`;
+                    });
+                }
 
-    // ==========================================================================
-    // Navigation Dropdowns (Desktop hover + click, Mobile click-to-toggle)
-    // ==========================================================================
+                // Handle token replacements for all components
+                const params = { ...el.dataset };
+                
+                // Add versions of params without the component name prefix
+                const componentPrefix = component.toLowerCase();
+                
+                // Special mapping for hero-v2 to align data-hero-* attributes with {{tokens}}
+                if (component === 'hero-v2') {
+                    const heroMappings = {
+                        heroId: 'id',
+                        heroTitle: 'title',
+                        heroSubtitle: 'subtitle',
+                        heroImageSrc: 'imageSrc',
+                        heroImageAlt: 'imageAlt',
+                        heroCtaText: 'ctaText',
+                        heroCtaLink: 'ctaLink',
+                        heroPlace: 'placeClass',
+                        heroOverlay: 'overlayClass',
+                        heroMedia: 'mediaClass',
+                        heroMobile: 'mobileClass'
+                    };
+                    for (const [dataKey, tokenKey] of Object.entries(heroMappings)) {
+                        if (params[dataKey]) params[tokenKey] = params[dataKey];
+                    }
+                }
 
-    const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
-    if (dropdownToggles.length > 0) {
-        dropdownToggles.forEach(function(toggle) {
-            // Ensure aria-expanded is always present
-            if (!toggle.hasAttribute('aria-expanded')) {
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-
-            const wrapper = toggle.closest('.nav-dropdown-wrapper');
-            if (!wrapper) return;
-
-            const isMobileNav = function() {
-                return window.matchMedia('(max-width: 768px)').matches;
-            };
-
-            // Desktop: hover to open, click to toggle
-            if (!isMobileNav()) {
-                let hoverTimeout = null;
-
-                wrapper.addEventListener('mouseenter', function() {
-                    clearTimeout(hoverTimeout);
-                    wrapper.classList.add('active');
-                    toggle.setAttribute('aria-expanded', 'true');
+                Object.keys(params).forEach(key => {
+                    if (key.toLowerCase().startsWith(componentPrefix) && key.length > componentPrefix.length) {
+                        const suffix = key.slice(componentPrefix.length);
+                        const shortKey = suffix.charAt(0).toLowerCase() + suffix.slice(1);
+                        params[shortKey] = params[key];
+                    }
                 });
 
-                wrapper.addEventListener('mouseleave', function() {
-                    hoverTimeout = setTimeout(function() {
-                        wrapper.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }, 150);
-                });
+                // Special handling for YouTube IDs
+                if (params.youtubeUrl) {
+                    params.youtubeId = getYouTubeId(params.youtubeUrl);
+                }
 
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const isOpen = wrapper.classList.contains('active');
-                    
-                    // Close other dropdowns
-                    document.querySelectorAll('.nav-dropdown-wrapper.active').forEach(function(other) {
-                        if (other !== wrapper) {
-                            other.classList.remove('active');
-                            const btn = other.querySelector('.nav-dropdown-toggle');
-                            if (btn) btn.setAttribute('aria-expanded', 'false');
-                        }
+                // 1. Handle conditional blocks: {{#key}}...{{/key}}
+                for (const key in params) {
+                    const value = params[key];
+                    if (value && value !== 'false' && value !== '') {
+                        html = html.replace(new RegExp('{{#' + key + '}}([\\s\\S]*?){{\\/' + key + '}}', 'gi'), '$1');
+                    } else {
+                        html = html.replace(new RegExp('{{#' + key + '}}([\\s\\S]*?){{\\/' + key + '}}', 'gi'), '');
+                    }
+                }
+
+                // 2. Handle simple variables: {{key}}
+                for (const key in params) {
+                    if (key.length > 1) { // Avoid single-character key accidents
+                        const value = params[key];
+                        html = html.replace(new RegExp('{{' + key + '}}', 'gi'), value);
+                    }
+                }
+
+                // Clean up any remaining unused tokens
+                html = html.replace(/{{#?\/?[a-zA-Z0-9]+}}/g, '');
+                
+                el.innerHTML = html;
+                
+                // After component is inserted, check if it's the navigation
+                if (component === 'navigation') {
+                    initNavigation();
+                }
+
+                // Or if it's the footer (which now contains the newsletter)
+                // Or if it's a dedicated newsletter component
+                if (component === 'footer' || component === 'newsletter') {
+                    const newsletterForms = document.querySelectorAll('.newsletter-form');
+                    const tags = getNewsletterTagIdsForPath(window.location.pathname);
+                    newsletterForms.forEach(form => {
+                        form.dataset.ckTags = tags;
                     });
                     
-                    // Toggle this dropdown
-                    wrapper.classList.toggle('active', !isOpen);
-                    toggle.setAttribute('aria-expanded', String(!isOpen));
-                });
-            } else {
-                // Mobile: click to toggle
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                    // Re-initialize ConvertKitManager for new forms
+                    if (typeof ConvertKitManager !== 'undefined' && ConvertKitManager.init) {
+                        ConvertKitManager.init();
+                    }
+                }
 
-                    const isOpen = wrapper.classList.contains('active');
-
-                    // Close other dropdowns first
-                    document.querySelectorAll('.nav-dropdown-wrapper.active').forEach(function(other) {
-                        if (other !== wrapper) {
-                            other.classList.remove('active');
-                            const btn = other.querySelector('.nav-dropdown-toggle');
-                            if (btn) btn.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-
-                    // Toggle this dropdown
-                    wrapper.classList.toggle('active', !isOpen);
-                    toggle.setAttribute('aria-expanded', String(!isOpen));
-                });
+                // Trigger a custom event in case other scripts need to know when a component is ready
+                document.dispatchEvent(new CustomEvent('componentLoaded', { detail: component }));
+                
+                // If the footer was loaded, we might need to re-run some initializations
+                if (component === 'footer') {
+                    setActiveNavLink();
+                    
+                    // Update current year
+                    const yearEl = document.getElementById('current-year');
+                    if (yearEl) {
+                        yearEl.textContent = new Date().getFullYear();
+                    }
+                }
+            } catch (error) {
+                console.error(`Error loading component ${component}:`, error);
             }
-        });
+        }
+    };
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.nav-dropdown-wrapper')) {
-                document.querySelectorAll('.nav-dropdown-wrapper.active').forEach(function(wrapper) {
-                    wrapper.classList.remove('active');
-                    const btn = wrapper.querySelector('.nav-dropdown-toggle');
-                    if (btn) btn.setAttribute('aria-expanded', 'false');
-                });
-            }
-        });
-    }
-    
+    loadComponents();
+
     // ==========================================================================
-    // Header Scroll Effect
+    // Navigation
     // ==========================================================================
     
-    const header = document.querySelector('.header');
-    
-    if (header) {
+    function initNavigation() {
+        const header = document.querySelector('.header');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.nav-mobile');
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        if (!header) return;
+
+        // Sticky header on scroll
         let lastScroll = 0;
-        
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
             
-            // Add/remove scrolled class based on scroll position
             if (currentScroll > 100) {
                 header.classList.add('scrolled');
             } else {
@@ -317,8 +347,111 @@ document.addEventListener('DOMContentLoaded', function() {
             
             lastScroll = currentScroll;
         });
+
+        // Mobile menu toggle
+        if (mobileToggle && mobileNav) {
+            mobileToggle.addEventListener('click', () => {
+                const isOpen = mobileNav.classList.contains('active');
+                
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+        }
+
+        // Mobile dropdown toggles
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mobileItem = toggle.closest('.mobile-item');
+                const isActive = mobileItem.classList.contains('active');
+                
+                // Close other dropdowns
+                document.querySelectorAll('.mobile-item.active').forEach(item => {
+                    if (item !== mobileItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current
+                mobileItem.classList.toggle('active', !isActive);
+            });
+        });
+
+        // Close mobile menu when clicking backdrop
+        document.body.addEventListener('click', (e) => {
+            if (document.body.classList.contains('mobile-menu-open') && 
+                !e.target.closest('.nav-mobile') && 
+                !e.target.closest('.mobile-menu-toggle')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.body.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-submenu a, .mobile-link:not(.mobile-dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        function openMobileMenu() {
+            mobileNav.classList.add('active');
+            mobileToggle.classList.add('active');
+            document.body.classList.add('mobile-menu-open');
+        }
+
+        function closeMobileMenu() {
+            mobileNav.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.mobile-item.active').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        setActiveNavLink();
     }
-    
+
+    /**
+     * Active Navigation Link
+     */
+    function setActiveNavLink() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link, .dropdown-menu a, .mobile-link, .mobile-submenu a');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+
+            // Handle root/home
+            const isHome = (href === '/' || href === '/index.html' || href === 'index.html');
+            const pathParts = currentPath.split('/').filter(Boolean);
+            const atRoot = pathParts.length === 0 || (pathParts.length === 1 && pathParts[0] === 'index.html');
+
+            if ((isHome && atRoot) || (!isHome && currentPath.includes(href))) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    // Initialize nav if it already exists in HTML (not loaded via component)
+    if (document.querySelector('.header')) {
+        initNavigation();
+    }
+
     // ==========================================================================
     // Smooth Scroll for Anchor Links
     // ==========================================================================
@@ -373,29 +506,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ==========================================================================
-    // Active Navigation Link
-    // ==========================================================================
-    
-    function setActiveNavLink() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav a');
-        
-        navLinks.forEach(function(link) {
-            const href = link.getAttribute('href');
-            
-            // Check if current page matches link
-            if (currentPath.endsWith(href) || 
-                (href === 'index.html' && (currentPath === '/' || currentPath.endsWith('/')))) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
-    
-    setActiveNavLink();
-    
-    // ==========================================================================
     // Form Validation (Basic - Only for non-CK forms)
     // ==========================================================================
     
@@ -433,21 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('loaded');
         });
     });
-    
-    // ==========================================================================
-    // Escape Key Handler
-    // ==========================================================================
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            // Close mobile nav
-            if (nav && nav.classList.contains('open')) {
-                nav.classList.remove('open');
-                navToggle.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-    });
+
     
     // ==========================================================================
     // Floating Discovery Call Button
@@ -1606,11 +1702,8 @@ const ConvertKitManager = (function() {
     const CONFIG = getConfig();
     
     function init() {
-        // Find all forms with ConvertKit attributes
-        const formForms = document.querySelectorAll('form[data-ck-form-id]');
+        // Find all forms with ConvertKit tag attributes
         const tagForms = document.querySelectorAll('form[data-ck-tags]');
-        
-        formForms.forEach(form => setupForm(form, 'form'));
         tagForms.forEach(form => setupForm(form, 'tags'));
     }
     
@@ -1630,13 +1723,8 @@ const ConvertKitManager = (function() {
             setLoading(form, true);
             
             try {
-                if (type === 'form') {
-                    const formId = form.dataset.ckFormId;
-                    await subscribeViaForm(formId, email);
-                } else {
-                    const tagIds = form.dataset.ckTags.split(',').map(id => id.trim());
-                    await subscribeViaTags(tagIds, email);
-                }
+                const tagIds = form.dataset.ckTags.split(',').map(id => id.trim());
+                await subscribeViaTags(tagIds, email);
                 showSuccess(form);
                 emailInput.value = ''; // Clear input
             } catch (error) {
@@ -1729,12 +1817,6 @@ const ConvertKitManager = (function() {
             <p>Please check your email to confirm your subscription.</p>
         `;
         
-        // Add styles if not in CSS
-        msg.style.marginTop = '1rem';
-        msg.style.color = '#27ae60';
-        msg.style.fontSize = '0.9rem';
-        msg.style.textAlign = 'center';
-        
         form.appendChild(msg);
         
         // Auto-remove after 5 seconds
@@ -1752,11 +1834,6 @@ const ConvertKitManager = (function() {
         msg.className = 'form-message error';
         msg.innerText = message;
         
-        msg.style.marginTop = '1rem';
-        msg.style.color = '#e74c3c';
-        msg.style.fontSize = '0.9rem';
-        msg.style.textAlign = 'center';
-        
         form.appendChild(msg);
     }
     
@@ -1772,144 +1849,10 @@ const ConvertKitManager = (function() {
         init();
     }
     
+    // Export init for dynamic component loading
+    return {
+        init: init
+    };
+    
 })();
 
-// ==========================================================================
-// ConvertKit Form Styling Override
-// ==========================================================================
-// Inject custom styles AFTER ConvertKit loads to override their inline styles
-(function() {
-    // Inject a style tag with maximum specificity
-    const styleId = 'convertkit-custom-override';
-    if (!document.getElementById(styleId)) {
-        const style = document.createElement('style');
-        style.id = styleId;
-        style.textContent = `
-            /* Maximum specificity override for ConvertKit forms */
-            form[data-sv-form] input[type="email"],
-            form.formkit-form input[type="email"],
-            .seva-form input[type="email"],
-            input.formkit-input[name="email_address"] {
-                background: #242424 !important;
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
-                border-radius: 4px !important;
-                color: #F5F0E8 !important;
-                padding: 0.75rem 1rem !important;
-            }
-            
-            form[data-sv-form] input[type="email"]:focus,
-            form.formkit-form input[type="email"]:focus,
-            .seva-form input[type="email"]:focus {
-                border-color: #D4AF37 !important;
-                outline: none !important;
-            }
-            
-            form[data-sv-form] input[type="email"]::placeholder,
-            form.formkit-form input[type="email"]::placeholder,
-            .seva-form input[type="email"]::placeholder {
-                color: #a8a8a8 !important;
-                opacity: 1 !important;
-            }
-            
-            form[data-sv-form] button[type="submit"],
-            form.formkit-form button[type="submit"],
-            .seva-form button[type="submit"],
-            form[data-sv-form] [data-element="submit"],
-            form.formkit-form [data-element="submit"],
-            button.formkit-submit {
-                background: #D4AF37 !important;
-                color: #1a1a1a !important;
-                border: none !important;
-                border-radius: 4px !important;
-                padding: 0.75rem 2rem !important;
-                font-weight: 600 !important;
-                font-family: 'Libre Franklin', sans-serif !important;
-            }
-            
-            form[data-sv-form] button[type="submit"]:hover,
-            form.formkit-form button[type="submit"]:hover,
-            .seva-form button[type="submit"]:hover,
-            button.formkit-submit:hover {
-                background: #E8C547 !important;
-            }
-            
-            /* Fix form fields alignment */
-            form[data-sv-form] .formkit-fields,
-            form.formkit-form .formkit-fields,
-            .seva-form .formkit-fields,
-            form[data-sv-form] [data-element="fields"],
-            form.formkit-form [data-element="fields"] {
-                display: flex !important;
-                flex-direction: row !important;
-                align-items: stretch !important;
-                gap: 12px !important;
-                flex-wrap: nowrap !important;
-                width: 100% !important;
-            }
-            
-            form[data-sv-form] .formkit-field,
-            form.formkit-form .formkit-field,
-            .seva-form .formkit-field {
-                flex: 1 1 0 !important;
-                min-width: 0 !important;
-                margin: 0 !important;
-            }
-            
-            form[data-sv-form] [data-element="submit"],
-            form.formkit-form [data-element="submit"],
-            .seva-form button[type="submit"],
-            button.formkit-submit {
-                flex: 0 0 auto !important;
-                white-space: nowrap !important;
-                align-self: stretch !important;
-            }
-            
-            .formkit-powered-by-convertkit-container,
-            .formkit-powered-by,
-            a[data-element="powered-by"],
-            a.formkit-powered-by {
-                display: none !important;
-                visibility: hidden !important;
-                height: 0 !important;
-                width: 0 !important;
-                overflow: hidden !important;
-            }
-            
-            @media (max-width: 576px) {
-                form[data-sv-form] .formkit-fields,
-                form.formkit-form .formkit-fields,
-                .seva-form .formkit-fields {
-                    flex-direction: column !important;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
-    // Also apply direct style overrides as backup
-    function applyDirectStyles() {
-        document.querySelectorAll('input[type="email"]').forEach(input => {
-            if (input.closest('form[data-sv-form], form.formkit-form, .seva-form')) {
-                input.style.cssText += 'background: #242424 !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; color: #F5F0E8 !important;';
-            }
-        });
-        
-        document.querySelectorAll('button[type="submit"], [data-element="submit"]').forEach(button => {
-            if (button.closest('form[data-sv-form], form.formkit-form, .seva-form')) {
-                button.style.cssText += 'background: #D4AF37 !important; color: #1a1a1a !important; border: none !important;';
-            }
-        });
-    }
-    
-    // Apply styles multiple times as ConvertKit loads
-    applyDirectStyles();
-    setTimeout(applyDirectStyles, 500);
-    setTimeout(applyDirectStyles, 1500);
-    setTimeout(applyDirectStyles, 3000);
-    
-    // Watch for DOM changes
-    const observer = new MutationObserver(() => {
-        applyDirectStyles();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-})();
