@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (component === 'hero-v2') {
                     const heroMappings = {
                         heroId: 'id',
+                        heroLabel: 'label',
                         heroTitle: 'title',
                         heroSubtitle: 'subtitle',
                         heroImageSrc: 'imageSrc',
@@ -242,6 +243,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     };
                     for (const [dataKey, tokenKey] of Object.entries(heroMappings)) {
                         if (params[dataKey]) params[tokenKey] = params[dataKey];
+                    }
+                    
+                    // Safeguard: never show "Medicine Within" in the hero label (it's already in navbar)
+                    if (params.label && params.label.toLowerCase().trim() === 'medicine within') {
+                        params.label = '';
                     }
                 }
 
