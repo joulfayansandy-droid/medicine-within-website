@@ -223,6 +223,26 @@ p {
     padding: 0 var(--space-md);
 }
 
+/* Mobile header layout: always keep hamburger visible */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: nowrap;
+        gap: var(--space-sm);
+    }
+
+    /* Prevent the logo text pushing the toggle off-screen */
+    .logo {
+        min-width: 0;
+    }
+
+    .logo-text {
+        max-width: 70vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
 /* Logo (navigation v2 component) */
 .logo-text {
     font-family: var(--font-heading);
@@ -346,21 +366,32 @@ p {
 
 /* Mobile nav (navigation v2 component) */
 .mobile-menu-toggle {
-    background: none;
+    background: rgba(0, 0, 0, 0.25);
     border: none;
     cursor: pointer;
     padding: 10px;
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
+    flex-shrink: 0;
+    /* Minimum recommended tap target */
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    z-index: 1251;
 }
 
 .mobile-menu-toggle span {
     display: block;
-    width: 24px;
+    width: 28px;
     height: 2px;
     background: var(--color-text);
     transition: var(--transition-fast);
+    border-radius: 2px;
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
@@ -386,7 +417,7 @@ p {
     border-left: 1px solid var(--color-bg-elevated);
     padding: 5rem var(--space-md) var(--space-xl) var(--space-md);
     transition: var(--transition-base);
-    z-index: 1200;
+    z-index: 1250;
     overflow-y: auto;
     overflow-x: hidden;
     will-change: transform;
