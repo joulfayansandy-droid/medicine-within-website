@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 157">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9c7a22" />
+      <stop offset="25%" style="stop-color:#d4af37" />
+      <stop offset="50%" style="stop-color:#f9e4a8" />
+      <stop offset="75%" style="stop-color:#d4af37" />
+      <stop offset="100%" style="stop-color:#9c7a22" />
+    </linearGradient>
+  </defs>
+  <!-- Alchemical Diamond Logo -->
+  <path d="M50 0 L100 78.5 L50 157 L0 78.5 Z M50 60 L75 98.5 L50 137 L25 98.5 Z" fill="url(#gold-grad)" fill-rule="evenodd" />
+</svg>

@@ -8,98 +8,33 @@
     <title>Kambô Benefits | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    <a href="../index.html">Home</a>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="temple-work.html">Tantrik Temple</a>
-                            <a href="sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="embodied-tantra.html">Embodied Tantra</a>
-                            <a href="kambo.html" class="active">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="../mentorship/couples.html">Couples 1:1</a>
-                            <a href="../mentorship/integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" 
-            alt="Benefits of Kambo" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">The Path of Purification</p>
-                <h2 class="hero-page-title">Kambô Benefits</h2>
-                <p class="hero-subtitle">
-                    Clarity · Detox · Emotional Release · Spiritual Grounding.<br>
-                    Experience the profound reset your body and spirit have been calling for.
-                </p>
-                <div class="hero-cta">
-                    <a href="../events/index.html" class="btn btn-primary btn-large">Book a Ceremony</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="The Path of Purification"
+        data-hero-title="KAMBO BENEFITS"
+        data-hero-subtitle="Clarity · Detox · Emotional Release · Spiritual Grounding. Experience the profound reset your body and spirit have been calling for."
+        data-hero-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg"
+        data-hero-place="mw-hero--place-center"
+        data-hero-overlay="mw-hero--overlay-vignette"
+        data-hero-cta-text="Book a Ceremony"
+        data-hero-cta-link="../events/"
+    ></div>
     
     <!-- ========== KAMBO SUB-NAV ========== -->
     <nav class="sub-nav">
@@ -115,235 +50,78 @@
     </nav>
     
     <!-- ========== INTRO ========== -->
-    <section class="section">
+    <section class="section section-elevated">
         <div class="container container-narrow text-center">
-            <p class="tagline">Clarity · Detox · Emotional Release · Spiritual Grounding</p>
+            <div class="ornament"><span>◊</span></div>
             <p class="lead">Kambô is an ancient Amazonian purification medicine known for its powerful physical, emotional, and energetic benefits. It is non-psychedelic, deeply somatic, and works through the body’s natural intelligence.</p>
         </div>
     </section>
 
-    <!-- ========== WHY CHOOSE KAMBO ========== -->
+    <!-- ========== CORE BENEFITS (Media Block) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="Physical & Energetic Detox"
+        data-tagline="Total System Reset"
+        data-content="<p>Kambô is known as 'the vaccine of the forest.' It contains a potent cocktail of bioactive peptides that interact with the body's systems to trigger a deep cleanse.</p><ul class='feature-list mt-md'><li>Boosts immune system and cellular health</li><li>Clears chronic fatigue and brain fog</li><li>Regulates the nervous system</li><li>Releases deep-seated emotional blockages</li></ul>"
+        data-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg"
+        data-image-alt="Kambo Ceremony Details"
+        data-section-class="section-dark"
+    ></div>
+
+    <!-- ========== YOUTUBE TRANSMISSION ========== -->
     <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
-                <div class="order-mobile-2">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Emotional release and support" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
-                </div>
-                <div class="order-mobile-1">
-                    <div class="section-header" style="text-align: left;">
-                        <div class="ornament"><span></span></div>
-                        <p class="tagline">Why People Choose Kambô</p>
-                        <h2>Ready for a Reset?</h2>
-                    </div>
-                    <p>People come to Kambô when they feel:</p>
-                    <ul class="feature-list">
-                        <li>Overwhelmed or emotionally heavy</li>
-                        <li>Stuck, unclear, or disconnected</li>
-                        <li>Physically depleted or inflamed</li>
-                        <li>Energetically blocked</li>
-                        <li>Ready for a reset or life transition</li>
-                    </ul>
-                    <div class="hero-cta" style="margin-top: 2rem; text-align: left;">
-                        <a href="kambo-ceremonies.html" class="btn btn-primary">Book a Kambô Ceremony</a>
-                    </div>
-                </div>
+        <div class="container container-narrow">
+            <div class="section-header">
+                <p class="tagline">The Spirit of Kambo</p>
+                <h2>Why we sit with the frog</h2>
             </div>
+            <div 
+                data-component="youtube-embed"
+                data-youtube-url="https://www.youtube.com/watch?v=mC9yJEg9fvA"
+                data-youtube-title="Kambo Benefits and Spirit"
+                data-ratio-class="ratio-9x16"
+                data-caption="Understanding the depth of the Kambo medicine."
+            ></div>
         </div>
     </section>
 
-    <!-- ========== HOW KAMBO WORKS ========== -->
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
-                <div class="image-wrapper">
-                    <img src="../assets/img/methodology/purge.jpg" alt="Purification process" class="rounded shadow">
-                </div>
-                <div class="content-wrapper">
-                    <div class="section-header" style="text-align: left;">
-                        <p class="tagline">The Biological Reset</p>
-                        <h2>How Kambô Works</h2>
-                    </div>
-                    <p>Kambô contains bioactive peptides that support:</p>
-                    <ul class="feature-list">
-                        <li>Immune strengthening</li>
-                        <li>Lymphatic detox</li>
-                        <li>Hormonal regulation</li>
-                        <li>Improved digestion</li>
-                        <li>Reduced inflammation</li>
-                        <li>Enhanced circulation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== VIDEO BREAK ========== -->
-    <section class="section-video" style="position: relative; height: 60vh; overflow: hidden; display: flex; align-items: center; justify-content: center; color: white;">
-        <video 
-            class="video-background"
-            data-lazy-video
-            data-background-video
-            data-autoplay
-            data-src="../assets/videos/sandi-group-5.mov"
-            poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg"
-            preload="none"
-            muted
-            loop
-            playsinline
-            aria-hidden="true"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;"
-        >
-        </video>
-        <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 0;"></div>
-        <div class="container text-center" style="position: relative; z-index: 1;">
-            <p class="tagline" style="color: var(--color-gold);">The Afterglow</p>
-            <h2 style="color: white; margin-bottom: 1rem;">A Return to Truth</h2>
-            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">"Kambô brings you back into your body, your truth, and your strength."</p>
-        </div>
-    </section>
-
-    <!-- ========== BENEFITS GRID ========== -->
+    <!-- ========== THE LAYERS OF HEALING ========== -->
     <section class="section section-dark">
         <div class="container">
-            <div class="section-header">
-                <p class="tagline">Total Transformation</p>
-                <h2>Comprehensive Benefits</h2>
-            </div>
-            <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto; gap: var(--space-xl);">
-                <!-- Physical -->
+            <div class="grid grid-3">
                 <div class="card">
-                    <h3 style="color: var(--color-gold);">Physical Benefits</h3>
-                    <ul class="feature-list">
-                        <li>Stronger immunity</li>
-                        <li>Increased energy and stamina</li>
-                        <li>Detoxification of liver, gallbladder, kidneys</li>
-                        <li>Improved sleep and recovery</li>
-                        <li>Reduced allergies and sensitivities</li>
-                    </ul>
-                    <p class="pull-quote">“Lighter, clearer, and more alive.”</p>
+                    <h3 class="text-gold">Physical</h3>
+                    <p class="text-muted">Potent anti-inflammatory, anti-viral, and anti-microbial properties. Deep organ and lymphatic cleanse.</p>
                 </div>
-                <!-- Emotional -->
                 <div class="card">
-                    <h3 style="color: var(--color-gold);">Emotional & Psychological</h3>
-                    <ul class="feature-list">
-                        <li>Emotional release</li>
-                        <li>Reduced anxiety</li>
-                        <li>Increased self-awareness</li>
-                        <li>Clearing grief, fear, shame</li>
-                        <li>Improved emotional resilience</li>
-                        <li>Stronger self-trust</li>
-                    </ul>
+                    <h3 class="text-gold">Emotional</h3>
+                    <p class="text-muted">Releasing 'Panema' — the indigenous term for bad luck, heavy energy, or emotional stagnation.</p>
                 </div>
-                <!-- Mental -->
                 <div class="card">
-                    <h3 style="color: var(--color-gold);">Mental Benefits</h3>
-                    <ul class="feature-list">
-                        <li>Mental clarity</li>
-                        <li>Reduced overwhelm</li>
-                        <li>Sharper focus</li>
-                        <li>Improved decision-making</li>
-                    </ul>
-                </div>
-                <!-- Energetic -->
-                <div class="card">
-                    <h3 style="color: var(--color-gold);">Energetic & Spiritual</h3>
-                    <ul class="feature-list">
-                        <li>Clearing dense energy</li>
-                        <li>Strengthening boundaries</li>
-                        <li>Grounding spiritual sensitivity</li>
-                        <li>Reconnecting with intuition</li>
-                        <li>Removing energetic stagnation</li>
-                    </ul>
-                    <p class="pull-quote">“The reset my life needed.”</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== KAMBO & AYAHUASCA ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
-                <div>
-                    <div class="section-header" style="text-align: left;">
-                        <p class="tagline">The Cleanser Before the Visionary</p>
-                        <h2>Kambô & Ayahuasca</h2>
-                    </div>
-                    <p>Kambô is commonly used before Ayahuasca to cleanse and ground, or after to support integration. Known traditionally as:</p>
-                    <p class="pull-quote" style="font-size: 1.5rem; margin: 2rem 0; color: var(--color-gold);">
-                        “The cleanser before the visionary.”
-                    </p>
-                    <div class="hero-cta" style="text-align: left;">
-                        <a href="kambo-ceremonies.html" class="btn btn-primary">Explore Kambô Ceremonies</a>
-                    </div>
-                </div>
-                <div>
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" alt="Sandi - Medicine Within" style="border-radius: 12px; width: 100%; height: 450px; object-fit: cover;">
+                    <h3 class="text-gold">Spiritual</h3>
+                    <p class="text-muted">Restoring your inner authority, sharpening intuition, and clearing the path for your true mission.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== FINAL CTA ========== -->
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-3">
-                <div class="cta-card">
-                    <a href="../events/index.html" class="btn btn-primary btn-large" style="width: 100%; text-align: center;">Book a Ceremony</a>
-                </div>
-                <div class="cta-card">
-                    <a href="kambo-safety.html" class="btn btn-large" style="width: 100%; text-align: center;">Read Contraindications</a>
-                </div>
-                <div class="cta-card">
-                    <a href="kambo-ceremonies.html#warrior-cleanse" class="btn btn-large" style="width: 100%; text-align: center;">Warrior Cleanse</a>
-                </div>
+    <section class="section section-elevated text-center">
+        <div class="container container-narrow">
+            <h2>Ready for a reset?</h2>
+            <p class="mb-lg">The medicine is calling. Step into the ceremony of your reclamation.</p>
+            <div class="btn-group">
+                <a href="../events/" class="btn btn-primary">Join a Ceremony</a>
+                <a href="kambo-ceremonies.html" class="btn">Learn about the Journey</a>
             </div>
         </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/video-loader.js"></script>
 </body>
 </html>
-

@@ -8,99 +8,33 @@
     <title>Kambô Ceremonies | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    <a href="../index.html">Home</a>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="temple-work.html">Tantrik Temple</a>
-                            <a href="sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="embodied-tantra.html">Embodied Tantra</a>
-                            <a href="kambo.html" class="active">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="../mentorship/couples.html">Couples 1:1</a>
-                            <a href="../mentorship/integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" 
-            alt="Kambo Ceremony" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">Sacred Initiation</p>
-                <h2 class="hero-page-title">Kambô Ceremonies</h2>
-                <p class="hero-subtitle">
-                    A sacred initiation into clarity, strength, and soul remembrance. 
-                    Held in a trauma-aware ceremonial field in Amsterdam.
-                </p>
-                <div class="hero-cta">
-                    <a href="../events/index.html" class="btn btn-primary btn-large">View Upcoming Dates</a>
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-large">Book Private Ceremony</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="Sacred Initiation"
+        data-hero-title="KAMBO CEREMONIES"
+        data-hero-subtitle="A sacred initiation into clarity, strength, and soul remembrance. Held in a trauma-aware ceremonial field in Amsterdam."
+        data-hero-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg"
+        data-hero-place="mw-hero--place-bottom-left"
+        data-hero-overlay="mw-hero--overlay-bottom"
+        data-hero-cta-text="View Upcoming Dates"
+        data-hero-cta-link="../events/"
+    ></div>
     
     <!-- ========== KAMBO SUB-NAV ========== -->
     <nav class="sub-nav">
@@ -115,31 +49,23 @@
         </div>
     </nav>
 
-    <!-- ========== WHAT IS KAMBO ========== -->
+    <!-- ========== WHAT IS KAMBO (Media Block with YouTube) ========== -->
     <section class="section section-dark">
         <div class="container">
             <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div class="video-featured" style="border-radius: 12px; overflow: hidden;">
-                    <video 
-                        data-click-to-play
-                        data-src="../assets/videos/sandi-group-3.mov"
-                        poster="../assets/img/events/Maithuna-day02-byShariVandeCraen-1.jpg"
-                        style="width: 100%; height: 500px; object-fit: cover;"
-                    >
-                        <div class="video-poster">
-                            <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-1.jpg" alt="Watch Ceremony Insight" style="width: 100%; height: 500px; object-fit: cover;">
-                        </div>
-                    </video>
-                </div>
+                <div 
+                    data-component="youtube-embed"
+                    data-youtube-url="https://www.youtube.com/watch?v=eDpXMxzQf0o"
+                    data-youtube-title="Kambo Ceremony Transmission"
+                    data-ratio-class="ratio-9x16"
+                    data-caption="A transmission on the spirit of the medicine."
+                ></div>
                 <div>
-                    <div class="ornament"><span></span></div>
+                    <div class="ornament"><span>◊</span></div>
                     <p class="tagline">Sacred Secretion</p>
                     <h2>What is Kambô?</h2>
-                    <p>
-                        Kambô is the sacred secretion of the <em>Phyllomedusa bicolor</em> frog, traditionally used for cleansing, protection, vitality, and energetic alignment. 
-                        It is non-psychedelic and works directly through the body’s intelligence.
-                    </p>
-                    <p>Kambô acts through:</p>
+                    <p>Kambô is the sacred secretion of the <em>Phyllomedusa bicolor</em> frog, traditionally used for cleansing, protection, vitality, and energetic alignment. It is non-psychedelic and works directly through the body’s intelligence.</p>
+                    <p class="mt-sm">Kambô acts through:</p>
                     <ul class="feature-list mb-md">
                         <li>The lymphatic & immune systems</li>
                         <li>The nervous system</li>
@@ -147,9 +73,7 @@
                         <li>The energetic field</li>
                         <li>Intuitive and instinctual layers</li>
                     </ul>
-                    <p>
-                        Kambô does not “take you somewhere.” It brings you back into your body, your truth, and your strength.
-                    </p>
+                    <p>Kambô does not “take you somewhere.” It brings you back into your body, your truth, and your strength.</p>
                     <div class="mt-md">
                         <a href="kambo-benefits.html" class="btn">Explore the Benefits</a>
                     </div>
@@ -174,7 +98,7 @@
                         <p class="tagline" style="color: var(--color-text); margin-bottom: 0.5rem;">Westerstraat Home Temple</p>
                         <h3>Group Ceremonies</h3>
                         <p>Intimate circles (max 4) every other Saturday. 10:00–13:00.</p>
-                        <a href="../events/index.html" class="link-arrow" style="color: var(--color-gold);">Join a Group Ceremony</a>
+                        <a href="../events/" class="link-arrow">Join a Group Ceremony</a>
                     </div>
                 </div>
                 
@@ -185,7 +109,7 @@
                         <p class="tagline" style="color: var(--color-text); margin-bottom: 0.5rem;">Personalised & Deep</p>
                         <h3>Private Ceremonies</h3>
                         <p>One-to-one containers in my temple, your home, or for couples.</p>
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="link-arrow" style="color: var(--color-gold);">Book Private Ceremony</a>
+                        <button onclick="window.openCalendlyPopup()" class="btn-secondary-link">Book Private Ceremony</button>
                     </div>
                 </div>
             </div>
@@ -193,30 +117,16 @@
     </section>
 
     <!-- ========== KAYA ========== -->
-    <section class="section section-dark">
-        <div class="container text-center">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center; text-align: left;">
-                <div>
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">Grounded Presence</p>
-                    <h2>The Sweetest Temple Assistant — Kaya</h2>
-                    <p>
-                        Kaya, my 4-year-old Yakutian Laika, is often present during ceremonies. 
-                        She has been with me through every phase of my Kambô journey and intuitively understands the rhythm, silence, and gravity of this work.
-                    </p>
-                    <p>
-                        She greets you warmly at the door — and once ceremony begins, she instinctively steps back, holding grounded presence from the edges of the field. At the end, she often returns — for a gentle check-in, quiet companionship, or soft cuddles.
-                    </p>
-                    <p class="text-muted mt-md" style="font-style: italic;">
-                        If you have fear of dogs or specific sensitivities, simply let me know in advance.
-                    </p>
-                </div>
-                <div>
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" alt="Kaya - Temple Assistant" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="media-block"
+        data-title="The Sweetest Temple Assistant — Kaya"
+        data-tagline="Grounded Presence"
+        data-content="<p>Kaya, my 4-year-old Yakutian Laika, is often present during ceremonies. She has been with me through every phase of my Kambô journey and intuitively understands the rhythm, silence, and gravity of this work.</p><p class='mt-sm'>She greets you warmly at the door — and once ceremony begins, she instinctively steps back, holding grounded presence from the edges of the field. At the end, she often returns — for a gentle check-in, quiet companionship, or soft cuddles.</p><p class='text-muted mt-md' style='font-style: italic;'>If you have fear of dogs or specific sensitivities, simply let me know in advance.</p>"
+        data-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg"
+        data-image-alt="Kaya - Temple Assistant"
+        data-block-class="content-block--reverse"
+        data-section-class="section-dark"
+    ></div>
 
     <!-- ========== CEREMONY UNFOLDS ========== -->
     <section class="section section-elevated">
@@ -225,7 +135,6 @@
                 <p class="tagline">The Journey</p>
                 <h2>How the Ceremony Unfolds</h2>
                 <p class="text-muted">A ritual-based container weaving shamanic, somatic, and relational intelligence.</p>
-                <p class="text-muted small">Everything is guided, explained, and consensual. You are never pushed — only supported.</p>
             </div>
             
             <div class="experience-timeline">
@@ -285,9 +194,8 @@
                     <div class="pricing-card-content" style="padding: var(--space-lg);">
                         <h3>The Warrior Cleanse</h3>
                         <p class="text-muted">Traditional 3-session protocol within 28 days for deep cleansing, immunity, and clarity.</p>
-                        <p class="text-muted small">Can also be spaced monthly if needed.</p>
                         <div class="mt-md">
-                            <a href="../events/index.html" class="btn">Explore Cleanse</a>
+                            <a href="../events/" class="btn">Explore Cleanse</a>
                         </div>
                     </div>
                 </div>
@@ -298,13 +206,8 @@
                         <div class="featured-tag" style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--color-gold); color: var(--color-text-dark); padding: 0.5rem 1.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; z-index: 3;">Most Popular</div>
                         <h3>Warrior Integration</h3>
                         <p class="text-muted">Kambô opens the door. Integration changes your life. 3 ceremonies + 3 somatic integration sessions.</p>
-                        <ul class="feature-list text-left mb-md" style="font-size: 0.85rem; border: none; max-width: 300px; margin: 0 auto;">
-                            <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Somatic + emotional processing</li>
-                            <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Nervous-system anchoring</li>
-                            <li style="border: none; padding: 0.25rem 0 0.25rem 1.5rem;">Personalised integration practices</li>
-                        </ul>
-                        <div class="pricing-amount" style="font-size: 2.5rem;">€666 – €777</div>
-                        <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary">Book Package</a>
+                        <div class="pricing-amount" style="font-size: 2.5rem; margin: 1rem 0;">€666 – €777</div>
+                        <button onclick="window.openCalendlyPopup()" class="btn btn-primary">Book Package</button>
                     </div>
                 </div>
             </div>
@@ -312,37 +215,17 @@
     </section>
 
     <!-- ========== BOOKING & PREPARATION ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                <div>
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" alt="Preparation for Ceremony" style="border-radius: 12px; width: 100%; height: 500px; object-fit: cover;">
-                </div>
-                <div>
-                    <div class="ornament"><span></span></div>
-                    <p class="tagline">The Path to Presence</p>
-                    <h2>Booking & Preparation</h2>
-                    <p>After booking, you will receive a comprehensive welcome pack including:</p>
-                    <ul class="feature-list mb-md">
-                        <li>Preparation & hydration protocols</li>
-                        <li>Dietary & emotional preparation guidelines</li>
-                        <li>Aftercare & integration guidance</li>
-                    </ul>
-                    <div class="warning-box info-box">
-                        <h4>Safety First</h4>
-                        <p class="small">
-                            Contraindications must be read before booking. Booking confirms you have reviewed them. 
-                            If pregnant, breastfeeding, on medication, or unsure about safety: 
-                            <a href="mailto:info@medicinewithin.nl">info@medicinewithin.nl</a>
-                        </p>
-                    </div>
-                    <div class="mt-md">
-                        <a href="kambo-safety.html" class="btn">Review Contraindications</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="media-block"
+        data-title="Booking & Preparation"
+        data-tagline="The Path to Presence"
+        data-content="<p>After booking, you will receive a comprehensive welcome pack including:</p><ul class='feature-list mt-sm'><li>Preparation & hydration protocols</li><li>Dietary & emotional preparation guidelines</li><li>Aftercare & integration guidance</li></ul><div class='warning-box info-box mt-md'><h4>Safety First</h4><p class='small'>Contraindications must be read before booking. Booking confirms you have reviewed them.</p></div>"
+        data-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg"
+        data-image-alt="Preparation for Ceremony"
+        data-cta-text="Review Contraindications"
+        data-cta-link="kambo-safety.html"
+        data-section-class="section-elevated"
+    ></div>
 
     <!-- ========== GALLERY ========== -->
     <section class="section section-dark">
@@ -352,102 +235,36 @@
                 <h2>A Glimpse into the Space</h2>
             </div>
             <div class="gallery">
-                <div class="gallery-item">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Ceremonial detail" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred space" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="Deep presence" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" alt="Integration circle" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" alt="Medicine detail" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Soft light" loading="lazy">
-                </div>
+                <div class="gallery-item"><img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="Ceremonial detail"></div>
+                <div class="gallery-item"><img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred space"></div>
+                <div class="gallery-item"><img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg" alt="Deep presence"></div>
+                <div class="gallery-item"><img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" alt="Integration circle"></div>
+                <div class="gallery-item"><img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" alt="Medicine detail"></div>
+                <div class="gallery-item"><img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Soft light"></div>
             </div>
         </div>
     </section>
 
     <!-- ========== FINAL CTA ========== -->
-    <section class="section section-dark text-center" style="position: relative; overflow: hidden; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
-        <video 
-            class="video-background"
-            data-lazy-video
-            data-background-video
-            data-autoplay
-            data-src="../assets/videos/sandi-group-6.mov"
-            poster="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg"
-            preload="none"
-            muted
-            loop
-            playsinline
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
-        ></video>
+    <section class="section section-dark text-center relative overflow-hidden" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" alt="The Temple Field" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: 1;">
         <div class="hero-overlay" style="z-index: 2; background: rgba(26, 26, 26, 0.7);"></div>
         <div class="container container-narrow" style="position: relative; z-index: 3;">
-            <div class="ornament"><span></span></div>
+            <div class="ornament"><span>◊</span></div>
             <h2 style="color: white;">Ready to Begin?</h2>
             <p class="mb-lg" style="color: var(--color-text);">Choose the path that serves your soul's current season.</p>
             <div class="btn-group">
-                <a href="../events/index.html" class="btn btn-primary">Book Group Ceremony</a>
-                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn" style="background: rgba(26, 26, 26, 0.5); color: var(--color-gold);">Book Private Ceremony</a>
-            </div>
-            <div class="btn-group mt-md">
-                <a href="../events/index.html" class="btn btn-small" style="background: rgba(26, 26, 26, 0.5);">Warrior Cleanse</a>
-                <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-small" style="background: rgba(26, 26, 26, 0.5);">Warrior Integration</a>
+                <a href="../events/" class="btn btn-primary">Book Group Ceremony</a>
+                <button onclick="window.openCalendlyPopup()" class="btn">Book Private Ceremony</button>
             </div>
         </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
-

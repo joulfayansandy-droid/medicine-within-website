@@ -8,158 +8,78 @@
     <title>Temple Work | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="temple-work.html" class="active">Tantrik Temple</a>
-                            <a href="sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="embodied-tantra.html">Embodied Tantra</a>
-                            <a href="kambo.html">Kambô</a>
-                            <a href="retreats.html">Retreats</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="../mentorship/couples.html">Couples 1:1</a>
-                            <a href="../mentorship/integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" 
-            alt="Temple Night ceremony" 
-            class="hero-bg"
-        >
-        <video 
-            class="hero-bg video-background"
-            data-lazy-video
-            data-background-video
-            data-autoplay
-            data-src="../assets/videos/sandi-group-1.mov"
-            poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg"
-            preload="none"
-            muted
-            loop
-            playsinline
-            aria-hidden="true"
-        >
-        </video>
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">The Tantric Lover</p>
-                <h2 class="hero-page-title">Temple Work</h2>
-                <p class="hero-subtitle">
-                    Sacred gatherings for truth, presence, prayer, and play. <br>Find your tribe. Awaken your eros.
-                </p>
-                <div class="hero-cta">
-                    <a href="../events/index.html" class="btn btn-primary btn-large">View Events</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="The Tantric Lover"
+        data-hero-title="TEMPLE WORK"
+        data-hero-subtitle="Sacred gatherings for truth, presence, prayer, and play. Find your tribe. Awaken your eros."
+        data-hero-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg"
+        data-hero-place="mw-hero--place-center"
+        data-hero-overlay="mw-hero--overlay-vignette"
+        data-hero-cta-text="View Events"
+        data-hero-cta-link="../events/"
+    ></div>
     
-    <!-- ========== WELCOME TO THE TEMPLE ========== -->
-    <section class="section section-elevated">
+    <!-- ========== SUB-NAV ========== -->
+    <nav class="sub-nav">
         <div class="container">
-            <div class="grid grid-2 flex-center">
-                <div class="animate-fadeInUp">
-            <div class="ornament"><span></span></div>
-                    <h2>A mirror to your life</h2>
-                    <p class="byline">The inner world, the outer world, and the mystery between.</p>
-                    <p>
-                        Do you dare feel your presence — fully? Your truth — honestly? 
-                        Your desires, curiosities, edges — without performance?
-                    </p>
-                    <p>
-                        Do you dare feel so safe in your body (with a touch of edge), 
-                        love yourself so fiercely (with a touch of courage), 
-                        that you leap into the unknown and meet who you truly are?
-                    </p>
-                    <p>
-                        This is a <strong>sacred playground for the soul</strong> — wild, primal, alive. 
-                        A place where instinct meets presence. Where authentic intimacy replaces performance. 
-                        Where ancient temple arts enter the modern body and initiate you back into yourself.
-                    </p>
-                    <div class="mt-md">
-                        <a href="#events" class="btn btn-primary">Enter the Temple</a>
+            <ul class="sub-nav-list">
+                <li><a href="temple-work.html" class="sub-nav-link active">Tantrik Temple</a></li>
+                <li><a href="sacred-feminine.html" class="sub-nav-link">Sacred Feminine</a></li>
+                <li><a href="embodied-tantra.html" class="sub-nav-link">Embodied Tantra</a></li>
+                <li><a href="kambo.html" class="sub-nav-link">Kambô</a></li>
+                <li><a href="retreats.html" class="sub-nav-link">Retreats</a></li>
+            </ul>
                     </div>
-                </div>
-                <div class="animate-fadeInUp delay-1">
-                    <div class="video-container">
-                        <video 
-                            data-lazy-video
-                            data-autoplay
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            data-src="../assets/videos/sandi-group-2.mov"
-                            poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg"
-                        ></video>
-                    </div>
-                </div>
+    </nav>
+
+    <!-- ========== WELCOME TO THE TEMPLE (Media Block) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="A mirror to your life"
+        data-tagline="The inner world, the outer world, and the mystery between."
+        data-content="<p>Do you dare feel your presence — fully? Your truth — honestly? Your desires, curiosities, edges — without performance?</p><p class='mt-md'>Do you dare feel so safe in your body (with a touch of edge), love yourself so fiercely (with a touch of courage), that you leap into the unknown and meet who you truly are?</p><p class='mt-md'>This is a <strong>sacred playground for the soul</strong> — wild, primal, alive. A place where instinct meets presence. Where authentic intimacy replaces performance. Where ancient temple arts enter the modern body and initiate you back into yourself.</p>"
+        data-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg"
+        data-image-alt="Temple Night ceremony"
+        data-cta-text="Enter the Temple"
+        data-cta-link="#events"
+    ></div>
+
+    <!-- ========== YOUTUBE TRANSMISSION ========== -->
+    <section class="section section-dark">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <p class="tagline">Deep Presence</p>
+                <h2>The Temple Field</h2>
             </div>
+            <div 
+                data-component="youtube-embed"
+                data-youtube-url="https://www.youtube.com/watch?v=mmIT6RhLKmY"
+                data-youtube-title="Medicine Within - Temple Work"
+                data-ratio-class="ratio-16x9"
+                data-caption="A glimpse into the devotional field of Medicine Within."
+            ></div>
         </div>
     </section>
 
     <!-- ========== THE LINEAGE ========== -->
-    <section class="section section-dark">
+    <section class="section section-elevated">
         <div class="container">
             <div class="grid grid-2 flex-center">
                 <div class="animate-fadeInUp">
@@ -167,11 +87,7 @@
                         <p class="tagline">The Roots</p>
                         <h2>The Lineage Behind the Temple</h2>
                     </div>
-                    <p>
-                        Temple arts arise from ancient tantrik, priestess, and shamanic lineages — 
-                        traditions that understood transformation as embodied initiation. 
-                        Before self-help, before workshops, before modern tantra… <strong>There were temples.</strong>
-                    </p>
+                    <p>Temple arts arise from ancient tantrik, priestess, and shamanic lineages — traditions that understood transformation as embodied initiation. Before self-help, before workshops, before modern tantra… <strong>There were temples.</strong></p>
                     
                     <div class="info-box text-left mt-lg">
                         <ul class="feature-list grid grid-2">
@@ -184,19 +100,11 @@
                         </ul>
                     </div>
                     
-                    <p class="mt-lg text-muted">
-                        Tantrik Temples are a modern rebirth of these lineages — rooted in sovereignty, 
-                        relational intelligence, trauma-awareness, and your actual lived humanity.
-                    </p>
+                    <p class="mt-lg text-muted">Tantrik Temples are a modern rebirth of these lineages — rooted in sovereignty, relational intelligence, trauma-awareness, and your actual lived humanity.</p>
                 </div>
                 <div class="animate-fadeInUp delay-1">
-                    <div class="video-container" style="border-radius: 50% 50% 0 0; overflow: hidden;">
-                        <img 
-                            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" 
-                            alt="Sacred Altar and Ritual Space" 
-                            class="img-fluid"
-                            style="width: 100%; height: 600px; object-fit: cover;"
-                        >
+                    <div class="content-block__media" style="border-radius: 50% 50% 0 0;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred Altar" style="height: 600px;">
                     </div>
                 </div>
             </div>
@@ -204,16 +112,12 @@
     </section>
     
     <!-- ========== WHAT MAKES US DIFFERENT ========== -->
-    <section class="section section-elevated">
+    <section class="section section-dark">
         <div class="container">
             <div class="section-header">
                 <p class="tagline">The field</p>
                 <h2>What Makes This Temple Different</h2>
-                <p class="container-narrow mx-auto">
-                    This is not a performance space. Not a sexualised container. 
-                    Not a place to “do tantra right.” Tantrik Temples are a living field 
-                    shaped by presence, authenticity, curiosity, prayer, and play.
-                </p>
+                <p class="container-narrow mx-auto">This is not a performance space. Not a sexualised container. Not a place to “do tantra right.” Tantrik Temples are a living field shaped by presence, authenticity, curiosity, prayer, and play.</p>
             </div>
             
             <div class="grid grid-3">
@@ -232,16 +136,13 @@
             </div>
             
             <div class="text-center mt-xl container-narrow mx-auto">
-                <p class="pull-quote">
-                    "Nothing is forced. Nothing is expected. Everything is optional. 
-                    You meet yourself. You meet others. And something older than language moves through the room."
-                </p>
+                <p class="pull-quote">"Nothing is forced. Nothing is expected. Everything is optional. You meet yourself. You meet others. And something older than language moves through the room."</p>
             </div>
         </div>
     </section>
 
     <!-- ========== THE TWO PORTALS ========== -->
-    <section class="section section-dark">
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <p class="tagline">The Entry Points</p>
@@ -249,59 +150,41 @@
             </div>
             
             <div class="offering-cards">
-                <!-- Portal 1 -->
                 <article class="offering-card">
                     <div class="offering-card-image">
-                        <img 
-                            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" 
-                            alt="Sunday Tantrik Temple Day" 
-                            class="img-fluid"
-                            style="width: 100%; height: 100%; object-fit: cover;"
-                        >
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" alt="Sunday Tantrik Temple Day">
                     </div>
                     <div class="offering-card-divider"></div>
                     <div class="offering-card-content">
                         <h3 class="offering-card-title">Sunday Tantrik Temple Day</h3>
                         <p class="tagline">Full-Day Initiatory Journey</p>
-                        <p class="offering-card-description">
-                            An immersive Sunday temple weaving ecstatic dance, tantrik ritual, 
-                            relational practices, and free-flow space. Spacious, grounded, and alive.
-                        </p>
+                        <p class="offering-card-description">An immersive Sunday temple weaving ecstatic dance, tantrik ritual, relational practices, and free-flow space. Spacious, grounded, and alive.</p>
                         <ul class="offering-feature-list">
                             <li>Ecstatic Dance & Breathwork</li>
                             <li>Relational Alchemy & Consent Practices</li>
                             <li>Lineage Tantrik Rituals</li>
                             <li>Deep-Flow Temple Field</li>
                         </ul>
-                        <a href="#events" class="btn btn-primary">Explore Sunday Temple</a>
+                        <a href="../events/" class="btn btn-primary">Explore Sunday Temple</a>
                     </div>
                 </article>
 
-                <!-- Portal 2 -->
-                <article class="offering-card">
+                <article class="offering-card reverse">
+                    <div class="offering-card-image">
+                        <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" alt="Tantrik Ritual Nights">
+                    </div>
+                    <div class="offering-card-divider"></div>
                     <div class="offering-card-content">
                         <h3 class="offering-card-title">Tantrik Ritual Nights</h3>
                         <p class="tagline">Monthly Devotional Evening</p>
-                        <p class="offering-card-description">
-                            Shorter, intimate temple spaces (±2 hours) devoted to ritual, 
-                            prayer, presence, and embodied connection. Simple, focused, and potent.
-                        </p>
+                        <p class="offering-card-description">Shorter, intimate temple spaces (±2 hours) devoted to ritual, prayer, presence, and embodied connection. Simple, focused, and potent.</p>
                         <ul class="offering-feature-list">
                             <li>Intimate Group Setting</li>
                             <li>Sacred Ritual & Prayer</li>
                             <li>Embodied Connection</li>
                             <li>Perfect for Beginners</li>
                         </ul>
-                        <a href="#events" class="btn btn-primary">Explore Ritual Nights</a>
-                    </div>
-                    <div class="offering-card-divider"></div>
-                    <div class="offering-card-image">
-                        <img 
-                            src="../assets/img/events/Maithuna-day02-byShariVandeCraen-100.jpg" 
-                            alt="Tantrik Ritual Nights" 
-                            class="img-fluid"
-                            style="width: 100%; height: 100%; object-fit: cover;"
-                        >
+                        <a href="../events/" class="btn btn-primary">Explore Ritual Nights</a>
                     </div>
                 </article>
             </div>
@@ -318,139 +201,31 @@
             </div>
             
             <div class="grid grid-3 mt-xl">
-                <div class="text-center animate-fadeInUp">
-                    <div class="video-container mb-md" style="height: 300px; border-radius: 8px;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="Ecstatic Dance" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="text-center">
+                    <div class="content-block__media mb-md" style="height: 300px;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="Ecstatic Dance">
                     </div>
-                    <div class="experience-number mx-auto" style="margin-bottom: 1rem;">1</div>
-                    <h4>Ecstatic Dance</h4>
-                    <p class="small text-muted">
-                        We begin with movement — primal, human, simple. The body wakes. No choreography. Just space to land.
-                    </p>
+                    <div class="experience-number mx-auto">1</div>
+                    <h4 class="mt-sm">Ecstatic Dance</h4>
+                    <p class="small text-muted">We begin with movement — primal, human, simple. The body wakes. No choreography. Just space to land.</p>
                 </div>
                 
-                <div class="text-center animate-fadeInUp delay-1">
-                    <div class="video-container mb-md" style="height: 300px; border-radius: 8px;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Sacred Ritual" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="text-center">
+                    <div class="content-block__media mb-md" style="height: 300px;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Sacred Ritual">
                     </div>
-                    <div class="experience-number mx-auto" style="margin-bottom: 1rem;">2</div>
-                    <h4>The Ritual</h4>
-                    <p class="small text-muted">
-                        A playful exploration of boundaries as holy ground and authentic connection without pressure.
-                    </p>
+                    <div class="experience-number mx-auto">2</div>
+                    <h4 class="mt-sm">The Ritual</h4>
+                    <p class="small text-muted">A playful exploration of boundaries as holy ground and authentic connection without pressure.</p>
                 </div>
                 
-                <div class="text-center animate-fadeInUp delay-2">
-                    <div class="video-container mb-md" style="height: 300px; border-radius: 8px;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Free Flow" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="text-center">
+                    <div class="content-block__media mb-md" style="height: 300px;">
+                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Free Flow">
                     </div>
-                    <div class="experience-number mx-auto" style="margin-bottom: 1rem;">3</div>
-                    <h4>Free-Flow Temple</h4>
-                    <p class="small text-muted">
-                        An open, living temple field where instinct leads and intimacy becomes medicine.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== WHY PEOPLE COME / WHO FOR ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="grid grid-3">
-                <div class="animate-fadeInUp">
-                    <h3>Why People Come</h3>
-                    <p class="text-muted mb-md">Because something in them is done with surface living.</p>
-                    <ul class="feature-list">
-                        <li>Feel themselves again</li>
-                        <li>Release old relational patterns</li>
-                        <li>Experience real connection</li>
-                        <li>Explore intimacy safely</li>
-                        <li>Awaken primal intelligence</li>
-                        <li>Remember erotic innocence</li>
-                    </ul>
-                </div>
-                <div class="animate-fadeInUp delay-1">
-                    <div class="video-container" style="height: 100%; min-height: 400px; border-radius: 8px;">
-                        <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg" alt="Sandi - Medicine Within" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-                <div class="animate-fadeInUp delay-2">
-                    <h3>Who This Is For</h3>
-                    <p class="text-muted mb-md">All of humanity belongs here.</p>
-                    <div class="info-box">
-                        <ul class="feature-list">
-                            <li>✓ Crave deeper presence</li>
-                            <li>✓ Value truth over performance</li>
-                            <li>✓ Called to tantra or ritual</li>
-                            <li>✓ Want intimacy without pressure</li>
-                            <li>✓ Seek depth, safety, and sovereignty</li>
-                            <li>✓ Long for tribe and real meeting</li>
-                        </ul>
-                    </div>
-                    <p class="mt-md small">Perfect for beginners. Revelatory for experienced practitioners. Welcoming to singles, couples, and poly dynamics.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== THE AGREEMENTS ========== -->
-    <section class="section section-elevated">
-        <div class="container container-narrow">
-            <div class="section-header">
-                <p class="tagline">Sacred Agreements</p>
-                <h2>To Keep the Temple Sacred</h2>
-                <p>Your sovereignty is the spine of the temple.</p>
-            </div>
-            <div class="grid grid-2" style="gap: 2rem;">
-                <div class="card">
-                    <h4 class="text-gold">Confidentiality</h4>
-                    <p class="text-muted small">What is shared in the temple stays in the temple.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">Consent-First</h4>
-                    <p class="text-muted small">Boundaries are honored and celebrated as holy ground.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">Everything Optional</h4>
-                    <p class="text-muted small">You are always free to pause, skip, or change any practice.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">Truth Over Performance</h4>
-                    <p class="text-muted small">We prioritize authentic expression over looking "good."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PRACTICALS ========== -->
-    <section class="section section-elevated">
-        <div class="container container-narrow">
-            <div class="grid grid-2 flex-center">
-                <div class="animate-fadeInUp">
-                    <h3>Practicals</h3>
-                    <ul class="feature-list mt-md">
-                        <li><strong>When:</strong> Monthly Sunday Journeys</li>
-                        <li><strong>Duration:</strong> ±8-hour immersive journey</li>
-                        <li><strong>Format:</strong> Mixed-gender (all welcome)</li>
-                        <li><strong>Team:</strong> Trauma-informed facilitation team</li>
-                        <li><strong>Location:</strong> Amsterdam / surroundings</li>
-                        <li><strong>Investment:</strong> Early Bird · Standard · Last Release</li>
-                    </ul>
-                </div>
-                <div class="animate-fadeInUp delay-1">
-                    <div class="video-container">
-                        <video 
-                            data-lazy-video
-                            data-autoplay
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            data-src="../assets/videos/sandi-group-5.mov"
-                            poster="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg"
-                        ></video>
-                    </div>
+                    <div class="experience-number mx-auto">3</div>
+                    <h4 class="mt-sm">Free-Flow Temple</h4>
+                    <p class="small text-muted">An open, living temple field where instinct leads and intimacy becomes medicine.</p>
                 </div>
             </div>
         </div>
@@ -478,19 +253,12 @@
 
     <!-- ========== FINAL INVITATION ========== -->
     <section class="section section-elevated text-center relative overflow-hidden" style="min-height: 600px; display: flex; align-items: center;">
-        <img 
-            src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" 
-            alt="The Temple Field" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 0;"
-        >
+        <img src="../assets/img/events/Maithuna-day02-byShariVandeCraen-150.jpg" alt="The Temple Field" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; z-index: 0;">
         <div class="container container-narrow" style="position: relative; z-index: 1;">
-            <div class="ornament"><span></span></div>
+            <div class="ornament"><span>◊</span></div>
             <h2>Come meet yourself</h2>
             <p class="byline">In the temple of your becoming.</p>
-            <p class="mt-md">
-                If you’re reading this, something in you already knows. <br>
-                Come pray. Come play. Come belong to something real.
-            </p>
+            <p class="mt-md">If you’re reading this, something in you already knows. <br>Come pray. Come play. Come belong to something real.</p>
             <div class="mt-lg">
                 <a href="#events" class="btn btn-primary btn-large">Join the Temple</a>
             </div>
@@ -498,51 +266,10 @@
     </section>
     
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div data-component="footer"></div>
     
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    
-    <!-- Calendly Widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    
 </body>
 </html>
-

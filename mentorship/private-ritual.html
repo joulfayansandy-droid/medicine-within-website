@@ -1,474 +1,111 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-clean">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Private Ritual Work with Sandi - Custom ceremonial containers for transformation, release, and celebration. Amsterdam & Private Locations.">
+    <meta name="description" content="Private Ritual & Embodied Healing with Sandi - Custom ceremonial containers for transformation and release.">
     
     <title>Private Ritual | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    <a href="../index.html">Home</a>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../offerings/temple-work.html">Tantrik Temple</a>
-                            <a href="../offerings/sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="../offerings/embodied-tantra.html">Embodied Tantra</a>
-                            <a href="../offerings/kambo.html">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="index.html">Mentorship</a>
-                            <a href="private-ritual.html" class="active">Private Ritual</a>
-                            <a href="archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="couples.html">Couples 1:1</a>
-                            <a href="integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/hero/GoddessSandi-byShariVandeCraen-7.jpg" 
-            alt="Private Ritual" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <h2 class="hero-page-title">Private Ritual</h2>
-                <p class="hero-subtitle">
-                    Custom ceremonial containers for deep transformation, release, and celebration. 
-                    A space dedicated entirely to your process.
-                </p>
-                <div class="hero-cta">
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-large">Book Discovery Call</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="Custom Ceremonial Container"
+        data-hero-title="PRIVATE<span>RITUAL</span>"
+        data-hero-subtitle="A deep ceremonial space for emotional release, soul re-orientation, and embodied healing."
+        data-hero-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-2.jpg"
+        data-hero-place="mw-hero--place-bottom-left"
+        data-hero-overlay="mw-hero--overlay-bottom"
+        data-hero-cta-text="Book Discovery Call"
+        data-hero-cta-link="../contact/"
+    ></div>
     
-    <!-- ========== INTRO ========== -->
-    <section class="section section-elevated">
-        <div class="container container-narrow text-center">
-            <div class="ornament"><span></span></div>
-            <p class="tagline">A Sacred Encounter</p>
-            <h2>Eros, Truth & Devotion</h2>
-            <div style="font-size: 1.15rem; line-height: 1.9;">
-                <p>
-                    A private ceremonial space to meet intimacy, desire, truth, and presence inside a held Temple field. 
-                    This is Temple Arts — brought into a private, intimate, and intentional container.
-                </p>
-                <p class="mt-md">
-                    A space to slow down. To listen. To meet one another — and yourself — in sacredness rather than performance.
-                </p>
-            </div>
-            <div class="mt-lg">
-                <a href="#apply" class="btn btn-primary">Apply for a Ritual</a>
-            </div>
-        </div>
-    </section>
+    <!-- ========== INTRO (Media Block) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="Marking the Threshold"
+        data-tagline="Ritual as Medicine"
+        data-content="<p>Some moments in life require more than just conversation. They require a threshold. A marking. A ritual.</p><p class='mt-sm'>Private Rituals are bespoke ceremonial containers designed around your specific intention. Whether you are closing a chapter, initiating a new season, or needing a deep space for emotional release, we craft a ritual that speaks to your body and soul.</p>"
+        data-image-src="/assets/img/hero/GoddessSandi-byShariVandeCraen-10.jpg"
+        data-image-alt="Sacred Ritual Space"
+        data-section-class="section-elevated"
+    ></div>
 
-    <!-- ========== WHAT IS PRIVATE TEMPLE ========== -->
+    <!-- ========== WHAT WE WEAVE ========== -->
     <section class="section section-dark">
         <div class="container">
-            <div class="offering-card">
-                <div class="offering-card-image">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-15.jpg" alt="Private Temple Ritual space">
-                </div>
-                <div class="offering-card-divider"></div>
-                <div class="offering-card-content">
-                    <p class="tagline">The Bespoke Experience</p>
-                    <h2 class="offering-card-title">What is a Private Temple Ritual?</h2>
-                    <div class="offering-card-description">
-                        <p>
-                            A Private Temple Ritual is a bespoke ceremonial experience designed for individuals, couples, or close connections who feel the call to meet eros, intimacy, and truth inside a sacred, devotional field.
-                        </p>
-                        <ul class="offering-feature-list mt-md">
-                            <li>Erotic energy is honored as life force, not acted out</li>
-                            <li>Intimacy is slowed down until it becomes truthful</li>
-                            <li>Presence replaces performance</li>
-                            <li>The body becomes a doorway</li>
-                            <li>Connection becomes ritual</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== THE LINEAGE ========== -->
-    <section class="section section-dark" style="position: relative; overflow: hidden; min-height: 60vh; display: flex; align-items: center;">
-        <video 
-            class="video-background"
-            data-lazy-video
-            data-background-video
-            data-autoplay
-            data-src="../assets/videos/sandi-group-3.mov"
-            poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg"
-            preload="none"
-            muted
-            loop
-            playsinline
-            aria-hidden="true"
-            style="opacity: 0.4;"
-        >
-        </video>
-        <div class="container container-narrow text-center" style="position: relative; z-index: 2;">
             <div class="section-header">
-                <p class="tagline">The Roots</p>
-                <h2 style="color: var(--color-gold);">The Lineage of Temple Arts</h2>
-            </div>
-            <div style="font-size: 1.1rem; line-height: 1.8; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
-                <p>Before intimacy became casual. Before sexuality became performative. Before healing became clinical. <strong>There were temples.</strong></p>
-                <p class="mt-md">Across cultures and lineages, temple spaces existed so humans could meet the most powerful forces of life — eros, grief, devotion, longing, truth — inside sacred structure.</p>
-                <p class="mt-md">Temple Arts were never about sex. They were about life force — and how it moves through the body and between humans when it is honored rather than suppressed or consumed.</p>
-                <p class="mt-md" style="font-family: var(--font-heading); font-style: italic; font-size: 1.4rem; color: var(--color-gold);">
-                    Private Temple returns intimacy to its rightful place: as devotion, as prayer, as embodied truth.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== WHY PRIVATE TEMPLE ========== -->
-    <section class="section section-dark" style="position: relative;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: url('../assets/img/methodology/sparkles.jpg'); background-size: cover; pointer-events: none;"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="section-header">
-                <p class="tagline">The Invitation</p>
-                <h2>Why Private Temple?</h2>
+                <p class="tagline">The Elements</p>
+                <h2>What we weave into ritual</h2>
             </div>
             <div class="grid grid-3">
                 <div class="card">
-                    <div class="ornament" style="margin: 0 0 var(--space-sm) 0; justify-content: flex-start;"><span></span></div>
-                    <h3 class="text-gold">Precision & Slowness</h3>
-                    <p class="text-muted">Some encounters require a depth of listening and a pace that cannot be found in public spaces. Here, truth has time to unfold.</p>
+                    <h3 class="text-gold">Somatic Release</h3>
+                    <p class="text-muted">Breath, movement, and sound to move what has become stagnant in the body.</p>
                 </div>
                 <div class="card">
-                    <div class="ornament" style="margin: 0 0 var(--space-sm) 0; justify-content: flex-start;"><span></span></div>
-                    <h3 class="text-gold">Relationship as Ceremony</h3>
-                    <p class="text-muted">For moments when your relationship wants ceremony — not discussion. Something sacred asking to be honored properly.</p>
+                    <h3 class="text-gold">Sacred Prayer</h3>
+                    <p class="text-muted">Intention setting and devotional practices to align your field with truth.</p>
                 </div>
                 <div class="card">
-                    <div class="ornament" style="margin: 0 0 var(--space-sm) 0; justify-content: flex-start;"><span></span></div>
-                    <h3 class="text-gold">Embodied Presence</h3>
-                    <p class="text-muted">Eros becomes intelligence, boundaries become clarity, and devotion becomes embodied truth. Meeting what is alive, correctly.</p>
+                    <h3 class="text-gold">Shamanic Arts</h3>
+                    <p class="text-muted">Altar work, soft plant allies, and energetic clearing to support the shift.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== WHO THIS IS FOR ========== -->
+    <!-- ========== YOUTUBE TRANSMISSION ========== -->
     <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div>
-                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-md);">
-                        <p class="tagline">Alignment</p>
-                        <h2>Who This Is For</h2>
-                    </div>
-                    <ul class="feature-list">
-                        <li>Individuals seeking a sacred relationship with eros and truth</li>
-                        <li>Couples longing to deepen intimacy without performance</li>
-                        <li>Lovers or partners navigating significant thresholds</li>
-                        <li>Humans curious about devotional intimacy and temple arts</li>
-                        <li>Those ready to meet erotic energy with reverence</li>
-                    </ul>
-                    <p class="mt-md text-muted" style="font-style: italic;">
-                        You do not need to be experienced in tantra or temple work. You do need willingness, honesty, and respect for sacred space.
-                    </p>
-                </div>
-                <div>
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" alt="Devotional presence" style="border-radius: 4px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== HOW IT UNFOLDS ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <p class="tagline">The Journey</p>
-                <h2>How a Private Temple Ritual Unfolds</h2>
-                <p class="text-muted">Each ritual is unique. There is no script. Presence leads.</p>
-            </div>
-            
-            <div class="video-container mb-xl" style="max-width: 900px; margin-left: auto; margin-right: auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-                <video 
-                    data-lazy-video
-                    data-autoplay
-                    data-background-video
-                    data-src="../assets/videos/sandi-group-4.mov"
-                    poster="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg"
-                    preload="none"
-                    muted
-                    loop
-                    playsinline
-                    aria-hidden="true"
-                >
-                </video>
-                <div class="video-overlay" style="background: linear-gradient(to top, rgba(26,26,26,0.6), transparent);"></div>
-            </div>
-
-            <div class="grid grid-3">
-                <div class="card">
-                    <h4 class="text-gold">Opening & Intention</h4>
-                    <p class="text-muted">We begin by grounding in the space, setting clear intentions, and attuning to what is alive.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">Agreements & Consent</h4>
-                    <p class="text-muted">Deep safety is built through temple agreements and precise consent attunement.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">Embodied Practices</h4>
-                    <p class="text-muted">Guided relational or solo inquiry and movement to drop from mind into body.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">The Ritual</h4>
-                    <p class="text-muted">A ritualized meeting of eros and presence, held with reverence and without agenda.</p>
-                </div>
-                <div class="card">
-                    <h4 class="text-gold">Integration</h4>
-                    <p class="text-muted">Closing the field with devotional presence, allowing the experience to land deeply.</p>
-                </div>
-                <div class="card" style="border: 1px dashed var(--color-gold); opacity: 0.8;">
-                    <h4 class="text-gold">Bespoke Container</h4>
-                    <p class="text-muted">Everything is optional. Nothing is forced. Every ritual is shaped around who you are.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== TESTIMONIALS ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="section-header">
-                <p class="tagline">Reflections</p>
-                <h2>What People Experience</h2>
-            </div>
-            <div class="grid grid-3" style="gap: var(--space-lg);">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
-                    <div style="height: 240px; overflow: hidden;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-1.jpg" alt="Temple atmosphere" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
-                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"Something softened that words never touched."</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
-                    <div style="height: 240px; overflow: hidden;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg" alt="Shared presence" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
-                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"We felt closer without having to explain anything."</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
-                    <div style="height: 240px; overflow: hidden;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-10.jpg" alt="Erotic devotion" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
-                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"I met my desire without shame for the first time."</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
-                    <div style="height: 240px; overflow: hidden;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-11.jpg" alt="Ancient ritual" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
-                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"It felt ancient. Simple. True."</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
-                    <div style="height: 240px; overflow: hidden;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="Embodied trust" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
-                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"I trusted my body again."</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 6 -->
-                <div class="testimonial-card" style="padding: 0; border-radius: 12px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(212, 175, 55, 0.15); transition: transform 0.3s ease;">
-                    <div style="height: 240px; overflow: hidden;">
-                        <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred space" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding: var(--space-lg) var(--space-md); flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--color-bg-card);">
-                        <p class="testimonial-quote" style="margin: 0; font-size: 1.15rem; line-height: 1.6; font-style: italic;">"Always, it is embodied."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== YOUR GUIDE ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="offering-card">
-                <div class="offering-card-content">
-                    <p class="tagline">Meet Sandi</p>
-                    <h2 class="offering-card-title">Your Guide</h2>
-                    <div class="offering-card-description">
-                        <p>
-                            Private Temple Rituals are held by Sandi Djoulfian — Medicine Within. Tantrika, Temple facilitator, and ritual guide devoted to embodied truth, sacred intimacy, and devotional presence.
-                        </p>
-                        <p class="mt-md">
-                            Sandi’s work is known for being precise, grounded, trauma-aware, and deeply human. She does not perform ritual; she holds the field so what is ready can emerge safely and honestly.
-                        </p>
-                    </div>
-                </div>
-                <div class="offering-card-divider"></div>
-                <div class="offering-card-image">
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-5.jpg" alt="Sandi - Medicine Within">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PRACTICAL DETAILS ========== -->
-    <section class="section section-elevated" id="apply">
         <div class="container container-narrow">
             <div class="section-header">
-                <p class="tagline">Logistics</p>
-                <h2>Practical Details</h2>
+                <p class="tagline">The Power of Ritual</p>
+                <h2>Meeting the Mystery</h2>
             </div>
-            <div class="info-box">
-                <div class="grid grid-2" style="gap: var(--space-md);">
-                    <div>
-                        <h4 class="text-gold">Format</h4>
-                        <p>Private ritual for individuals, couples, or close connections.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-gold">Duration</h4>
-                        <p>Half-day (3–4 hours) or Full Immersion (by request).</p>
-                    </div>
-                    <div>
-                        <h4 class="text-gold">Location</h4>
-                        <p>My home temple space in Amsterdam or your private space (by arrangement).</p>
-                    </div>
-                    <div>
-                        <h4 class="text-gold">Energy Exchange</h4>
-                        <p>Shared upon application (based on format and location).</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-xl">
-                <h3>How to Begin</h3>
-                <p class="mb-lg">Private Temple Rituals are offered by application only to ensure clarity, safety, and alignment. If something in your body is leaning forward — that is enough to begin.</p>
-                <div class="btn-group">
-                    <a href="" onclick="if(typeof openCalendlyPopup === 'function') { openCalendlyPopup(); } else { window.open('https://calendly.com/joulfayansandy/discovery-call-30-minutes', '_blank'); } return false;" class="btn btn-primary btn-large">Apply for a Ritual</a>
-                    <a href="../contact/index.html" class="btn btn-large">Ask a Question</a>
-                </div>
+            <div 
+                data-component="youtube-embed"
+                data-youtube-url="https://www.youtube.com/watch?v=eDpXMxzQf0o"
+                data-youtube-title="Private Ritual Transmission"
+                data-ratio-class="ratio-9x16"
+                data-caption="A transmission on the initiatory power of private ritual."
+            ></div>
+        </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="section section-dark text-center">
+        <div class="container container-narrow">
+            <div class="ornament"><span>◊</span></div>
+            <h2>Ready to mark your threshold?</h2>
+            <p class="mb-lg">Every ritual is unique. Book a discovery call to feel into what wants to be born.</p>
+            <div class="btn-group">
+                <button onclick="window.openCalendlyPopup()" class="btn btn-primary">Book Discovery Call</button>
+                <a href="../contact/" class="btn">Get in Touch</a>
             </div>
         </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="../offerings/temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="../offerings/sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="../offerings/embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="../offerings/kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
+    <div data-component="footer"></div>
+
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
-

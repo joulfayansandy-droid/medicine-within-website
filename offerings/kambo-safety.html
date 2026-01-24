@@ -8,97 +8,33 @@
     <title>Kambô Safety | Medicine Within</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/img/logo_gold_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-gold.svg">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Calendly Widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
     
     <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-icon">
-                    Medicine <span>Within</span>
-                </a>
-                
-                <nav class="nav" aria-label="Main">
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle active" aria-expanded="false">
-                            Offerings <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="temple-work.html">Tantrik Temple</a>
-                            <a href="sacred-feminine.html">Sacred Feminine Embodiment</a>
-                            <a href="embodied-tantra.html">Embodied Tantra</a>
-                            <a href="kambo.html" class="active">Kambô</a>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-dropdown-wrapper">
-                        <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
-                            1:1 <span class="caret">▾</span>
-                        </button>
-                        <div class="nav-dropdown-menu" role="menu">
-                            <a href="../mentorship/index.html">Mentorship</a>
-                            <a href="../mentorship/private-ritual.html">Private Ritual</a>
-                            <a href="../mentorship/archetypal-coaching.html">Archetypal Coaching</a>
-                            <a href="../mentorship/couples.html">Couples 1:1</a>
-                            <a href="../mentorship/integration.html">Integration Sessions</a>
-                        </div>
-                    </div>
-                    <a href="../events/index.html">Events</a>
-                    <a href="../about/index.html">About</a>
-                    <a href="../contact/index.html">Contact</a>
-                </nav>
-                
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <div data-component="navigation"></div>
     
     <!-- ========== HERO ========== -->
-    <section class="hero">
-        <img 
-            src="../assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" 
-            alt="Kambo Safety" 
-            class="hero-bg"
-        >
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <div class="hero-top">
-                <img src="../assets/img/logo_gold_transparent.png" alt="Medicine Within Logo" class="hero-logo animate-fadeInUp">
-                <h1 class="hero-title animate-fadeInUp delay-1">MEDICINE <span>WITHIN</span></h1>
-            </div>
-            <div class="hero-bottom animate-fadeInUp delay-2">
-                <p class="tagline">Safety First</p>
-                <h2 class="hero-page-title">Safety & Contraindications</h2>
-                <p class="hero-subtitle">
-                    Kambô is powerful, safe, and deeply healing when guided correctly.<br>
-                    Please read this information thoroughly before booking.
-                </p>
-                <div class="hero-cta">
-                    <a href="../contact/index.html" class="btn btn-primary btn-large">Ask a Safety Question</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div 
+        data-component="hero-v2"
+        data-hero-label="Safety First"
+        data-hero-title="SAFETY & CONTRAINDICATIONS"
+        data-hero-subtitle="Kambô is powerful, safe, and deeply healing when guided correctly. Please read this information thoroughly before booking."
+        data-hero-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg"
+        data-hero-place="mw-hero--place-bottom-left"
+        data-hero-overlay="mw-hero--overlay-bottom"
+        data-hero-cta-text="Ask a Safety Question"
+        data-hero-cta-link="mailto:info@medicinewithin.nl"
+    ></div>
     
     <!-- ========== KAMBO SUB-NAV ========== -->
     <nav class="sub-nav">
@@ -113,218 +49,54 @@
         </div>
     </nav>
     
-    <!-- ========== CONTRAINDICATIONS ========== -->
-    <section class="section section-elevated">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: flex-start;">
-                <div>
-                    <div class="section-header text-left">
-                        <div class="ornament"><span></span></div>
-                        <h2>Absolute Contraindications</h2>
-                        <p class="text-muted">If any of these apply, you cannot receive Kambô.</p>
-                    </div>
-                    <ul class="feature-list">
-                        <li>Serious heart conditions</li>
-                        <li>Heart surgery, pacemaker, stents</li>
-                        <li>Stroke history</li>
-                        <li>Blood pressure medication</li>
-                        <li>Epilepsy</li>
-                        <li>Pregnancy</li>
-                        <li>Breastfeeding (first 6 months)</li>
-                        <li>Recent major surgery</li>
-                        <li>Under 18 years old</li>
-                        <li>Severe mental illness (psychosis, bipolar)</li>
-                        <li>Water fasting 24h before (dangerous)</li>
-                        <li>Alcohol or drugs within 24h</li>
-                    </ul>
-                    <p class="mt-md">If unsure &rarr; <a href="mailto:info@medicinewithin.nl">info@medicinewithin.nl</a></p>
-                </div>
-                <div class="animate-fadeInRight">
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg" alt="Sacred Elements" class="img-rounded" style="width: 100%; height: 600px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-                </div>
+    <!-- ========== CONTRAINDICATIONS (Media Block) ========== -->
+    <div 
+        data-component="media-block"
+        data-title="Absolute Contraindications"
+        data-tagline="Please read carefully"
+        data-content="<p class='text-muted'>If any of these apply, you cannot receive Kambô.</p><ul class='feature-list mt-sm'><li>Serious heart conditions</li><li>Heart surgery, pacemaker, stents</li><li>Stroke history</li><li>Blood pressure medication</li><li>Epilepsy</li><li>Pregnancy</li><li>Breastfeeding (first 6 months)</li><li>Recent major surgery</li><li>Under 18 years old</li><li>Severe mental illness</li><li>Alcohol or drugs within 24h</li></ul><p class='mt-md'>If unsure &rarr; <a href='mailto:info@medicinewithin.nl'>info@medicinewithin.nl</a></p>"
+        data-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-30.jpg"
+        data-image-alt="Sacred Elements"
+        data-section-class="section-elevated"
+    ></div>
+
+    <!-- ========== PREPARATION ========== -->
+    <section class="section section-dark">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <p class="tagline">Preparation</p>
+                <h2>Preparing for your Journey</h2>
             </div>
-            
-            <div class="mt-xl">
-                <h3>Relative Contraindications (Case-by-Case)</h3>
-                <p class="text-muted">These require prior communication:</p>
-                <ul class="feature-list">
-                    <li>Antidepressants / SSRIs</li>
-                    <li>Anxiety or sleep medication</li>
-                    <li>Thyroid medication</li>
-                    <li>Diabetes</li>
-                    <li>Asthma medication</li>
-                    <li>Trauma history requiring modification</li>
-                    <li>Panic disorder or acute grief</li>
+            <div class="content-text">
+                <p>Safety starts with preparation. To ensure a safe and deep experience, please follow these guidelines:</p>
+                <ul class="feature-list mt-lg">
+                    <li><strong>Fast:</strong> No food for at least 8 hours before ceremony.</li>
+                    <li><strong>Hydration:</strong> Drink normally until arrival. In ceremony, you will drink a specific amount of water as guided.</li>
+                    <li><strong>Diet:</strong> Eat light and clean for 24-48 hours before (low salt, low spice, no heavy fats).</li>
+                    <li><strong>Substances:</strong> No alcohol, recreational drugs, or heavy medication for at least 24 hours.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- ========== SAFETY PROTOCOLS ========== -->
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div class="animate-fadeInLeft" style="position: relative; min-height: 400px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
-                    <!-- Video Background for Safety Protocols -->
-                    <img src="../assets/img/events/Maithuna-day01-byShariVandeCraen-20.jpg" alt="Safety Protocols" class="video-poster-fallback" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <video 
-                        class="video-background" 
-                        data-lazy-video 
-                        data-background-video 
-                        data-src="../assets/videos/sandi-group-3.mov"
-                        muted loop playsinline
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2;"
-                    ></video>
-                </div>
-                <div class="animate-fadeInRight">
-                    <div class="section-header text-left" style="margin-bottom: var(--space-md);">
-                        <div class="ornament"><span></span></div>
-                        <h2>Safety Protocols</h2>
-                    </div>
-                    <ul class="feature-list">
-                        <li>Trauma-informed facilitation</li>
-                        <li>Hydration monitored</li>
-                        <li>Consent-first container</li>
-                        <li>Optional Rapé & Sananga</li>
-                        <li>No forced purging</li>
-                        <li>Nothing sexualised</li>
-                        <li>Integration guidance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PREP & AFTERCARE ========== -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="grid grid-2" style="gap: var(--space-xl); align-items: center;">
-                <div class="grid grid-2" style="gap: var(--space-xl);">
-                    <div>
-                        <h3>Preparation</h3>
-                        <p><strong>24 hours before:</strong></p>
-                        <ul class="feature-list">
-                            <li>Eat clean, light food</li>
-                            <li>No alcohol or recreational drugs</li>
-                            <li>Hydrate gently and sleep well</li>
-                        </ul>
-                        <p class="mt-md"><strong>Morning of:</strong></p>
-                        <ul class="feature-list">
-                            <li>No coffee or caffeine</li>
-                            <li>No fasting</li>
-                            <li>Light meal 3-4h before</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Aftercare</h3>
-                        <p><strong>Integration is key:</strong></p>
-                        <ul class="feature-list">
-                            <li>Rest and allow the medicine to settle</li>
-                            <li>Eat light, nourishing food</li>
-                            <li>Hydrate well</li>
-                            <li>Avoid alcohol for 24-48 hours</li>
-                            <li>Spend time in nature, journaling or stillness</li>
-                        </ul>
-                        <p class="mt-md"><strong>Optional support:</strong></p>
-                        <p>&rarr; <a href="../mentorship/integration.html" class="text-gold">Book an Integration Session</a></p>
-                    </div>
-                </div>
-                <div class="animate-fadeInRight">
-                    <img src="../assets/img/hero/GoddessSandi-byShariVandeCraen-1.jpg" alt="Sandi - Integration Stillness" class="img-rounded" style="width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FAQ ========== -->
-    <section class="section section-elevated">
+    <!-- ========== FINAL CTA ========== -->
+    <section class="section section-elevated text-center">
         <div class="container container-narrow">
-            <div class="section-header">
-                <h2>Safety FAQ</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <h4 class="faq-question">Is Kambô safe?</h4>
-                    <p class="faq-answer">Yes — when properly screened and facilitated by a trained practitioner. Your safety is my absolute priority.</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">Will I vomit?</h4>
-                    <p class="faq-answer">Maybe. Purge can be physical, emotional, energetic, or subtle. Every experience is unique.</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">How long does it last?</h4>
-                    <p class="faq-answer">The entire ceremony container is 2-3 hours, including preparation and rest.</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">Can I come if I'm scared?</h4>
-                    <p class="faq-answer">Yes. Fear is a natural response to the unknown. We move gently and at your pace.</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">Is Rapé or Sananga required?</h4>
-                    <p class="faq-answer">No. They are always optional and offered only if they serve your process.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CTA SECTION ========== -->
-    <section class="section section-dark text-center" style="position: relative; overflow: hidden;">
-        <!-- Background Ornament/Image for CTA -->
-        <img src="../assets/img/methodology/sparkles.jpg" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1; z-index: 1;">
-        <div class="container container-narrow" style="position: relative; z-index: 2;">
-            <div class="ornament"><span></span></div>
-            <h2 class="mb-lg">Take the Next Step</h2>
-            <div class="grid grid-2" style="gap: var(--space-md);">
-                <a href="kambo-ceremonies.html" class="btn btn-primary">Book a Ceremony</a>
-                <a href="kambo-benefits.html" class="btn btn-outline">Check Benefits</a>
-                <a href="kambo.html" class="btn btn-outline">Warrior Cleanse</a>
-                <a href="../contact/index.html" class="btn btn-outline">Contact Sandi</a>
+            <div class="ornament"><span>◊</span></div>
+            <h2>Ready to proceed?</h2>
+            <p class="mb-lg">If you have read the above and feel ready to sit with the medicine, browse the upcoming dates.</p>
+            <div class="btn-group">
+                <a href="../events/" class="btn btn-primary">View Upcoming Dates</a>
+                <a href="kambo-ceremonies.html" class="btn">Learn about the Journey</a>
             </div>
         </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <a href="../index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex; align-items: center;">
-                        <img src="../assets/img/logo_gold_transparent.png" alt="" class="logo-footer">
-                        Medicine <span>Within</span>
-                    </a>
-                    <p class="text-muted">
-                        Embodied healing and sacred rituals for women ready to feel alive again.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4>Offerings</h4>
-                    <ul class="footer-links">
-                        <li><a href="temple-work.html">Tantrik Temple</a></li>
-                        <li><a href="sacred-feminine.html">Sacred Feminine Embodiment</a></li>
-                        <li><a href="embodied-tantra.html">Embodied Tantra</a></li>
-                        <li><a href="kambo.html">Kambô</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="../contact/index.html">Contact</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Medicine Within. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div data-component="footer"></div>
     
     <!-- Scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/video-loader.js"></script>
 </body>
 </html>

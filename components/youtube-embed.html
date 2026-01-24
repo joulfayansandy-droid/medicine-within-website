@@ -1,0 +1,12 @@
+<div class="youtube-embed-container {{ratioClass}}">
+    <div class="youtube-embed-wrapper">
+        <iframe 
+            src="https://www.youtube.com/embed/{{youtubeId}}" 
+            title="{{youtubeTitle}}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+        ></iframe>
+    </div>
+    {{#caption}}<p class="youtube-caption">{{caption}}</p>{{/caption}}
+</div>

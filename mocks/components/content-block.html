@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Content Block Mock</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mw-teal: #2F4347;
+            --mw-gold: #D4AF37;
+            --mw-charcoal: #1A1A1F;
+            --mw-bone: #E8E1D8;
+            
+            --mw-font-headlines: 'Cinzel', serif;
+            --mw-font-body: 'Cormorant Garamond', serif;
+            --mw-font-support: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--mw-charcoal);
+            color: var(--mw-bone);
+            font-family: var(--mw-font-body);
+            margin: 0;
+            padding: 4rem 2rem;
+        }
+
+        .doc-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .doc-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 2rem;
+        }
+
+        .doc-header h1 {
+            font-family: var(--mw-font-headlines);
+            color: var(--mw-gold);
+            margin: 0;
+        }
+
+        /* 
+           ==========================================================================
+           CONTENT BLOCK COMPONENT
+           ========================================================================== 
+        */
+
+        .content-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .content-block--reverse .content-block__media {
+                order: -1;
+            }
+        }
+
+        .content-block__text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .content-block__text h3 {
+            font-family: var(--mw-font-headlines);
+            font-size: 1.75rem;
+            color: var(--mw-gold);
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+
+        .content-block__text p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .content-block__media {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .content-block__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.1) contrast(1.1);
+        }
+
+        .content-block--reverse .content-block__text {
+            order: 2;
+        }
+        .content-block--reverse .content-block__media {
+            order: 1;
+        }
+
+        /* Feature List Variant */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .feature-item__icon {
+            font-family: var(--mw-font-headlines);
+            color: var(--mw-gold);
+            font-size: 1.25rem;
+        }
+
+        .feature-item__content h4 {
+            font-family: var(--mw-font-headlines);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .feature-item__content p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Documentation Helpers */
+        .example-section { margin-top: 4rem; }
+        .example-label { 
+            display: inline-block;
+            background: var(--mw-gold);
+            color: var(--mw-charcoal);
+            padding: 0.25rem 0.75rem;
+            font-family: var(--mw-font-support);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-container">
+        <header class="doc-header">
+            <h1>Content Block</h1>
+            <p>Flexible layouts for narrative content, mixing text, imagery, and structured lists.</p>
+        </header>
+
+        <div class="example-section">
+            <span class="example-label">Media & Narrative (Split)</span>
+            
+            <div class="content-block">
+                <div class="content-block__text">
+                    <h3>The Archetypal Feminine</h3>
+                    <p>
+                        Women are full-spectrum beings — powerful, soft, intuitive, fiery, erotic, playful, wise, wild. Yet most are conditioned to live from only one or two expressions.
+                    </p>
+                    <p>
+                        Through embodiment and ritual, we awaken the dormant forces that shape how you love, lead, and create in the world.
+                    </p>
+                </div>
+                <div class="content-block__media">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/hero/GoddessSandi-byShariVandeCraen-9.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="example-section">
+            <span class="example-label">Structured List Variant</span>
+            
+            <div class="content-block content-block--reverse">
+                <div class="content-block__text">
+                    <h3>Inside the Temple</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-item__icon">◊</span>
+                            <div class="feature-item__content">
+                                <h4>Trauma Aware</h4>
+                                <p>Regulated spaces that honor your nervous system's pacing.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-item__icon">✺</span>
+                            <div class="feature-item__content">
+                                <h4>Devotional Ritual</h4>
+                                <p>Ancient practices reborn for modern transformation.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-item__icon">☾</span>
+                            <div class="feature-item__content">
+                                <h4>Erotic Innocence</h4>
+                                <p>Reclaiming the sacred nature of your life force energy.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block__media">
+                    <img src="https://benji-cpu.github.io/medicine-within-website/assets/img/events/Maithuna-day01-byShariVandeCraen-25.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

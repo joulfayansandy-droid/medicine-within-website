@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Within | Section Header Mock</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mw-teal: #2F4347;
+            --mw-gold: #D4AF37;
+            --mw-charcoal: #1A1A1F;
+            --mw-bone: #E8E1D8;
+            
+            --mw-font-headlines: 'Cinzel', serif;
+            --mw-font-body: 'Cormorant Garamond', serif;
+            --mw-font-support: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--mw-charcoal);
+            color: var(--mw-bone);
+            font-family: var(--mw-font-body);
+            margin: 0;
+            padding: 4rem 2rem;
+        }
+
+        .doc-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .doc-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 2rem;
+        }
+
+        .doc-header h1 {
+            font-family: var(--mw-font-headlines);
+            color: var(--mw-gold);
+            margin: 0;
+        }
+
+        /* 
+           ==========================================================================
+           SECTION HEADER COMPONENT
+           ========================================================================== 
+        */
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header--center {
+            text-align: center;
+        }
+
+        .section-header__label {
+            font-family: var(--mw-font-support);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: var(--mw-gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-header__title {
+            font-family: var(--mw-font-headlines);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1;
+            margin: 0 0 1.5rem 0;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .section-header__description {
+            font-family: var(--mw-font-body);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-style: italic;
+            max-width: 700px;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        .section-header--center .section-header__description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header__ornament {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--mw-gold);
+            margin-top: 2rem;
+        }
+
+        /* Documentation Helpers */
+        .example-section { 
+            margin-top: 4rem; 
+            padding: 4rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .example-label { 
+            display: inline-block;
+            background: var(--mw-gold);
+            color: var(--mw-charcoal);
+            padding: 0.25rem 0.75rem;
+            font-family: var(--mw-font-support);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-container">
+        <header class="doc-header">
+            <h1>Section Header</h1>
+            <p>A standardized heading structure for introducing major content sections.</p>
+        </header>
+
+        <div class="example-section">
+            <span class="example-label">Left Aligned (Default)</span>
+            
+            <header class="section-header">
+                <span class="section-header__label">Pathway of Depth</span>
+                <h2 class="section-header__title">Tantrik Temple Arts</h2>
+                <p class="section-header__description">
+                    Living sanctuaries where the sacred is honoured through breath, movement, emotion, and devotion. This is the modern rebirth of an ancient lineage.
+                </p>
+            </header>
+        </div>
+
+        <div class="example-section" style="background-color: var(--mw-teal);">
+            <span class="example-label">Center Aligned</span>
+            
+            <header class="section-header section-header--center">
+                <span class="section-header__label">Upcoming Rituals</span>
+                <h2 class="section-header__title">Enter the Circle</h2>
+                <p class="section-header__description">
+                    A living calendar of spaces designed for awakening, release, and remembrance. Choose your next doorway.
+                </p>
+                <span class="section-header__ornament">✺</span>
+            </header>
+        </div>
+    </div>
+
+</body>
+</html>
+
