@@ -222,6 +222,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Handle token replacements for all components
                 const params = { ...el.dataset };
                 
+                // Special handling for HTML content in data attributes
+                // The dataset API may not properly preserve HTML, so read these directly
+                const htmlAttributes = ['gallery-images', 'images'];
+                htmlAttributes.forEach(attrName => {
+                    const attrValue = el.getAttribute(`data-${attrName}`);
+                    if (attrValue !== null) {
+                        // Convert kebab-case to camelCase for template matching
+                        const camelKey = attrName.split('-').map((word, i) => 
+                            i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+                        ).join('');
+                        // Fix root-relative paths in HTML content for subdirectories
+                        let fixedValue = attrValue;
+                        if (depth > 0) {
+                            fixedValue = fixedValue.replace(/(src|href)="\/([^"]*)"/g, (match, p1, p2) => {
+                                // Skip external links or anchor links
+                                if (p2.startsWith('http') || p2.startsWith('#')) return match;
+                                return `${p1}="${rootPath}${p2}"`;
+                            });
+                        }
+                        params[camelKey] = fixedValue;
+                    }
+                });
+                
                 // Add versions of params without the component name prefix
                 const componentPrefix = component.toLowerCase();
                 
