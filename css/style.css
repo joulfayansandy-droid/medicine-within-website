@@ -227,19 +227,28 @@ p {
 @media (max-width: 768px) {
     .header-container {
         flex-wrap: nowrap;
-        gap: var(--space-sm);
+        gap: 0.5rem; /* Tighten spacing */
+        padding: 0 1rem; /* Reduced horizontal padding */
     }
 
-    /* Prevent the logo text pushing the toggle off-screen */
     .logo {
         min-width: 0;
+        flex-shrink: 1;
+        gap: 0.35rem; /* Reduced gap between icon and text */
     }
 
     .logo-text {
-        max-width: 70vw;
+        font-size: clamp(0.8rem, 3.5vw, 1.1em); /* Scale text down on small screens */
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        flex-shrink: 1;
+    }
+
+    .logo-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
     }
 }
 
