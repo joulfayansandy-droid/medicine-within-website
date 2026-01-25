@@ -8,13 +8,20 @@
                     {{content}}
                 </div>
                 {{#ctaText}}
-                <div class="mt-md">
+                <div class="content-block__cta">
                     <a href="{{ctaLink}}" class="btn">{{ctaText}}</a>
                 </div>
                 {{/ctaText}}
             </div>
             <div class="content-block__media">
+                {{#galleryImages}}
+                <div class="image-gallery image-gallery--4">
+                    {{galleryImages}}
+                </div>
+                {{/galleryImages}}
+                {{^galleryImages}}
                 <img src="{{imageSrc}}" alt="{{imageAlt}}" loading="lazy">
+                {{/galleryImages}}
             </div>
         </div>
     </div>

@@ -264,7 +264,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     params.youtubeId = getYouTubeId(params.youtubeUrl);
                 }
 
-                // 1. Handle conditional blocks: {{#key}}...{{/key}}
+                // 1. Handle conditional blocks: {{#key}}...{{/key}} and inverse {{^key}}...{{/key}}
+                // First, handle inverse conditionals for keys that don't exist or are falsy
+                html = html.replace(/{{\^([a-zA-Z0-9]+)}}([\s\S]*?){{\/\1}}/gi, function(match, key, content) {
+                    const value = params[key];
+                    if (!value || value === '' || value === 'false') {
+                        // Key doesn't exist or is falsy - show content
+                        return content;
+                    }
+                    // Key exists and is truthy - remove the block
+                    return '';
+                });
+                
+                // Then handle positive conditionals
                 for (const key in params) {
                     const value = params[key];
                     if (value && value !== 'false' && value !== '') {
@@ -282,8 +294,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
 
-                // Clean up any remaining unused tokens
-                html = html.replace(/{{#?\/?[a-zA-Z0-9]+}}/g, '');
+                // Clean up any remaining unused tokens (but not inverse conditionals that were already processed)
+                html = html.replace(/{{#?\^?\/?[a-zA-Z0-9]+}}/g, '');
                 
                 el.innerHTML = html;
                 
@@ -427,6 +439,77 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         setActiveNavLink();
+        initSubNavAccordion();
+    }
+
+    /**
+     * Sub-Nav Accordion (Mobile)
+     * Converts sub-nav to accordion on mobile - shows active item by default,
+     * clicking active item expands to show all items, clicking any item navigates
+     */
+    function initSubNavAccordion() {
+        const subNavList = document.querySelector('.sub-nav-list');
+        if (!subNavList) return;
+        
+        // Prevent duplicate initialization
+        if (subNavList.dataset.accordionInitialized === 'true') return;
+        subNavList.dataset.accordionInitialized = 'true';
+        
+        const subNavItems = subNavList.querySelectorAll('li');
+        if (subNavItems.length === 0) return;
+        
+        // Find active item
+        let activeItem = null;
+        subNavItems.forEach(item => {
+            const link = item.querySelector('.sub-nav-link');
+            if (link && link.classList.contains('active')) {
+                activeItem = item;
+                item.classList.add('sub-nav-item-active');
+            }
+        });
+        
+        // If no active item found, make first item active
+        if (!activeItem && subNavItems.length > 0) {
+            activeItem = subNavItems[0];
+            activeItem.classList.add('sub-nav-item-active');
+            const link = activeItem.querySelector('.sub-nav-link');
+            if (link) link.classList.add('active');
+        }
+        
+        // Setup accordion click handlers
+        subNavItems.forEach(item => {
+            const link = item.querySelector('.sub-nav-link');
+            if (!link) return;
+            
+            link.addEventListener('click', function(e) {
+                // Only handle accordion on mobile
+                if (window.innerWidth > 768) {
+                    return; // Allow normal navigation on desktop
+                }
+                
+                const isActiveItem = item.classList.contains('sub-nav-item-active');
+                const isExpanded = subNavList.classList.contains('sub-nav-expanded');
+                
+                if (isActiveItem && !isExpanded) {
+                    // Active item clicked and accordion is collapsed - expand it
+                    e.preventDefault();
+                    subNavList.classList.add('sub-nav-expanded');
+                }
+                // Otherwise allow normal navigation
+            });
+        });
+        
+        // Handle window resize - reset accordion state on desktop
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                if (window.innerWidth > 768) {
+                    // Desktop: remove accordion classes
+                    subNavList.classList.remove('sub-nav-expanded');
+                }
+            }, 250);
+        });
     }
 
     /**
