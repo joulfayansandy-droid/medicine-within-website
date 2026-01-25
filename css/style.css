@@ -7,23 +7,42 @@
    1. CSS Variables & Brand Tokens
    -------------------------------------------------------------------------- */
 :root {
-    /* Colors */
-    --color-bg: #1a1a1a;
-    --color-bg-elevated: #242424;
-    --color-bg-card: #2a2a2a;
+    /* Core Brand Colors */
+    --deep-teal: #2F4347;
+    --gold: #D4AF37;
+    --charcoal: #1A1A1F;
+    --burgundy: #3A1F26;
+    --warm-bone: #E8E1D8;
+    --soft-blush: #F2D6C9;
     
-    --color-gold: #D4AF37;
+    /* Legacy Color Mappings (for backward compatibility) */
+    --color-bg: var(--deep-teal);
+    --color-bg-elevated: #3A4A4F;
+    --color-bg-card: #384A4F;
+    
+    --color-gold: var(--gold);
     --color-gold-light: #E8C547;
-    --color-burgundy: #6B2D3C;
+    --color-burgundy: var(--burgundy);
     --color-forest: #2D4A3E;
     
-    --color-text: #F5F0E8;
-    --color-text-muted: #c8c8c8; /* Improved contrast from #a8a8a8 */
-    --color-text-dark: #1a1a1a;
+    --color-text: var(--warm-bone);
+    --color-text-muted: #c8c8c8;
+    --color-text-dark: var(--charcoal);
+    
+    /* Gold Texture Gradient */
+    --gold-texture: linear-gradient(
+        135deg, 
+        #9c7a22 0%, 
+        #d4af37 25%, 
+        #f9e4a8 50%, 
+        #d4af37 75%, 
+        #9c7a22 100%
+    );
     
     /* Typography */
-    --font-heading: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Cormorant Garamond', Georgia, serif;
+    --font-support: 'Inter', sans-serif;
     
     /* Spacing */
     --space-xs: 0.5rem;
@@ -86,7 +105,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 400;
     line-height: 1.2;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 h1 {
@@ -113,11 +133,14 @@ p {
 .text-center { text-align: center; }
 
 .tagline {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 1.25rem;
+    font-family: var(--font-support);
+    font-style: normal;
+    font-size: 0.75rem;
     color: var(--color-gold);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+    display: block;
 }
 
 .byline {
@@ -134,6 +157,37 @@ p {
     font-size: 1.15rem;
     margin-top: var(--space-md);
     color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   3.5 Gold Texture Utilities
+   -------------------------------------------------------------------------- */
+.gold-texture-text {
+    background: var(--gold-texture);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+    background: linear-gradient(
+        90deg, 
+        #9c7a22 0%, 
+        #f9e4a8 50%, 
+        #9c7a22 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 8s linear infinite;
 }
 
 /* --------------------------------------------------------------------------
@@ -160,6 +214,50 @@ p {
 
 .section-elevated {
     background-color: var(--color-bg-elevated);
+}
+
+/* Mood-Based Section Classes */
+.mood-deep-anchor {
+    background-color: var(--deep-teal);
+    color: var(--warm-bone);
+}
+
+.mood-deep-anchor .label,
+.mood-deep-anchor .tagline {
+    color: var(--gold);
+}
+
+.mood-night-temple {
+    background-color: var(--burgundy);
+    color: var(--soft-blush);
+}
+
+.mood-night-temple .label,
+.mood-night-temple .tagline {
+    color: var(--gold);
+}
+
+.mood-soft-sanctuary {
+    background-color: var(--warm-bone);
+    color: var(--charcoal);
+}
+
+.mood-soft-sanctuary .label,
+.mood-soft-sanctuary .tagline {
+    color: var(--deep-teal);
+}
+
+.mood-soft-sanctuary h1,
+.mood-soft-sanctuary h2,
+.mood-soft-sanctuary h3,
+.mood-soft-sanctuary h4,
+.mood-soft-sanctuary h5,
+.mood-soft-sanctuary h6 {
+    color: var(--charcoal);
+}
+
+.mood-soft-sanctuary p {
+    color: var(--charcoal);
 }
 
 /* Grid */
@@ -203,12 +301,12 @@ p {
     /* Keep the entire header/nav ABOVE the mobile overlay */
     z-index: 1200;
     padding: var(--space-sm) 0;
-    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0));
+    background: linear-gradient(to bottom, rgba(47, 67, 71, 0.95), rgba(47, 67, 71, 0));
     transition: var(--transition-base);
 }
 
 .header.scrolled {
-    background: rgba(26, 26, 26, 0.98);
+    background: rgba(47, 67, 71, 0.98);
     backdrop-filter: blur(10px);
 }
 
@@ -238,7 +336,7 @@ p {
     }
 
     .logo-text {
-        font-size: clamp(0.8rem, 3.5vw, 1.1em); /* Scale text down on small screens */
+        font-size: clamp(0.65rem, 2.5vw, 1em); /* Scale text down more aggressively on small screens */
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -249,6 +347,35 @@ p {
         width: 20px;
         height: 20px;
         flex-shrink: 0;
+    }
+}
+
+/* Intermediate breakpoint for smoother scaling */
+@media (max-width: 600px) {
+    .logo-text {
+        font-size: clamp(0.7rem, 2.2vw, 0.95em);
+    }
+    
+    .header-container {
+        gap: 0.4rem;
+        padding: 0 0.875rem;
+    }
+}
+
+/* Very small screens: even more aggressive scaling */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: clamp(0.6rem, 2vw, 0.85em);
+    }
+    
+    .logo-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .header-container {
+        gap: 0.35rem;
+        padding: 0 0.75rem;
     }
 }
 
@@ -285,6 +412,7 @@ p {
 
 .nav-link {
     color: var(--color-text);
+    font-family: var(--font-support);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -343,6 +471,7 @@ p {
 .dropdown-menu a {
     display: block;
     padding: 0.65rem 0.9rem;
+    font-family: var(--font-support);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -470,6 +599,7 @@ body.mobile-menu-open::before {
     background: none;
     border: none;
     color: var(--color-text);
+    font-family: var(--font-support);
     font-size: 1rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -588,6 +718,7 @@ body.mobile-menu-open::before {
 .nav a,
 .nav-dropdown-toggle {
     color: var(--color-text);
+    font-family: var(--font-support);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1120,13 +1251,17 @@ body.mobile-menu-open::before {
 }
 
 .btn-primary {
-    background: var(--color-gold);
-    color: var(--color-text-dark);
+    background: var(--gold-texture);
+    color: var(--charcoal);
+    border-color: var(--gold);
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background: var(--color-gold-light);
-    border-color: var(--color-gold-light);
+    background: var(--gold-texture);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .btn-large {
@@ -1146,13 +1281,13 @@ body.mobile-menu-open::before {
    -------------------------------------------------------------------------- */
 .card {
     background: var(--color-bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     padding: var(--space-md);
     transition: var(--transition-base);
 }
 
 .card:hover {
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.4);
     transform: translateY(-4px);
 }
 
@@ -1167,7 +1302,7 @@ body.mobile-menu-open::before {
     display: flex;
     flex-direction: column;
     background: var(--color-bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 16px;
     overflow: hidden;
     color: var(--color-text);
@@ -1204,7 +1339,8 @@ body.mobile-menu-open::before {
     display: block;
     margin: 0;
     transform: scale(1.01);
-    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
 }
 
 .portal-card__body {
@@ -1245,13 +1381,14 @@ body.mobile-menu-open::before {
 }
 
 .portal-card:hover {
-    border-color: rgba(212, 175, 55, 0.35);
+    border-color: rgba(212, 175, 55, 0.4);
     transform: translateY(-6px);
     box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35);
 }
 
 .portal-card:hover .portal-card__media img {
     transform: scale(1.07);
+    filter: sepia(0) contrast(1.2) brightness(0.9);
 }
 
 .portal-card:hover .portal-card__cta::after {
@@ -1310,11 +1447,13 @@ body.mobile-menu-open::before {
     margin: 0;
     object-fit: cover;
     display: block;
-    transition: var(--transition-slow);
+    transition: var(--transition-slow), filter 0.5s ease;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
 }
 
 .offering-card:hover .offering-card-image img {
     transform: scale(1.05);
+    filter: sepia(0) contrast(1.2) brightness(0.9);
 }
 
 .offering-card.reverse {
@@ -1720,12 +1859,14 @@ body.mobile-menu-open::before {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: var(--transition-slow);
+    transition: var(--transition-slow), filter 0.5s ease;
     margin: 0;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
 }
 
 .gallery-item:hover img {
     transform: scale(1.08);
+    filter: sepia(0) contrast(1.2) brightness(0.9);
 }
 
 /* Flush gallery (tight, modern) - used for the home ceremonial field section */
@@ -1872,11 +2013,13 @@ body.mobile-menu-open::before {
     object-fit: cover;
     object-position: center;
     margin: 0;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
 }
 
 .methodology-card:hover .methodology-card-image img {
     transform: scale(1.08);
+    filter: sepia(0) contrast(1.2) brightness(0.9);
 }
 
 .methodology-card-number {
@@ -2114,6 +2257,7 @@ body.mobile-menu-open::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
 }
 
 .testimonial-content {
@@ -2588,7 +2732,7 @@ a.formkit-powered-by {
 .footer {
     background: var(--color-bg);
     padding: var(--space-xl) 0 var(--space-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .footer-content {
@@ -2606,7 +2750,7 @@ a.formkit-powered-by {
 }
 
 .footer h4 {
-    font-family: var(--font-body);
+    font-family: var(--font-support);
     font-size: 0.875rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -2634,7 +2778,7 @@ a.formkit-powered-by {
 .footer-bottom {
     text-align: center;
     padding-top: var(--space-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
     color: var(--color-text-muted);
     font-size: 0.875rem;
 }
@@ -4348,6 +4492,7 @@ a.formkit-powered-by {
     object-position: center;
     display: block;
     margin: 0;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
 }
 
 /* Overlay */
@@ -4372,10 +4517,10 @@ a.formkit-powered-by {
 }
 
 .mw-hero__label {
-    font-family: var(--font-body);
+    font-family: var(--font-support);
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     margin-bottom: 1rem;
     color: var(--color-gold);
     font-weight: 500;
@@ -4388,6 +4533,10 @@ a.formkit-powered-by {
     margin-bottom: 1.5rem;
     color: var(--color-text);
     font-weight: 400;
+}
+
+.mw-hero__title.shimmer-text {
+    /* Shimmer effect applied via class */
 }
 
 .mw-hero__title span {
@@ -4413,17 +4562,20 @@ a.formkit-powered-by {
     padding: 1.1rem 2.2rem;
     font-family: var(--font-heading);
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
     text-decoration: none;
     border: 1px solid var(--color-gold);
-    color: var(--color-gold);
+    background: var(--gold-texture);
+    color: var(--charcoal);
+    font-weight: 600;
     transition: all 0.4s ease;
 }
 
 .mw-hero__cta .btn:hover {
-    background: var(--color-gold);
-    color: var(--color-bg);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 /* PLACEMENT MODIFIERS */
@@ -4500,23 +4652,23 @@ a.formkit-powered-by {
 
 /* OVERLAY MODIFIERS */
 .mw-hero--overlay-bottom .mw-hero__overlay {
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(26, 26, 31, 0.8) 0%, transparent 60%);
 }
 
 .mw-hero--overlay-top .mw-hero__overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 60%);
+    background: linear-gradient(to bottom, rgba(26, 26, 31, 0.8) 0%, transparent 60%);
 }
 
 .mw-hero--overlay-left .mw-hero__overlay {
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 60%);
+    background: linear-gradient(to right, rgba(26, 26, 31, 0.8) 0%, transparent 60%);
 }
 
 .mw-hero--overlay-right .mw-hero__overlay {
-    background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 60%);
+    background: linear-gradient(to left, rgba(26, 26, 31, 0.8) 0%, transparent 60%);
 }
 
 .mw-hero--overlay-vignette .mw-hero__overlay {
-    background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.6) 100%);
+    background: radial-gradient(circle, transparent 20%, rgba(26, 26, 31, 0.8) 100%);
 }
 
 .mw-hero--overlay-teal .mw-hero__overlay {
@@ -4659,6 +4811,12 @@ a.formkit-powered-by {
     object-position: center;
     display: block;
     margin: 0;
+    filter: sepia(0.2) contrast(1.1) brightness(0.8);
+    transition: filter 0.5s ease;
+}
+
+.content-block__media:hover img {
+    filter: sepia(0) contrast(1.2) brightness(0.9);
 }
 
 .content-block--reverse .content-block__text {
