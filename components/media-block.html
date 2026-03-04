@@ -20,7 +20,9 @@
                 </div>
                 {{/galleryImages}}
                 {{^galleryImages}}
-                <img src="{{imageSrc}}" alt="{{imageAlt}}" loading="lazy">
+                <div class="image-frame">
+                    <img src="{{imageSrc}}" alt="{{imageAlt}}" loading="lazy">
+                </div>
                 {{/galleryImages}}
             </div>
         </div>
