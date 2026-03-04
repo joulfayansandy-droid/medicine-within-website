@@ -38,17 +38,10 @@
     ></div>
     
     <!-- ========== KAMBO SUB-NAV ========== -->
-    <nav class="sub-nav">
-        <div class="container">
-            <ul class="sub-nav-list">
-                <li><a href="kambo.html" class="sub-nav-link">Overview</a></li>
-                <li><a href="kambo-ceremonies.html" class="sub-nav-link">Ceremonies</a></li>
-                <li><a href="kambo-benefits.html" class="sub-nav-link active">Benefits</a></li>
-                <li><a href="kambo-safety.html" class="sub-nav-link">Safety</a></li>
-                <li><a href="kambo-integration.html" class="sub-nav-link">Integration</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div
+        data-component="sub-nav"
+        data-links='<li><a href="kambo.html" class="sub-nav-link">Overview</a></li><li><a href="kambo-ceremonies.html" class="sub-nav-link">Ceremonies</a></li><li><a href="kambo-benefits.html" class="sub-nav-link">Benefits</a></li><li><a href="kambo-safety.html" class="sub-nav-link">Safety</a></li><li><a href="kambo-integration.html" class="sub-nav-link">Integration</a></li>'
+    ></div>
     
     <!-- ========== INTRO ========== -->
     <section class="section mood-soft-sanctuary">
@@ -66,6 +59,8 @@
         data-content="<p>Kambô is known as 'the vaccine of the forest.' It contains a potent cocktail of bioactive peptides that interact with the body's systems to trigger a deep cleanse.</p><ul class='feature-list mt-md'><li>Boosts immune system and cellular health</li><li>Clears chronic fatigue and brain fog</li><li>Regulates the nervous system</li><li>Releases deep-seated emotional blockages</li></ul>"
         data-image-src="/assets/img/man-ceremony-hand-on-heart.jpg"
         data-image-alt="Kambo Ceremony Details"
+        data-cta-text="Join a Ceremony"
+        data-cta-link="../events/"
         data-section-class="mood-deep-anchor"
     ></div>
 
@@ -92,24 +87,30 @@
             <div class="grid grid-3">
                 <div class="card">
                     <div class="card__image">
-                        <img src="../assets/img/man-ceremony-hand-on-heart.jpg" alt="Physical Healing" loading="lazy">
+                        <img src="../assets/img/methodology/embody.jpg" alt="Physical Healing" loading="lazy">
                     </div>
-                    <h3 class="text-gold">Physical</h3>
-                    <p class="text-muted">Potent anti-inflammatory, anti-viral, and anti-microbial properties. Deep organ and lymphatic cleanse.</p>
+                    <div class="card__content">
+                        <h3 class="text-gold">Physical</h3>
+                        <p class="text-muted">Potent anti-inflammatory, anti-viral, and anti-microbial properties. Deep organ and lymphatic cleanse.</p>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card__image">
                         <img src="../assets/img/expressive-movement-woman.jpg" alt="Emotional Release" loading="lazy">
                     </div>
-                    <h3 class="text-gold">Emotional</h3>
-                    <p class="text-muted">Releasing 'Panema' — the indigenous term for bad luck, heavy energy, or emotional stagnation.</p>
+                    <div class="card__content">
+                        <h3 class="text-gold">Emotional</h3>
+                        <p class="text-muted">Releasing 'Panema' — the indigenous term for bad luck, heavy energy, or emotional stagnation.</p>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card__image">
                         <img src="../assets/img/meditative-woman-redhead.jpg" alt="Spiritual Grounding" loading="lazy">
                     </div>
-                    <h3 class="text-gold">Spiritual</h3>
-                    <p class="text-muted">Restoring your inner authority, sharpening intuition, and clearing the path for your true mission.</p>
+                    <div class="card__content">
+                        <h3 class="text-gold">Spiritual</h3>
+                        <p class="text-muted">Restoring your inner authority, sharpening intuition, and clearing the path for your true mission.</p>
+                    </div>
                 </div>
             </div>
         </div>
