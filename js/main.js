@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Special handling for HTML content in data attributes
                 // The dataset API may not properly preserve HTML, so read these directly
-                const htmlAttributes = ['gallery-images', 'images'];
+                const htmlAttributes = ['gallery-images', 'images', 'links'];
                 htmlAttributes.forEach(attrName => {
                     const attrValue = el.getAttribute(`data-${attrName}`);
                     if (attrValue !== null) {
@@ -288,7 +288,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // 1. Handle conditional blocks: {{#key}}...{{/key}} and inverse {{^key}}...{{/key}}
-                // First, handle inverse conditionals for keys that don't exist or are falsy
+                // First, find ALL conditionals in the template (both positive and inverse) to ensure we process them all
+                
+                // Process inverse conditionals {{^key}}...{{/key}}
                 html = html.replace(/{{\^([a-zA-Z0-9]+)}}([\s\S]*?){{\/\1}}/gi, function(match, key, content) {
                     const value = params[key];
                     if (!value || value === '' || value === 'false') {
@@ -299,15 +301,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     return '';
                 });
                 
-                // Then handle positive conditionals
-                for (const key in params) {
+                // Process positive conditionals {{#key}}...{{/key}}
+                // Find all conditionals in the template, not just those in params
+                html = html.replace(/{{#([a-zA-Z0-9]+)}}([\s\S]*?){{\/\1}}/gi, function(match, key, content) {
                     const value = params[key];
                     if (value && value !== 'false' && value !== '') {
-                        html = html.replace(new RegExp('{{#' + key + '}}([\\s\\S]*?){{\\/' + key + '}}', 'gi'), '$1');
-                    } else {
-                        html = html.replace(new RegExp('{{#' + key + '}}([\\s\\S]*?){{\\/' + key + '}}', 'gi'), '');
+                        // Key exists and is truthy - show content
+                        return content;
                     }
-                }
+                    // Key doesn't exist or is falsy - remove the block entirely
+                    return '';
+                });
 
                 // 2. Handle simple variables: {{key}}
                 for (const key in params) {
@@ -354,6 +358,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (yearEl) {
                         yearEl.textContent = new Date().getFullYear();
                     }
+                }
+                
+                // If media-block was loaded, assign frame styles to single images
+                if (component === 'media-block') {
+                    assignImageFrames();
+                }
+
+                // If sub-nav was loaded, auto-detect and set the active link
+                if (component === 'sub-nav') {
+                    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                    el.querySelectorAll('.sub-nav-link').forEach(link => {
+                        const linkHref = link.getAttribute('href');
+                        if (linkHref === currentPage) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             } catch (error) {
                 console.error(`Error loading component ${component}:`, error);
@@ -1787,6 +1807,57 @@ const EventsManager = (function() {
     };
     
 })();
+
+// ==========================================================================
+// Image Frame Assignment
+// ==========================================================================
+
+/**
+ * Assign different frame styles to single images in media blocks
+ * Cycles through: circle, diamond, octagon, hexagon, pill, corners, rounded
+ */
+function assignImageFrames() {
+    const frameStyles = [
+        'image-frame-circle',
+        'image-frame-diamond',
+        'image-frame-octagon',
+        'image-frame-hexagon',
+        'image-frame-pill',
+        'image-frame-corners',
+        'image-frame-rounded'
+    ];
+    
+    // Find all image frames (only those without a specific frame class already assigned)
+    const imageFrames = document.querySelectorAll('.content-block__media .image-frame');
+    
+    let frameCounter = 0;
+    imageFrames.forEach((frame) => {
+        // Skip if already has a specific frame class
+        const hasFrameClass = Array.from(frame.classList).some(cls => 
+            frameStyles.includes(cls)
+        );
+        
+        if (!hasFrameClass) {
+            // Cycle through frame styles
+            const frameIndex = frameCounter % frameStyles.length;
+            frame.classList.add(frameStyles[frameIndex]);
+            frameCounter++;
+        }
+    });
+}
+
+// Run frame assignment after all components are loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for components to load, then assign frames
+    setTimeout(assignImageFrames, 500);
+    
+    // Also run after any component is loaded (in case of dynamic loading)
+    document.addEventListener('componentLoaded', function(e) {
+        if (e.detail === 'media-block') {
+            setTimeout(assignImageFrames, 100);
+        }
+    });
+});
 
 // ==========================================================================
 // ConvertKit Integration
