@@ -274,7 +274,7 @@ p {
     .section-vh-60 .container,
     .section-vh-50 .container,
     .section-vh-min .container {
-        padding: var(--space-md) 0; /* Reduce from 96px to 32px for tighter mobile spacing */
+        padding: var(--space-md) var(--space-md); /* Preserve horizontal padding on mobile */
     }
 }
 
@@ -354,6 +354,12 @@ p {
 .gap-lg { gap: var(--space-lg); }
 .gap-xl { gap: var(--space-xl); }
 .items-center { align-items: center; }
+.text-left { text-align: left; }
+.text-italic { font-style: italic; }
+.rounded { border-radius: 12px; }
+.small { font-size: 0.9rem; }
+.mt-lg { margin-top: var(--space-lg); }
+.mb-lg { margin-bottom: var(--space-lg); }
 
 /* Grid modifiers */
 .grid-centered { max-width: 1000px; margin-left: auto; margin-right: auto; }
@@ -1841,6 +1847,15 @@ body.mobile-menu-open::before {
 
 .spoke-card:hover .link-arrow::after {
     margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .spoke-card {
+        height: 320px;
+    }
+    .spoke-card h3 {
+        font-size: 1.35rem;
+    }
 }
 
 /* Pricing Cards */
@@ -4333,6 +4348,103 @@ a.formkit-powered-by {
 }
 
 /* ==========================================================================
+   Ceremony Steps Accordion
+   ========================================================================== */
+
+.ceremony-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ceremony-step {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.ceremony-step__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.ceremony-step__header:hover {
+    color: var(--color-gold);
+}
+
+.ceremony-step__header .experience-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    border-radius: 50%;
+}
+
+.ceremony-step__header h3 {
+    flex: 1;
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.ceremony-step__icon {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.ceremony-step[aria-expanded="true"] .ceremony-step__icon {
+    transform: rotate(45deg);
+}
+
+.ceremony-step__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 0 0 calc(40px + 1rem);
+}
+
+.ceremony-step[aria-expanded="true"] .ceremony-step__body {
+    max-height: 500px;
+    padding-bottom: 1.5rem;
+}
+
+.ceremony-step__body p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* Desktop: expanded by default */
+@media (min-width: 769px) {
+    .ceremony-step__body {
+        max-height: none;
+        padding-bottom: 1.5rem;
+    }
+    .ceremony-step__icon {
+        display: none;
+    }
+    .ceremony-step__header {
+        cursor: default;
+    }
+}
+
+/* ==========================================================================
    Contraindications List
    ========================================================================== */
 
@@ -5516,12 +5628,23 @@ section .content-block:nth-of-type(7n+7) .content-block__media .image-frame img 
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .content-block--reverse .content-block__text {
         order: 1;
     }
-    
+
     .content-block--reverse .content-block__media {
         order: 2;
+    }
+
+    .content-block__media {
+        aspect-ratio: 16/10;
+        max-height: 350px;
+    }
+
+    .image-gallery--4 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 0.375rem;
     }
 }

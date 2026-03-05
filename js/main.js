@@ -381,7 +381,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    loadComponents();
+    loadComponents().then(function() {
+        // Clean up empty CTA containers (fallback for browsers without :has() support)
+        document.querySelectorAll('.content-block__cta').forEach(function(cta) {
+            if (!cta.querySelector('.btn') && cta.textContent.trim() === '') {
+                cta.style.display = 'none';
+            }
+        });
+
+        // Initialize ceremony step accordions (mobile only)
+        initCeremonySteps();
+    });
 
     // ==========================================================================
     // Navigation
@@ -1858,6 +1868,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ==========================================================================
+// Ceremony Steps Accordion
+// ==========================================================================
+
+function initCeremonySteps() {
+    const steps = document.querySelectorAll('.ceremony-step');
+    if (steps.length === 0) return;
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    steps.forEach(function(step) {
+        const header = step.querySelector('.ceremony-step__header');
+        if (!header) return;
+
+        // On mobile, start collapsed; on desktop, start expanded
+        step.setAttribute('aria-expanded', isMobile ? 'false' : 'true');
+
+        header.addEventListener('click', function() {
+            // Only toggle on mobile
+            if (!window.matchMedia('(max-width: 768px)').matches) return;
+            const expanded = step.getAttribute('aria-expanded') === 'true';
+            step.setAttribute('aria-expanded', String(!expanded));
+        });
+    });
+}
 
 // ==========================================================================
 // ConvertKit Integration
