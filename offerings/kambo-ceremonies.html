@@ -34,7 +34,7 @@
         data-hero-overlay="mw-hero--overlay-top"
         data-hero-mobile="mw-hero--mobile-bottom"
         data-hero-cta-text="Book Discovery Call"
-        data-hero-cta-link="../contact/"
+        data-hero-cta-link="#cta"
     ></div>
     
     <!-- ========== KAMBO SUB-NAV ========== -->
@@ -103,7 +103,7 @@
                         <p class="tagline">Personalised & Deep</p>
                         <h3>Private Ceremonies</h3>
                         <p>One-to-one containers in my temple, your home, or for couples.</p>
-                        <button onclick="window.openCalendlyPopup()" class="btn-secondary-link">Book Private Ceremony</button>
+                        <a onclick="window.openCalendlyPopup()" class="link-arrow" role="button" style="cursor:pointer">Book Private Ceremony</a>
                     </div>
                 </div>
             </div>
@@ -115,14 +115,14 @@
         data-component="media-block"
         data-title="The Sweetest Temple Assistant — Kaya"
         data-tagline="Grounded Presence"
-        data-content="<p>Kaya, my 4-year-old Yakutian Laika, is often present during ceremonies. She has been with me through every phase of my Kambô journey and intuitively understands the rhythm, silence, and gravity of this work.</p><p class='mt-sm'>She greets you warmly at the door — and once ceremony begins, she instinctively steps back, holding grounded presence from the edges of the field. At the end, she often returns — for a gentle check-in, quiet companionship, or soft cuddles.</p><p class='text-muted mt-md' style='font-style: italic;'>If you have fear of dogs or specific sensitivities, simply let me know in advance.</p>"
+        data-content="<p>Kaya, my 4-year-old Yakutian Laika, is often present during ceremonies. She has been with me through every phase of my Kambô journey and intuitively understands the rhythm, silence, and gravity of this work.</p><p class='mt-sm'>She greets you warmly at the door — and once ceremony begins, she instinctively steps back, holding grounded presence from the edges of the field. At the end, she often returns — for a gentle check-in, quiet companionship, or soft cuddles.</p><p class='text-muted mt-md text-italic'>If you have fear of dogs or specific sensitivities, simply let me know in advance.</p>"
         data-image-src="/assets/img/events/Maithuna-day01-byShariVandeCraen-3.jpg"
         data-image-alt="Kaya - Temple Assistant"
         data-block-class="content-block--reverse"
         data-section-class="mood-deep-anchor"
     ></div>
 
-    <!-- ========== CEREMONY UNFOLDS - INTRO ========== -->
+    <!-- ========== CEREMONY UNFOLDS ========== -->
     <section class="section mood-soft-sanctuary">
         <div class="container">
             <div class="section-header">
@@ -130,51 +130,63 @@
                 <h2>How the Ceremony Unfolds</h2>
                 <p class="text-muted">A ritual-based container weaving shamanic, somatic, and relational intelligence.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- ========== CEREMONY UNFOLDS - OPENING ========== -->
-    <section class="section mood-soft-sanctuary">
-        <div class="container">
-            <div class="grid grid-2 gap-lg items-center">
-                <div>
-                    <div class="experience-number experience-number--lg">1</div>
-                    <h3>Rapé Opening</h3>
-                    <p class="text-muted">Grounding snuff medicine to calm the mind, open prayer, and sharpen presence. (Optional)</p>
+            <div class="ceremony-steps">
+                <div class="ceremony-step" aria-expanded="false">
+                    <button class="ceremony-step__header" type="button">
+                        <span class="experience-number">1</span>
+                        <h3>Rapé Opening</h3>
+                        <span class="ceremony-step__icon">+</span>
+                    </button>
+                    <div class="ceremony-step__body">
+                        <p class="text-muted">Grounding snuff medicine to calm the mind, open prayer, and sharpen presence. (Optional)</p>
+                    </div>
                 </div>
-                <div>
-                    <div class="experience-number experience-number--lg">2</div>
-                    <h3>Kambô Application</h3>
-                    <p class="text-muted">Small, surface-level portals are opened. Experiences may include nausea, emotional release, or deep stillness.</p>
+
+                <div class="ceremony-step" aria-expanded="false">
+                    <button class="ceremony-step__header" type="button">
+                        <span class="experience-number">2</span>
+                        <h3>Kambô Application</h3>
+                        <span class="ceremony-step__icon">+</span>
+                    </button>
+                    <div class="ceremony-step__body">
+                        <p class="text-muted">Small, surface-level portals are opened. Experiences may include nausea, emotional release, or deep stillness.</p>
+                    </div>
+                </div>
+
+                <div class="ceremony-step" aria-expanded="false">
+                    <button class="ceremony-step__header" type="button">
+                        <span class="experience-number">3</span>
+                        <h3>Medicine Songs</h3>
+                        <span class="ceremony-step__icon">+</span>
+                    </button>
+                    <div class="ceremony-step__body">
+                        <p class="text-muted">Ancestral songs support your system, soften resistance, and help the purge become prayer.</p>
+                    </div>
+                </div>
+
+                <div class="ceremony-step" aria-expanded="false">
+                    <button class="ceremony-step__header" type="button">
+                        <span class="experience-number">4</span>
+                        <h3>Sananga Closing</h3>
+                        <span class="ceremony-step__icon">+</span>
+                    </button>
+                    <div class="ceremony-step__body">
+                        <p class="text-muted">Eye-drop medicine for grounding, clarity, and energetic clearing. (Optional)</p>
+                    </div>
+                </div>
+
+                <div class="ceremony-step" aria-expanded="false">
+                    <button class="ceremony-step__header" type="button">
+                        <span class="experience-number">5</span>
+                        <h3>Soup & Integration</h3>
+                        <span class="ceremony-step__icon">+</span>
+                    </button>
+                    <div class="ceremony-step__body">
+                        <p class="text-muted">Warm soup and grounding conversation on what released and how to integrate safely.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ========== CEREMONY UNFOLDS - MIDDLE ========== -->
-    <section class="section mood-deep-anchor">
-        <div class="container">
-            <div class="grid grid-2 gap-lg items-center">
-                <div>
-                    <div class="experience-number experience-number--lg">3</div>
-                    <h3>Medicine Songs</h3>
-                    <p class="text-muted">Ancestral songs support your system, soften resistance, and help the purge become prayer.</p>
-                </div>
-                <div>
-                    <div class="experience-number experience-number--lg">4</div>
-                    <h3>Sananga Closing</h3>
-                    <p class="text-muted">Eye-drop medicine for grounding, clarity, and energetic clearing. (Optional)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== CEREMONY UNFOLDS - INTEGRATION ========== -->
-    <section class="section mood-soft-sanctuary">
-        <div class="container container-narrow text-center">
-            <div class="experience-number experience-number--lg">5</div>
-            <h3>Soup & Integration</h3>
-            <p class="text-muted">Warm soup and grounding conversation on what released and how to integrate safely.</p>
         </div>
     </section>
 
@@ -243,7 +255,7 @@
     ></div>
 
     <!-- ========== FINAL CTA ========== -->
-    <section class="section section-dark text-center cta-bg-section cta-bg-section--dark">
+    <section id="cta" class="section section-dark text-center cta-bg-section cta-bg-section--dark">
         <img src="../assets/img/feather-ritual-blindfold.jpg" alt="The Temple Field" class="cta-bg-section__image">
         <div class="cta-bg-section__overlay"></div>
         <div class="container container-narrow cta-bg-section__content">
