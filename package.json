@@ -1,0 +1,15 @@
+{
+  "name": "medicine-within-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "resend": "^4.0.1"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.4"
+  }
+}

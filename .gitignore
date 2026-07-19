@@ -1,6 +1,14 @@
 # ConvertKit API Keys - DO NOT COMMIT
 js/config.js
 
+# Environment variables - DO NOT COMMIT
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
 # Parent directory files (not part of v2 site)
 Sandi Personal Assets/
 .cursor/
@@ -36,3 +44,4 @@ npm-debug.log*
 *.tmp
 *.temp
 
+.vercel
