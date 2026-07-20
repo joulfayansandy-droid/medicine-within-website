@@ -285,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Special handling for YouTube IDs
                 if (params.youtubeUrl) {
                     params.youtubeId = getYouTubeId(params.youtubeUrl);
+                    params.youtubeThumb = `/assets/img/youtube-thumbs/${params.youtubeId}.jpg`;
                 }
 
                 // 1. Handle conditional blocks: {{#key}}...{{/key}} and inverse {{^key}}...{{/key}}
@@ -391,7 +392,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Initialize ceremony step accordions (mobile only)
         initCeremonySteps();
+
+        // Wire up click-to-play YouTube facades
+        initYouTubeFacades();
     });
+
+    /**
+     * Click-to-play YouTube facades: swap the static thumbnail for a live
+     * iframe only on interaction, so YouTube's own title/channel overlay
+     * never appears until the visitor has chosen to play the video.
+     */
+    function initYouTubeFacades() {
+        document.querySelectorAll('.yt-facade').forEach(function(facade) {
+            const play = function() {
+                const id = facade.dataset.ytId;
+                if (!id) return;
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+                iframe.title = facade.dataset.ytTitle || 'YouTube video';
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.allowFullscreen = true;
+                facade.innerHTML = '';
+                facade.removeAttribute('role');
+                facade.removeAttribute('tabindex');
+                facade.appendChild(iframe);
+            };
+            facade.addEventListener('click', play);
+            facade.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    play();
+                }
+            });
+        });
+    }
 
     // ==========================================================================
     // Navigation

@@ -1,12 +1,9 @@
 <div class="youtube-embed-container {{ratioClass}}">
-    <div class="youtube-embed-wrapper">
-        <iframe 
-            src="https://www.youtube.com/embed/{{youtubeId}}" 
-            title="{{youtubeTitle}}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen
-        ></iframe>
+    <div class="youtube-embed-wrapper yt-facade" data-yt-id="{{youtubeId}}" data-yt-title="{{youtubeTitle}}" role="button" tabindex="0" aria-label="Play video: {{youtubeTitle}}">
+        <img class="yt-facade-thumb" src="{{youtubeThumb}}" alt="{{youtubeTitle}}" loading="lazy">
+        <span class="yt-facade-play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        </span>
     </div>
     {{#caption}}<p class="youtube-caption">{{caption}}</p>{{/caption}}
 </div>
