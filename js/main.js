@@ -2269,13 +2269,13 @@ const ConvertKitManager = (function() {
             document.addEventListener('mouseout', function(e) {
                 if (!e.relatedTarget && e.clientY <= 0) fireOnce();
             });
-            setTimeout(fireOnce, 25000);
+            setTimeout(fireOnce, 9000);
         } else {
             window.addEventListener('scroll', function() {
                 const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
                 if (scrolled >= 0.5) fireOnce();
             }, { passive: true });
-            setTimeout(fireOnce, 30000);
+            setTimeout(fireOnce, 9000);
         }
     }
 
