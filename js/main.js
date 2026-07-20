@@ -2107,6 +2107,191 @@ const ConvertKitManager = (function() {
     return {
         init: init
     };
-    
+
+})();
+
+// ==========================================================================
+// Lead Magnet Popup ("The Body Remembers")
+// ==========================================================================
+
+(function() {
+    const LEAD_MAGNET_SLUG = 'body-remembers';
+    const DISMISS_KEY = 'mw_lm_popup_dismissed_at';
+    const SUBSCRIBED_KEY = 'mw_lm_popup_subscribed';
+    const SNOOZE_DAYS = 7;
+
+    // Don't show on the dedicated lead-magnet page, legal pages, or internal/test pages
+    const EXCLUDED_PATH_PARTS = ['/lead-magnets/', '/legal/', '/mocks/', 'test-tag-subscriptions'];
+
+    function isExcludedPage() {
+        const path = window.location.pathname;
+        return EXCLUDED_PATH_PARTS.some(part => path.includes(part));
+    }
+
+    function shouldShow() {
+        if (localStorage.getItem(SUBSCRIBED_KEY) === 'true') return false;
+
+        const dismissedAt = localStorage.getItem(DISMISS_KEY);
+        if (dismissedAt) {
+            const elapsedDays = (Date.now() - Number(dismissedAt)) / (1000 * 60 * 60 * 24);
+            if (elapsedDays < SNOOZE_DAYS) return false;
+        }
+
+        return true;
+    }
+
+    function snooze() {
+        localStorage.setItem(DISMISS_KEY, String(Date.now()));
+    }
+
+    function markSubscribed() {
+        localStorage.setItem(SUBSCRIBED_KEY, 'true');
+    }
+
+    function buildPopup() {
+        const overlay = document.createElement('div');
+        overlay.className = 'lm-popup-overlay';
+        overlay.innerHTML = `
+            <div class="lm-popup" role="dialog" aria-modal="true" aria-labelledby="lm-popup-heading">
+                <button type="button" class="lm-popup__close" aria-label="Close">&times;</button>
+                <p class="lm-popup__label">Free Guide</p>
+                <h3 id="lm-popup-heading">The Body <span class="gold-texture-text">Remembers</span></h3>
+                <p class="lead">5 daily rituals to return to your embodied intelligence, sent straight to your inbox.</p>
+
+                <form class="lm-popup-form" data-state="idle" novalidate>
+                    <div class="lm-popup-form-fields">
+                        <div class="lm-popup-form-row">
+                            <input type="text" name="firstName" class="form-input" placeholder="First name" autocomplete="given-name" required>
+                            <input type="text" name="lastName" class="form-input" placeholder="Last name" autocomplete="family-name" required>
+                        </div>
+                        <input type="email" name="email" class="form-input" placeholder="Your email address" autocomplete="email" required>
+                        <button type="submit" class="btn btn-primary">Send Me The Guide</button>
+                    </div>
+                    <p class="lm-popup-status" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="lm-popup-privacy">No spam, only love. Unsubscribe anytime xx</p>
+            </div>
+        `;
+        return overlay;
+    }
+
+    function wirePopup(overlay) {
+        const closeBtn = overlay.querySelector('.lm-popup__close');
+        const form = overlay.querySelector('.lm-popup-form');
+        const statusEl = overlay.querySelector('.lm-popup-status');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        function hide() {
+            overlay.classList.remove('is-visible');
+            snooze();
+            document.body.style.overflow = '';
+        }
+
+        function show() {
+            overlay.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeBtn.addEventListener('click', hide);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) hide();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && overlay.classList.contains('is-visible')) hide();
+        });
+
+        function setStatus(message, type) {
+            statusEl.textContent = message;
+            statusEl.classList.remove('is-error', 'is-success');
+            if (type) statusEl.classList.add(type === 'error' ? 'is-error' : 'is-success');
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const payload = {
+                firstName: formData.get('firstName')?.trim(),
+                lastName: formData.get('lastName')?.trim(),
+                email: formData.get('email')?.trim(),
+                leadMagnet: LEAD_MAGNET_SLUG,
+            };
+
+            if (!payload.firstName || !payload.lastName || !payload.email) {
+                setStatus('Please fill in your first name, last name, and email.', 'error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            setStatus('Sending...', null);
+
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    setStatus(data.error || 'Something went wrong. Please try again.', 'error');
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                form.dataset.state = 'success';
+                setStatus('Check your inbox. Your guide is on its way.', 'success');
+                markSubscribed();
+                setTimeout(hide, 2500);
+            } catch (err) {
+                setStatus('Something went wrong. Please check your connection and try again.', 'error');
+                submitBtn.disabled = false;
+            }
+        });
+
+        return { show, hide };
+    }
+
+    function initExitIntentAndTimers(controls) {
+        const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        let triggered = false;
+
+        function fireOnce() {
+            if (triggered) return;
+            triggered = true;
+            controls.show();
+        }
+
+        if (isDesktop) {
+            // Exit intent: mouse leaves toward the top of the viewport
+            document.addEventListener('mouseout', function(e) {
+                if (!e.relatedTarget && e.clientY <= 0) fireOnce();
+            });
+            setTimeout(fireOnce, 25000);
+        } else {
+            window.addEventListener('scroll', function() {
+                const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+                if (scrolled >= 0.5) fireOnce();
+            }, { passive: true });
+            setTimeout(fireOnce, 30000);
+        }
+    }
+
+    function init() {
+        if (isExcludedPage() || !shouldShow()) return;
+
+        const overlay = buildPopup();
+        document.body.appendChild(overlay);
+        const controls = wirePopup(overlay);
+        initExitIntentAndTimers(controls);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();
 

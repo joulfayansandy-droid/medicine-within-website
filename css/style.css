@@ -5703,3 +5703,137 @@ section .content-block:nth-of-type(7n+7) .content-block__media .image-frame img 
         gap: 0.375rem;
     }
 }
+
+/* --------------------------------------------------------------------------
+   21. Lead Magnet Popup
+   -------------------------------------------------------------------------- */
+.lm-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 31, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.lm-popup-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lm-popup {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--color-bg);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    transform: translateY(16px) scale(0.98);
+    transition: transform var(--transition-slow);
+}
+
+.lm-popup-overlay.is-visible .lm-popup {
+    transform: translateY(0) scale(1);
+}
+
+.lm-popup__close {
+    position: absolute;
+    top: var(--space-xs);
+    right: var(--space-xs);
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.lm-popup__close:hover {
+    color: var(--color-gold);
+}
+
+.lm-popup__label {
+    font-family: var(--font-support);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-xs);
+}
+
+.lm-popup h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.lm-popup p.lead {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.lm-popup-form-row {
+    display: flex;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.lm-popup-form-row .form-input {
+    flex: 1 1 50%;
+}
+
+.lm-popup-form .form-input {
+    margin-bottom: var(--space-xs);
+}
+
+.lm-popup-form .btn {
+    width: 100%;
+    margin-top: var(--space-xs);
+}
+
+.lm-popup-status {
+    min-height: 1.4em;
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+}
+
+.lm-popup-status.is-error {
+    color: #e08a8a;
+}
+
+.lm-popup-status.is-success {
+    color: var(--color-gold-light);
+}
+
+.lm-popup-privacy {
+    margin-top: var(--space-sm);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.lm-popup-form[data-state="success"] .lm-popup-form-fields {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .lm-popup {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .lm-popup-form-row {
+        flex-direction: column;
+    }
+}

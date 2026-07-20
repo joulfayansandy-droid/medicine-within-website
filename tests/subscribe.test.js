@@ -92,16 +92,32 @@ describe('handleSubscribeRequest (unit, injected fakes — no real Supabase/Rese
     expect(result.statusCode).toBe(200);
     expect(result.body).toEqual({ success: true, alreadySubscribed: false });
 
-    expect(sendEmail).toHaveBeenCalledTimes(1);
+    expect(sendEmail).toHaveBeenCalledTimes(2);
     const emailPayload = sendEmail.mock.calls[0][0];
     expect(emailPayload.to).toBe('sandi@example.com');
     expect(emailPayload.subject).toBe('Your guide is here: The Body Remembers');
     expect(emailPayload.html).toContain('Hi Sandi,');
     expect(emailPayload.html).toContain('https://medicinewithin.nl/assets/downloads/the-body-remembers.pdf');
 
+    const notifyPayload = sendEmail.mock.calls[1][0];
+    expect(notifyPayload.to).toBe('sandi@medicinewithin.nl');
+    expect(notifyPayload.subject).toBe('New subscriber: Sandi J wants The Body Remembers');
+    expect(notifyPayload.html).toContain('sandi@example.com');
+
     expect(fakeSupabase._rows()).toEqual([
       { first_name: 'Sandi', last_name: 'J', email: 'sandi@example.com', lead_magnet: 'body-remembers' },
     ]);
+  });
+
+  it('sends the new-subscriber notification to a custom address when notifyTo is provided', async () => {
+    const result = await handleSubscribeRequest(
+      { firstName: 'Sandi', lastName: 'J', email: 'sandi@example.com', leadMagnet: 'body-remembers' },
+      { supabase: fakeSupabase, sendEmail, leadMagnets: TEST_LEAD_MAGNETS, notifyTo: 'inbox@medicinewithin.nl' }
+    );
+
+    expect(result.statusCode).toBe(200);
+    expect(sendEmail).toHaveBeenCalledTimes(2);
+    expect(sendEmail.mock.calls[1][0].to).toBe('inbox@medicinewithin.nl');
   });
 
   it('does not re-send the email for a duplicate signup to the same lead magnet, but still reports success', async () => {
@@ -114,7 +130,7 @@ describe('handleSubscribeRequest (unit, injected fakes — no real Supabase/Rese
     expect(first.body.alreadySubscribed).toBe(false);
     expect(second.statusCode).toBe(200);
     expect(second.body).toEqual({ success: true, alreadySubscribed: true });
-    expect(sendEmail).toHaveBeenCalledTimes(1);
+    expect(sendEmail).toHaveBeenCalledTimes(2);
   });
 
   it('sends a new email when the same person signs up for a different lead magnet', async () => {
@@ -128,9 +144,9 @@ describe('handleSubscribeRequest (unit, injected fakes — no real Supabase/Rese
     expect(second.statusCode).toBe(200);
     expect(second.body).toEqual({ success: true, alreadySubscribed: false });
 
-    expect(sendEmail).toHaveBeenCalledTimes(2);
+    expect(sendEmail).toHaveBeenCalledTimes(4);
     expect(sendEmail.mock.calls[0][0].subject).toBe('Your guide is here: The Body Remembers');
-    expect(sendEmail.mock.calls[1][0].subject).toBe('Your Second Test Magnet guide');
+    expect(sendEmail.mock.calls[2][0].subject).toBe('Your Second Test Magnet guide');
   });
 
   it('rejects an unknown lead magnet slug without touching supabase or resend', async () => {
@@ -172,11 +188,15 @@ describe('api/subscribe.js createHandler (real HTTP entrypoint shape, fake clien
     expect(res.statusCode).toBe(200);
     expect(res.jsonBody).toEqual({ success: true, alreadySubscribed: false });
 
-    expect(sendEmail).toHaveBeenCalledTimes(1);
+    expect(sendEmail).toHaveBeenCalledTimes(2);
     const sentPayload = sendEmail.mock.calls[0][0];
     expect(sentPayload.to).toBe('maya@example.com');
     expect(sentPayload.subject).toBe('Your guide is here: The Body Remembers');
     expect(sentPayload.html).toContain('https://medicinewithin.nl/assets/downloads/the-body-remembers.pdf');
+
+    const notifyPayload = sendEmail.mock.calls[1][0];
+    expect(notifyPayload.to).toBe('sandi@medicinewithin.nl');
+    expect(notifyPayload.subject).toBe('New subscriber: Maya Rivera wants The Body Remembers');
   });
 
   it('rejects non-POST requests and never calls the email function', async () => {
